@@ -9,7 +9,9 @@ name: Zozo site
 
 on:
   schedule:
-    - cron: '*/15 13-21 * * 1-5'   # UTC; covers 9:25–16:30 New York time in both summer and winter time
+    # UTC; covers 9:25–16:35 New York time in both summer and winter time. Off the quarter-hour on purpose:
+    # GitHub delays or drops scheduled runs at :00/:15/:30/:45, when everyone's schedules fire at once.
+    - cron: '7,22,37,52 13-21 * * 1-5'
   push:
     branches: [main]
   workflow_dispatch:
