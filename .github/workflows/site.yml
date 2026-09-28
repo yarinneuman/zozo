@@ -1,0 +1,63 @@
+# Zozo — publish the site to GitHub Pages with fresh market data.
+# - every 15 minutes while the US market is open (plus a final run just after the close)
+# - on every push to main (the daily Claude refresh pushes the brief, signals and calendar)
+# - manually from the Actions tab
+# Market data (movers + stock screener) is generated fresh on each run and deployed directly,
+# not committed, so the repository doesn't grow every 15 minutes. If the data source fails,
+# the last committed copy (from the daily refresh) is published instead.
+name: Zozo site
+
+on:
+  schedule:
+    - cron: '*/15 13-21 * * 1-5'   # UTC; covers 9:25–16:30 New York time in both summer and winter time
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: zozo-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Only run on schedule while the US market is open
+        id: gate
+        run: |
+          now=$(TZ=America/New_York date +%H%M); dow=$(TZ=America/New_York date +%u)
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$dow" -le 5 ] && [ "$now" -ge 0925 ] && [ "$now" -le 1635 ]; then echo "run=true" >> "$GITHUB_OUTPUT"
+          else echo "run=false" >> "$GITHUB_OUTPUT"; echo "Market closed (New York $now, day $dow) — nothing to do."; fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          node-version: 24
+
+      - name: Fresh market data (movers + stock screener)
+        if: steps.gate.outputs.run == 'true'
+        run: node tools/market.mjs || echo "::warning::market data failed — publishing the last committed copy"
+
+      - uses: actions/configure-pages@v5
+        if: steps.gate.outputs.run == 'true'
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.gate.outputs.run == 'true'
+        with:
+          path: .
+
+      - id: deploy
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/deploy-pages@v4

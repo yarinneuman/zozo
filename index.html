@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zozo</title>
+<meta name="description" content="Zozo — תדריך שוק, איתותי MA150, מצבים חריגים וסקטורים במקום אחד.">
+<meta name="theme-color" content="#F3EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11100E" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" sizes="180x180">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zozo">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="application-name" content="Zozo">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Frank+Ruhl+Libre:wght@500;700;900&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/zozo.css">
+<script>
+  // apply saved theme before paint
+  try { var t = localStorage.getItem('zozo.theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">דלג לתוכן</a>
+
+<div class="tape" id="tape" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#brief" aria-label="Zozo — דף הבית">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="9" fill="var(--ink)"/><path d="M10 13h20L11 27h19" fill="none" stroke="var(--accent-on-ink)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="word">Zozo</span>
+    </a>
+    <div class="top-meta">
+      <span id="today" class="today"></span>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="החלפת מצב תצוגה" title="בהיר / כהה">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="ניווט ראשי"></nav>
+</header>
+
+<main id="main" class="wrap" tabindex="-1"></main>
+
+<footer class="foot wrap">
+  <div class="foot-brand"><span class="word sm">Zozo</span><span>שוק ההון, בלי הרעש.</span></div>
+  <p class="disclaimer">המידע באתר מבוסס על כללים אוטומטיים ומקורות פומביים ואינו ייעוץ השקעות, המלצה או הצעה לקנות או למכור ניירות ערך.</p>
+</footer>
+
+<nav class="bottom" id="bottomNav" aria-label="ניווט נייד"></nav>
+<div class="sheet" id="moreSheet" hidden>
+  <div class="sheet-back" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-label="עוד">
+    <div class="sheet-grip"></div>
+    <div id="moreLinks" class="sheet-links"></div>
+  </div>
+</div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+
+<!-- data (written by Claude's zozo-refresh skill) -->
+<script src="data/brief.js"></script>
+<script src="data/signals.js"></script>
+<script src="data/extreme.js"></script>
+<script src="data/history.js"></script>
+<script src="data/calendar.js"></script>
+<script src="data/movers.js"></script>
+<script src="data/universe.js"></script>
+<script src="data/sectors.js"></script>
+<script src="data/glossary.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js" defer></script>
+<script src="assets/charts.js" defer></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

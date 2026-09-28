@@ -1,0 +1,34 @@
+/* Zozo — extreme-condition buy signal. Written by the zozo-refresh skill (from spy-fear-greed-alert).
+Schema:
+{
+  updatedAt: ISO,
+  fearGreed: { score: 0-100, rating, timestamp, previousClose, oneWeekAgo, oneMonthAgo, source },
+  spy: { candles: [{ date, open, close }] (newest last, ~8), streak: int, lastClose, source },
+  active: bool (streak >= 3 && score < 25),
+  history: [{ date, score, streak, spyClose, spyNow }]  // every day the signal fired, newest first
+}
+*/
+window.ZOZO = window.ZOZO || {};
+ZOZO.extreme = {
+  updatedAt: "2026-09-28T16:00:00+03:00",
+  fearGreed: {
+    score: 38, rating: "fear", timestamp: "2026-09-25T23:00:00+03:00",
+    previousClose: 36, oneWeekAgo: 30, oneMonthAgo: 59,
+    source: "CNN Fear & Greed via Investrade (25/9) and Benzinga (24/9)"
+  },
+  spy: {
+    candles: [
+      { date: "2026-09-16", open: 759.50, close: 754.05 },
+      { date: "2026-09-17", open: 763.15, close: 762.60 },
+      { date: "2026-09-18", open: 761.31, close: 761.69 },
+      { date: "2026-09-21", open: 766.25, close: 773.50 },
+      { date: "2026-09-22", open: 774.03, close: 773.38 },
+      { date: "2026-09-23", open: 772.79, close: 767.81 },
+      { date: "2026-09-24", open: 764.07, close: 767.18 },
+      { date: "2026-09-25", open: 768.78, close: 771.35 }
+    ],
+    streak: 0, lastClose: 771.35, source: "Yahoo Finance, נרות יומיים של SPY"
+  },
+  active: false,
+  history: []
+};

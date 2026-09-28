@@ -1,0 +1,4 @@
+# build output for the Claude Artifact page (rebuilt by tools/build-artifact.ps1)
+dist/
+node_modules/
+*.log
