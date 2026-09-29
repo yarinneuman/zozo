@@ -184,10 +184,34 @@ const bySector = {};
 movable.forEach((r) => { if (!r[2]) return; const b = (bySector[r[2]] = bySector[r[2]] || { w: 0, s: 0, n: 0 }); b.w += r.capRaw; b.s += r.capRaw * r[6]; b.n++; });
 const sectors = Object.entries(bySector).filter(([k, b]) => b.n >= 20 && k !== 'שונות').map(([k, b]) => ({ sector: k, chg: r2(b.s / b.w), n: b.n })).sort((a, b) => b.chg - a.chg);
 
+/* ---------- 4. live market board: indices, yields, commodities, crypto, FX (Yahoo quotes) ---------- */
+const BOARD = [
+  ['S&P 500', '^GSPC', 'idx'], ['נאסד״ק', '^IXIC', 'idx'], ['דאו ג׳ונס', '^DJI', 'idx'], ['ראסל 2000', '^RUT', 'idx'],
+  ['VIX', '^VIX', 'num'], ['תשואה 10 שנים', '^TNX', 'yld'], ['מדד הדולר', 'DX-Y.NYB', 'num'],
+  ['נפט WTI', 'CL=F', 'usd'], ['נפט ברנט', 'BZ=F', 'usd'], ['זהב', 'GC=F', 'usd'], ['ביטקוין', 'BTC-USD', 'usd0'],
+  ['דולר/שקל', 'ILS=X', 'fx'], ['ת״א 35', 'TA35.TA', 'idx'],
+];
+const fmt = (v, d) => v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const indices = [];
+for (const [k, sym, kind] of BOARD) {
+  try {
+    const m = (await getJSON(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=5m`)).chart.result[0].meta;
+    let v = m.regularMarketPrice, prev = m.chartPreviousClose ?? m.previousClose;
+    if (!isFinite(v) || !isFinite(prev)) continue;
+    if (kind === 'yld' && v > 20) { v /= 10; prev /= 10; }            // older Yahoo feeds quote ^TNX ×10
+    const chg = (v / prev - 1) * 100;
+    const value = kind === 'idx' ? fmt(v, 2) : kind === 'yld' ? fmt(v, 2) + '%' : kind === 'usd' ? '$' + fmt(v, 2) : kind === 'usd0' ? '$' + fmt(v, 0) : kind === 'fx' ? fmt(v, 3) : fmt(v, 2);
+    const c = kind === 'yld' ? `${v >= prev ? '+' : '−'}${Math.abs(Math.round((v - prev) * 100))} נ״ב` : `${chg >= 0 ? '+' : '−'}${Math.abs(chg).toFixed(2)}%`;
+    indices.push({ k, sym, v: value, c, chg: r2(chg), dir: Math.abs(chg) < 0.005 ? 'flat' : chg > 0 ? 'up' : 'down', at: m.regularMarketTime ? isoIL(new Date(m.regularMarketTime * 1000)) : null });
+  } catch { /* skip a missing quote; the brief's morning snapshot still covers it */ }
+  await sleep(150);
+}
+console.log(`board: ${indices.length}/${BOARD.length} quotes`);
+
 writeFileSync(join(ROOT, 'data', 'movers.js'),
 `/* Zozo — the day's strongest moves across US stocks (market cap >= $${MOVER_CAP / 1e6}M, >= $2M/day traded). Written by tools/market.mjs (zozo-refresh).
    Source: Yahoo Finance daily candles (price, % change, volume vs 50-day average); names, caps and sectors from the Nasdaq stock screener. */
 window.ZOZO = window.ZOZO || {};
-ZOZO.movers = ${JSON.stringify({ updatedAt, asOf, live, marketTime, source: 'Yahoo Finance + Nasdaq stock screener', minCap: MOVER_CAP, breadth, sectors, gainers, losers, large, volume })};
+ZOZO.movers = ${JSON.stringify({ updatedAt, asOf, live, marketTime, source: 'Yahoo Finance + Nasdaq stock screener', minCap: MOVER_CAP, indices, breadth, sectors, gainers, losers, large, volume })};
 `);
 console.log(`wrote universe.js (${rows.length} rows, asOf ${asOf}) and movers.js (${gainers.length}/${losers.length}/${large.length}/${volume.length}, breadth ${breadth.up}/${breadth.down})`);

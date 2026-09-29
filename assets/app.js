@@ -48,6 +48,15 @@
     return { u, ix, byT: new Map(u.rows.map((r) => [r[0], r])) };
   };
   let UNI = buildUni();
+  // market board: live quotes from data/movers.js (refreshed every 15 min in trading hours), topped up with the
+  // morning brief's items that have no live quote (policy rates, 2-year yield…)
+  const boardItems = () => {
+    const live = D.movers && D.movers.indices && D.movers.indices.length ? D.movers.indices : null;
+    const brief = (D.brief && D.brief.snapshot) || [];
+    if (!live) return brief;
+    const have = new Set(live.map((x) => x.k));
+    return live.concat(brief.filter((s) => !have.has(s.k.replace(/\s*\(.*\)$/, '')) && !/ת״א 35|דולר/.test(s.k)));
+  };
   // market data stamp: "live" while US trading is open (refreshed every 15 min on the server), otherwise the close it shows
   const marketStamp = (m) => {
     if (!m) return stamp(null);
@@ -149,7 +158,7 @@
 
   /* ================= tape & header ================= */
   function buildTape() {
-    const snap = D.brief && D.brief.snapshot;
+    const snap = boardItems();
     const el = document.getElementById('tape');
     if (!snap || !snap.length) { el.innerHTML = ''; return; }
     const items = snap.map((s) => `<span><b>${esc(s.k)}</b>${esc(s.v)} <span class="${s.dir === 'up' ? 'u' : s.dir === 'down' ? 'd' : ''}">${arrowOf(s.dir)}${esc(s.c || '')}</span></span>`).join('');
@@ -281,7 +290,9 @@
   }
   function renderBrief() {
     const b = D.brief;
-    let h = head(b ? `תדריך ${b.edition || ''}` : 'תדריך', 'השוק היום', null, b ? b.updatedAt : null) + statusStrip();
+    // two clocks: the market numbers (live, every 15 min) and the written analysis (once a day)
+    const stamps = `<div class="stamps">${D.movers ? marketStamp(D.movers) : ''}${b ? `<span class="stamp" title="${esc(heDate(b.updatedAt, { dateStyle: 'full', timeStyle: 'short' }))}">הניתוח נכתב ${esc(heDate(b.updatedAt, { weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }))}</span>` : stamp(null)}</div>`;
+    let h = head(b ? `תדריך ${b.edition || ''}` : 'תדריך', 'השוק היום', null, undefined, stamps) + statusStrip();
     if (!b) return h + empty('התדריך הראשון עוד לא נכתב', 'Zozo מתעדכן אוטומטית כל בוקר מסחר לפני פתיחת וול סטריט: מאקרו, ריבית, AI, דוחות, ישראל וקולות מהשוק — עם מקור לכל נתון.', I.brief);
     const fw = b.macro && b.macro.fedwatch, pm = b.macro && b.macro.polymarket;
     const odds = (o) => o ? `<div class="odds">${isNum(o.cut) && o.cut > 0 ? `<div class="cut" style="width:${o.cut}%">${o.cut >= 12 ? o.cut + '%' : ''}</div>` : ''}${isNum(o.hold) && o.hold > 0 ? `<div class="hold" style="width:${o.hold}%">${o.hold >= 12 ? o.hold + '%' : ''}</div>` : ''}${isNum(o.hike) && o.hike > 0 ? `<div class="hike" style="width:${o.hike}%">${o.hike >= 12 ? o.hike + '%' : ''}</div>` : ''}</div>` : '';
@@ -304,7 +315,8 @@
     </section>`;
     h += moversWidget().replace('margin-top:0;margin-bottom:34px', 'margin-top:44px');
     let n = 0; const nn = () => String(++n).padStart(2, '0');
-    if (b.snapshot && b.snapshot.length) h += `<section class="block">${sec(nn(), 'תמונת מצב')}<div class="board">${b.snapshot.map((s) => `<div class="cell"><span class="k">${esc(s.k)}</span><span class="v">${esc(s.v)}</span><span class="c ${dirOf(s.dir)}">${arrowOf(s.dir)}${esc(s.c || '')}</span></div>`).join('')}</div></section>`;
+    const board = boardItems();
+    if (board.length) h += `<section class="block"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">${sec(nn(), 'תמונת מצב')}${D.movers && D.movers.indices && D.movers.indices.length ? marketStamp(D.movers) : ''}</div><div class="board">${board.map((s) => `<div class="cell"><span class="k">${esc(s.k)}</span><span class="v">${esc(s.v)}</span><span class="c ${dirOf(s.dir)}">${arrowOf(s.dir)}${esc(s.c || '')}</span></div>`).join('')}</div></section>`;
     if (b.changes && b.changes.length) h += `<section class="block" data-g>${sec(nn(), 'מה השתנה')}${b.changes.map((c) => `<div class="chg-row"><span class="t">${esc(c.topic)}</span><span class="from">${esc(c.from)}</span><span class="arr">←</span><span>${esc(c.to)}</span></div>`).join('')}</section>`;
     const stories = (arr) => arr.map((s) => `<article class="story"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p><div class="meta">${(s.tickers || []).map((t) => `<span class="chip tkr">${esc(t)}</span>`).join('')}${s.source ? `<span class="src">${link(s.source.url, s.source.name)}${s.source.date ? ' · ' + esc(s.source.date) : ''}</span>` : ''}</div></article>`).join('');
     if (b.ai && b.ai.length) h += `<section class="block" data-g>${sec(nn(), 'בינה מלאכותית וטכנולוגיה')}<div class="card flat">${stories(b.ai)}</div></section>`;
@@ -937,6 +949,7 @@
     if (!ok || D.movers.updatedAt === before) return;
     await reloadScript('data/universe.js');
     UNI = buildUni();
+    buildTape();
     const cur = (location.hash.replace(/^#\/?/, '') || 'brief').split(/[\/.]/)[0];
     const typing = document.activeElement && /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
     if (LIVE_ROUTES.includes(cur) && !typing) route(true);
