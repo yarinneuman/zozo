@@ -64,7 +64,8 @@ main{outline:none;padding-block:28px 64px;min-height:60vh}
 .tape:empty{display:none}
 .tape-track{display:inline-flex;gap:30px;padding-inline:16px;animation:tape 70s linear infinite}
 .tape:hover .tape-track{animation-play-state:paused}
-.tape b{font-weight:600;margin-right:6px;opacity:.7}
+.tape b{font-weight:600;margin-right:6px;opacity:.7;unicode-bidi:isolate}
+.tape .tv,.tape .u,.tape .d{unicode-bidi:isolate}
 .tape .u{color:#63D39B} .tape .d{color:#FF8D82}
 :root[data-theme="light"] .tape .u{color:#63D39B}
 @keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}

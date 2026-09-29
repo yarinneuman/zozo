@@ -161,7 +161,7 @@
     const snap = boardItems();
     const el = document.getElementById('tape');
     if (!snap || !snap.length) { el.innerHTML = ''; return; }
-    const items = snap.map((s) => `<span><b>${esc(s.k)}</b>${esc(s.v)} <span class="${s.dir === 'up' ? 'u' : s.dir === 'down' ? 'd' : ''}">${arrowOf(s.dir)}${esc(s.c || '')}</span></span>`).join('');
+    const items = snap.map((s) => `<span><b>${esc(s.k)}</b><span class="tv">${esc(s.v)}</span> <span class="${s.dir === 'up' ? 'u' : s.dir === 'down' ? 'd' : ''}">${arrowOf(s.dir)}${esc(s.c || '')}</span></span>`).join('');
     el.innerHTML = `<div class="tape-track">${items}${items}</div>`;
   }
   document.getElementById('today').textContent = heDate(Date.now(), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
