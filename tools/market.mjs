@@ -4,6 +4,7 @@
 // Writes: data/movers.js, data/universe.js
 // Usage:  node tools/market.mjs [--min-cap 1e9] [--concurrency 12] [--limit N]
 import { writeFileSync, readFileSync } from 'node:fs';
+import vm from 'node:vm';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -160,6 +161,19 @@ function indicators(q) {
 let fetchList = all.filter((r) => r.cap >= Math.min(MIN_CAP, MOVER_CAP)).sort((a, b) => b.cap - a.cap);
 if (LIMIT) fetchList = fetchList.slice(0, LIMIT);
 console.log(`yahoo fetch list (cap >= $${MOVER_CAP / 1e6}M): ${fetchList.length}`);
+
+// Fundamentals first — Yahoo rate-limits its session endpoint after the burst of chart requests below.
+// If they can't be fetched, keep the previous run's values (from the current data/universe.js).
+const FUND = await fundamentals(fetchList.filter((s) => s.cap >= MIN_CAP).map((s) => s.t));
+if (FUND.size < 100) {
+  try {
+    const ctx = {}; ctx.window = ctx; vm.createContext(ctx);
+    vm.runInContext(readFileSync(join(ROOT, 'data', 'universe.js'), 'utf8'), ctx);
+    const u = ctx.ZOZO.universe, ix = (f) => u.fields.indexOf(f);
+    if (ix('pe') >= 0) for (const r of u.rows) if (!FUND.has(r[0])) FUND.set(r[0], { pe: r[ix('pe')], fpe: r[ix('fpe')], eps: r[ix('eps')], feps: r[ix('feps')], dy: r[ix('dy')], pb: r[ix('pb')], beta: r[ix('beta')], rating: r[ix('rating')], earn: r[ix('earn')] });
+    console.log(`fundamentals: using the previous run's values for ${FUND.size} stocks`);
+  } catch { /* first run: nothing to reuse */ }
+} else console.log(`fundamentals: ${FUND.size} stocks`);
 const out = new Array(fetchList.length);
 let done = 0, failed = [];
 async function worker(ids) {
@@ -183,8 +197,6 @@ const dates = {}; out.forEach((x) => x && (dates[x.date] = (dates[x.date] || 0) 
 const asOf = Object.keys(dates).sort((a, b) => dates[b] - dates[a])[0];
 
 const FIELDS = ['t', 'name', 'sector', 'industry', 'cap', 'price', 'chg1d', 'chg5d', 'chg1m', 'chg3m', 'chg6m', 'chg1y', 'd20', 'd50', 'd150', 'd200', 'rsi', 'fromHigh', 'fromLow', 'relVol', 'dollarVol', 'atrPct', 'ma150', 'since', 'streak', 'gap', 'trend', 'slope150', 'cross', 'sp', 'pe', 'fpe', 'eps', 'feps', 'dy', 'pb', 'beta', 'rating', 'earn'];
-const FUND = await fundamentals(fetchList.filter((s) => s.cap >= MIN_CAP).map((s) => s.t));
-console.log(`fundamentals: ${FUND.size} stocks`);
 const tech = [];   // one row per stock with a fresh candle for asOf
 fetchList.forEach((s, i) => {
   const x = out[i]; if (!x || x.date !== asOf) return;   // skip stale/halted tickers
