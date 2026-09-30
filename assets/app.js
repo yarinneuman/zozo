@@ -1036,7 +1036,10 @@
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (!document.documentElement.getAttribute('data-theme')) route(); });
   // PWA: offline cache for the standalone site (not inside the claude.ai Artifact, where service workers are blocked)
   if ('serviceWorker' in navigator && !window.ZOZO_ARTIFACT && window.isSecureContext) {
-    addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    addEventListener('load', () => navigator.serviceWorker.register('sw.js').then((reg) => reg.update()).catch(() => {}));
+    // when a new version of the site takes over, reload once so the viewer never sits on old code
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
   }
   const boot = () => route();
   if (window.LightweightCharts || document.readyState === 'complete') boot(); else addEventListener('load', boot, { once: true });
