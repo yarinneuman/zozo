@@ -16,80 +16,82 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.brief = {
-  updatedAt: "2026-09-28T16:00:00+03:00",
+  updatedAt: "2026-09-30T10:58:00+03:00",
   edition: "יומי",
-  fullUrl: "https://claude.ai/artifact/BbnxxaFxkQTEbmWqtCmRYZ",
-  headline: "טראמפ דחה את איראן. <em>הנפט</em> קופץ והחוזים יורדים.",
-  thesis: "בסוף השבוע טראמפ דחה את ההצעה האיראנית לפתוח מחדש את מצר הורמוז, והנפט חזר מעל $100. התשואות והדולר עלו יחד איתו, והחוזים העתידיים מצביעים על פתיחה בירידה, יומיים לפני PCE ומיקרון.",
+  headline: "תשואת ה-30 שנה בשיא מאז 2002, אמון הצרכנים בשפל של 12 שנה. <em>מיקרון</em> ו-PCE היום.",
+  thesis: "התשואות הארוכות ממשיכות לטפס לרמות שלא נראו כבר עשרים ומעלה שנה, ואמון הצרכנים האמריקאי צנח לשפל של 12 שנה — שילוב שמעיב על המניות גם בלי החלטת ריבית חדשה. הנפט נסוג אחרי שחרור מהמאגר האסטרטגי ותקוות לשיחות ארה\"ב-איראן, אבל טראמפ דחה את הצעת שביתת הנשק של טהראן. היום: PCE, ADP ותמ\"ג סופי, ואחרי הסגירה מיקרון מדווחת.",
   bottomLine: [
-    "טראמפ דחה את ההצעה האיראנית לפתוח את הורמוז. WTI עלה 4.2% ל-$96.26, וברנט לדצמבר עלה 3.6% ל-$100.98. חוזה נובמבר הגיע לכ-$108 (AP).",
-    "תשואת ה-10 שנים עלתה ל-5.22%, ה-2 שנים ל-4.914% וה-30 שנים ל-5.52%. מדד הדולר ב-101.39, השיא של החודשיים האחרונים (Reuters).",
-    "החוזים העתידיים יורדים: S&P −0.59%, נאסד״ק −1.02%, דאו −0.48%. הזהב צונח 3% ל-$4,151, והביטקוין יורד 1.7% לכ-$83,300.",
-    "השוק מתמחר 68% להעלאת ריבית נוספת ב-28/10 (Reuters), לעומת 54% ביום רביעי שעבר.",
-    "אנבידיה הגדילה את תוכנית הרכישה העצמית ב-$150B, לסך של $235B. היום: מדד התעשייה של דאלאס ב-17:30, ו-Jefferies מדווחת אחרי הסגירה."
+    "וול סטריט נסגרה בירידה קלה שנייה ברציפות: S&P 500 ירד 0.16% ל-7,670.84, דאו ירד 0.26% ל-51,349.92 ונאסד\"ק ירד 0.09% ל-26,797.54 (Investrade, AP; 29/9).",
+    "התשואות ממשיכות לעלות: ל-30 שנה עלתה 4.7bp ל-5.61%, השיא מאז יוני 2002; ל-10 שנים עלתה ל-5.282%; ל-2 שנים ל-4.934%. נשיא הפד של ניו יורק וויליאמס אמר ש\"אין צורך במיידיות\", אך צפוי \"תיקון נוסף כלפי מעלה\" עוד השנה (29/9).",
+    "מדד אמון הצרכנים של קונפרנס בורד צנח 6.7 נקודות ל-81.9 בספטמבר — השפל מאז 2014 ומתחת לתחזית של 89.2 (Conference Board, TheStreet; 29/9).",
+    "הנפט נסוג: WTI צנח 3.48% ל-$89.38 אחרי שחרור מהמאגר האסטרטגי ותקוות לשיחות ארה\"ב-איראן. עם זאת טראמפ דחה את הצעת שביתת הנשק בת 7 הימים של איראן לפתיחת מצר הורמוז, וצפוי לחדש תקיפות אחרי הבחירות באמצע הקדנציה (AP, Al Jazeera; 29-30/9).",
+    "היום: PCE (15:30) ותמ\"ג רבעון שני סופי, ותעסוקת ADP (15:15). אחרי הסגירה מיקרון מדווחת — לפי הנחיית החברה $50B±$1B הכנסות ו-EPS $31±$1, ואופציות מתמחרות תנודה של כ-10.3% (TipRanks)."
   ],
   snapshot: [
-    { k: "חוזי S&P 500", v: "7,761", c: "−0.59%", dir: "down" },
-    { k: "חוזי נאסד״ק 100", v: "30,573", c: "−1.02%", dir: "down" },
-    { k: "חוזי דאו", v: "51,911", c: "−0.48%", dir: "down" },
-    { k: "תשואה 10 שנים", v: "5.22%", c: "+4bp", dir: "up" },
-    { k: "תשואה 2 שנים", v: "4.914%", c: "+5bp", dir: "up" },
-    { k: "מדד הדולר DXY", v: "101.39", c: "שיא חודשיים", dir: "up" },
-    { k: "נפט WTI", v: "$96.26", c: "+4.2%", dir: "up" },
-    { k: "ברנט (דצמבר)", v: "$100.98", c: "+3.6%", dir: "up" },
-    { k: "זהב", v: "$4,151", c: "−3%", dir: "down" },
-    { k: "ביטקוין", v: "$83,310", c: "−1.72%", dir: "down" },
-    { k: "ניקיי 225", v: "65,877.62", c: "−0.7%", dir: "down" },
-    { k: "ת״א 35 (24/9)", v: "4,242.12", c: "שבוע −1.12%", dir: "down" },
+    { k: "S&P 500", v: "7,670.84", c: "−0.16%", dir: "down" },
+    { k: "נאסד\"ק Composite", v: "26,797.54", c: "−0.09%", dir: "down" },
+    { k: "דאו ג'ונס", v: "51,349.92", c: "−0.26%", dir: "down" },
+    { k: "ראסל 2000", v: "2,807", c: "−0.35%", dir: "down" },
+    { k: "תשואה 10 שנים", v: "5.282%", c: "+4bp", dir: "up" },
+    { k: "תשואה 2 שנים", v: "4.934%", c: "+1bp", dir: "up" },
+    { k: "תשואה 30 שנה", v: "5.61%", c: "שיא מאז 2002", dir: "up" },
+    { k: "מדד הדולר DXY", v: "101.50", c: "+0.3%", dir: "up" },
+    { k: "נפט WTI", v: "$89.38", c: "−3.48%", dir: "down" },
+    { k: "ברנט", v: "$105.31", c: "כמעט ל״ש", dir: "flat" },
+    { k: "זהב", v: "כ-$4,150", c: "שפל 7 שבועות", dir: "down" },
+    { k: "ביטקוין", v: "$83,502", c: "−1.1%", dir: "down" },
+    { k: "ת״א 35 (29/9)", v: "4,221.94", c: "+0.02%", dir: "flat" },
     { k: "ריבית הפד", v: "3.75–4.00%", c: "הועלתה 16/9", dir: "flat" },
-    { k: "ריבית בנק ישראל", v: "3.25%", c: "הורדה 1/9", dir: "flat" }
+    { k: "ריבית בנק ישראל", v: "3.25%", c: "הבאה 21/10", dir: "flat" }
   ],
   changes: [
-    { topic: "ברנט (דצמבר)", from: "$97.44 (שישי)", to: "$100.98, שוב מעל $100" },
-    { topic: "WTI", from: "$92.41", to: "$96.26" },
-    { topic: "תשואת 10 שנים", from: "5.17%", to: "5.22%" },
-    { topic: "סיכוי להעלאה באוקטובר", from: "54.2% (FedWatch, 23/9)", to: "68% (Reuters, 28/9)" },
-    { topic: "זהב", from: "$4,321.20", to: "$4,151, הנמוך מאז 5/8" }
+    { topic: "תשואת 30 שנה", from: "5.52% (28/9)", to: "5.61%, שיא מאז 2002 (29/9)" },
+    { topic: "סיכוי להעלאה באוקטובר", from: "68% (Reuters, 28/9)", to: "76.9% (CME FedWatch, 29/9)" },
+    { topic: "נפט WTI", from: "$96.26 (28/9)", to: "$89.38, −3.48% (29/9)" },
+    { topic: "ביטקוין", from: "$83,310 (28/9)", to: "$83,502 (29/9)" },
+    { topic: "זהב", from: "$4,151 (28/9)", to: "כ-$4,150, שפל 7 שבועות (29/9)" }
   ],
   ai: [
-    { title: "אנבידיה: $150B נוספים לרכישה עצמית", body: "התוכנית גדלה לסך של $235B, שיבוצעו עד שנת הכספים 2028. זו ההגדלה הגדולה אי פעם של תוכנית כזאת, והמניה עלתה 0.84% בפרה-מרקט.", tickers: ["NVDA"], source: { name: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase", date: "28/9" } },
-    { title: "מיקרון מדווחת ביום רביעי", body: "לפי CMC Markets הצפי הוא EPS של $31.45 על הכנסות של $50.8B. Investing.com מציגה $31.16 ו-$50.45B. שוק האופציות מתמחר תנודה של ±11%.", tickers: ["MU", "SOXX"], source: { name: "CMC Markets", url: "https://www.cmcmarkets.com/en-gb/news-and-analysis/the-week-ahead-us-pce-jobs-report-micron-earnings", date: "28/9" } },
-    { title: "מניות סין ירדו 1.9%", body: "אחרי חוק אמריקאי שמגביל רכיבים סיניים במרכזי נתונים של AI בשימוש ממשלתי.", tickers: ["FXI", "KWEB"], source: { name: "Reuters דרך Yahoo", url: "https://finance.yahoo.com/markets/articles/stocks-cautious-asia-oil-gains-005009179.html", date: "28/9" } }
+    { title: "מיקרון מדווחת היום אחרי הסגירה", body: "לפי הנחיית החברה עצמה, ההכנסות צפויות ב-$50B (±$1B) והרווח המתואם ב-$31 (±$1) למניה, עם שולי רווח גולמי של כ-86%. אופציות מתמחרות תנודה של כ-10.3% בשני הכיוונים סביב הדוח.", tickers: ["MU"], source: { name: "TipRanks", url: "https://www.tipranks.com/news/why-micron-stock-options-signal-a-10-3-move-after-q4-results", date: "29/9" } },
+    { title: "וושינגטון ופקין משאירות את הפיקוח על שבבי AI בצד", body: "בפסגת טראמפ-שי הוסכם על הקלה במכסים של $30B ופתיחת ערוץ דיאלוג משותף על AI, אך הפיקוח על ייצוא שבבים מתקדמים לסין נותר ללא שינוי.", source: { name: "Roll Call", url: "https://rollcall.com/2026/09/23/ai-export-controls-debate-rages-as-trump-xi-meet/", date: "23/9" } },
+    { title: "זיכרון: היצע הדוק עד 2027", body: "לפי ברנסטיין, שוק שבבי הזיכרון העולמי צפוי להישאר בהיצע-ביקוש הדוק עד 2027 בשל הביקוש ל-AI, נרטיב שתומך באנבידיה ובמיקרון לקראת דוח הרבעון.", tickers: ["NVDA", "MU"], source: { name: "GuruFocus", url: "https://www.gurufocus.com/news/9102307/nvidia-nvda-faces-adjusted-ai-chip-demand-amid-storage-market-insights", date: "29/9" } }
   ],
   macro: {
-    fedwatch: { meeting: "אוקטובר (28/10)", cut: 0, hold: 27.7, hike: 72.3 },
-    polymarket: { cut: 0, hold: 32.5, hike: 66.5, url: "https://financefeeds.com/polymarket-puts-an-october-fed-hike-at-67-and-a-2026-rate-cut-at-3/" },
+    fedwatch: { meeting: "אוקטובר (28/10)", cut: 0, hold: 23.1, hike: 76.9 },
+    polymarket: { cut: 2, hold: 31, hike: 69, url: "https://defirate.com/prediction-markets/fed-decision-odds/" },
     items: [
-      { title: "איראן: טראמפ דחה את ההצעה", body: "איראן הציעה לחדש את השיחות על הגרעין, בתנאי שארה״ב תסיר את הסגר הימי ואת הסנקציות על הנפט. טראמפ דחה, ולפי Al Jazeera הוא מצפה שהמשא ומתן יתחדש השבוע. הנפט עלה בכ-20% מתחילת החודש.", source: { name: "AP", url: "https://www.news4jax.com/business/2026/09/28/asian-shares-trade-mixed-as-oil-prices-rise/", date: "28/9" } },
-      { title: "תשואות ודולר עולים", body: "ה-10 שנים ב-5.22%, ה-2 שנים ב-4.914%, ה-30 שנים ב-5.52%. מדד הדולר ב-101.39. לפי Reuters השוק מתמחר 68% להעלאה באוקטובר. משמעות: נפט יקר ותשואות גבוהות לוחצים על המניות באותו זמן.", source: { name: "Reuters דרך Yahoo", url: "https://finance.yahoo.com/markets/articles/stocks-cautious-asia-oil-gains-005009179.html", date: "28/9" } },
-      { title: "PCE ביום רביעי", body: "הצפי ל-PCE הכללי של אוגוסט הוא עלייה של 0.4% בחודש, לעומת 0.2% ביולי. בדוח הקודם ה-PCE ללא מזון ואנרגיה עמד על 3.3% בשנה.", source: { name: "CMC Markets", url: "https://www.cmcmarkets.com/en-gb/news-and-analysis/the-week-ahead-us-pce-jobs-report-micron-earnings", date: "28/9" } },
-      { title: "זהב בנפילה", body: "ירידה של 3% ל-$4,151, על רקע דולר חזק, תשואות גבוהות וציפייה להעלאת ריבית נוספת.", source: { name: "Yahoo Finance", url: "https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-monday-september-28-2026-gold-prices-slump-as-iran-tensions-and-oil-prices-rise-110730952.html", date: "28/9" } }
+      { title: "וויליאמס: \"אין צורך במיידיות\", אך עוד העלאה קרובה", body: "נשיא הפד של ניו יורק אמר שההעלאה בספטמבר מספקת לעת עתה, אך אם התחזית שלו תתממש \"תיקון נוסף כלפי מעלה\" בריבית עשוי להתאים עוד השנה. הוא צופה אינפלציה של כ-3.5% השנה וחזרה ליעד 2% רק ב-2028.", source: { name: "US News (Reuters)", url: "https://money.usnews.com/investing/news/articles/2026-09-29/feds-williams-sees-no-urgency-for-next-fed-rate-hike", date: "29/9" } },
+      { title: "PCE ותמ\"ג סופי היום ב-15:30", body: "הצפי הוא לעלייה חודשית של כ-0.3%-0.5% ב-PCE הכללי וכ-0.3% בליבה, ול-3.3% בשנה בליבה — עדיין רחוק מיעד 2% של הפד. לצד זה מתפרסם האומדן הסופי לתמ\"ג הרבעוני.", source: { name: "Newsquawk", url: "https://www.newsquawk.com/headlines/newsquawk-weekly-economic-release-28th-september---2nd-october-2026-", date: "29/9" } },
+      { title: "אמון הצרכנים צונח לשפל של 12 שנה", body: "מדד קונפרנס בורד צנח 6.7 נקודות ל-81.9, מתחת לתחזית של 89.2. הכלכלנית הראשית דנה פיטרסון: \"תפיסת הצרכנים את מצב העסקים הנוכחי הפכה שלילית לראשונה מאז ספטמבר 2024\". משמעות: זה מגביר את הסיכון לחולשה בצריכה הפרטית לקראת הרבעון הרביעי.", source: { name: "TheStreet", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-29-2026", date: "29/9" } },
+      { title: "תשואות בשיא של עשורים", body: "ה-30 שנה נגע ב-5.61%-5.62% ביום שלישי, השיא מאז 2002; ה-10 שנים נגע ב-5.29% תוך-יומי, השיא מאז 2007. משמעות: עלות המימון הממשלתי והמשכנתאות ממשיכה לעלות גם בלי החלטת ריבית חדשה של הפד.", source: { name: "Investrade Market Review", url: "https://investrade.com/market-review-september-29-2026/", date: "29/9" } }
     ]
   },
   voices: [
-    { name: "מארק מקורמיק", role: "BMO, אסטרטג מט״ח ראשי", stance: "ניטרלי", he: "שוק האג״ח לא מאותת על משבר. הוא מתמחר חוסן של ארה״ב וריבית שיווי משקל גבוהה יותר.", en: "The bond market is not flashing crisis. It is pricing US resilience and a higher equilibrium rate.", date: "28/9", url: "https://finance.yahoo.com/markets/articles/stocks-cautious-asia-oil-gains-005009179.html" },
-    { name: "סטיבן אינס", role: "Quintex Intel", stance: "זהיר", he: "המתיחות במזרח התיכון התלקחה שוב.", en: "Middle East tensions have flared again.", date: "28/9", url: "https://www.bloomberg.com/news/articles/2026-09-28/emerging-stocks-slide-as-oil-gains-on-renewed-mideast-tensions" },
-    { name: "ג׳נסן הואנג", role: "Nvidia, מנכ״ל", stance: "שורי", he: "יצירת המזומנים שלנו נותנת לנו את היכולת להשקיע בטכנולוגיות שמקדמות את השינוי הזה, ולהחזיר הון לבעלי המניות.", en: "Our cash generation gives us the capacity to invest in the technologies that advance this transformation and return capital to shareholders.", date: "28/9", url: "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase", note: "בהודעה על הגדלת תוכנית הרכישה העצמית." },
-    { name: "ריק רידר", role: "BlackRock, מנהל השקעות ראשי באג״ח", stance: "זהיר", he: "זה לא משבר, אלא תמרור אזהרה, וזה משהו שצריך לחשוב עליו", en: "not a crisis but an eye-opener, and it's something I think you've got to think about", date: "24/9", url: "https://finance.yahoo.com/markets/article/bond-market-sell-off-not-a-crisis-but-an-eye-opener-former-fed-chair-contender-says-144707057.html" },
-    { name: "טום לי", role: "Fundstrat, ראש מחקר", stance: "שורי", he: "ה-S&P 500 יכול בקלות להיות מעל 8,200 עד סוף השנה", en: "easily be above 8,200 by the end of the year", date: "16/9", url: "https://finance.yahoo.com/markets/stocks/articles/fundstrat-tom-lee-sees-p-073202187.html" },
-    { name: "פיטר שיף", role: "כלכלן, Euro Pacific", stance: "דובי", he: "אל תתבלבלו ותחשבו שזה השיא.", en: "Don't be fooled into thinking this is the top", date: "14/9", url: "https://www.benzinga.com/markets/economic-data/26/09/61780988/ed-yardeni-calls-ten-year-bond-yields-high-a-vote-of-confidence" }
+    { name: "ג'ון וויליאמס", role: "נשיא הפד של ניו יורק", stance: "ניצי", he: "בפעולת המדיניות שנקטנו בישיבת ספטמבר, אין צורך במיידיות. אם הכלכלה תתפתח בהתאם לתחזית שלי, ייתכן שתיקון נוסף כלפי מעלה בטווח הריבית יתאים בהמשך השנה.", en: "With the policy action we took at our September meeting, there is no need for urgency. If the economy evolves in a manner broadly consistent with my forecast, one further upward adjustment of the federal funds target range may be appropriate late this year.", date: "29/9", url: "https://money.usnews.com/investing/news/articles/2026-09-29/feds-williams-sees-no-urgency-for-next-fed-rate-hike" },
+    { name: "דנה פיטרסון", role: "קונפרנס בורד, כלכלנית ראשית", stance: "ניטרלי", he: "תפיסת הצרכנים את מצב העסקים הנוכחי הפכה שלילית לראשונה מאז ספטמבר 2024.", en: "Consumer appraisals of current business conditions became negative for the first time since September 2024.", date: "29/9", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-29-2026" },
+    { name: "אד יארדני", role: "Yardeni Research, נשיא", stance: "זהיר", he: "לאור העלייה האחרונה בתשואות האג\"ח, אנחנו מורידים את הערכתנו למכפיל הרווח העתידי של S&P 500 בסוף השנה מ-19.8 ל-18.6, מה שמוריד את יעד סוף השנה שלנו מ-8,400 ל-7,900.", en: "Given the recent backup in bond yields, we are lowering our estimate for the forward P/E of the S&P 500 at year-end from 19.8 to 18.6, which lowers our year-end target from 8,400 to 7,900.", date: "16/9", url: "https://www.advisorperspectives.com/articles/2026/09/16/stocks-bull-yardeni-cuts-s-p-500-7-900-downturn-risks" },
+    { name: "טום לי", role: "Fundstrat, ראש מחקר", stance: "שורי", he: "זו יכולה להיות אחת העליות הגדולות ביותר, ואני חושב שזה ימשיך גם בשנה הבאה — אחת העליות הגדולות ביותר בחיים שלנו.", en: "It could be one of the biggest rallies, and I think it continues next year to one of the biggest rallies of our lifetime.", date: "18/9", url: "https://www.foreignpolicyjournal.com/2026/09/18/tom-lee-predicts-historic-q4-rally-but-bitcoin-crypto-btc-ethereum-crypto-eth-and-xrp-crypto-xrp-face-steeper-climb-than-stocks/" },
+    { name: "מוחמד אל-עריאן", role: "כלכלן, יועץ באליאנץ", stance: "זהיר", he: "זה מדהים כמה משתתפי שוק הופתעו מהעלייה האחרונה בתשואות בארה\"ב. הגורמים הבסיסיים היו ברורים כבר זמן מה.", en: "It is striking how many market participants have been surprised by the recent surge in US yields. The fundamental drivers have been evident for some time.", date: "24/9", url: "https://www.benzinga.com/markets/bonds/26/09/61968162/bond-market-alarm-bells-are-ringing-but-mohamed-el-erian-says-psychology-may-be-fueling-the-fear-more-than-fundamentals" },
+    { name: "ריק רידר", role: "BlackRock, מנהל השקעות ראשי באג\"ח", stance: "זהיר", he: "הולכת להיות לנו בעיית חוב מצטברת במדינה.", en: "We're going to have a compounding debt problem in the country.", date: "19/9", url: "https://www.benzinga.com/markets/bonds/26/09/61811344/blackrocks-rick-rieder-turns-cautious-on-us-stocks-warns-40-trillion-debt-is-becoming-a-compoundingproblem" }
   ],
   israel: [
-    { title: "בנק ישראל: ריבית 3.25%", body: "ההחלטה הבאה ב-21/10. משמעות: מדד הדולר בשיא של חודשיים והסיכוי להעלאה בארה״ב עולה, ובנק ישראל בכיוון ההפוך. זה לחץ פוטנציאלי על השקל.", source: { name: "בנק ישראל", url: "https://www.boi.org.il/en/communication-and-publications/press-releases/01-9-26-en/", date: "1/9" } },
-    { title: "הבורסה בחול המועד", body: "אחרי שהייתה סגורה בערב סוכות ובראשון, היום יום מסחר מקוצר. הסגירה האחרונה של ת״א 35 שאומתה: 4,242.12 ב-24/9. שער הדולר-שקל להיום לא אומת.", source: { name: "הבורסה לני״ע", url: "https://www.tase.co.il/he/content/knowledge_center/trading_vacation_schedule", date: "28/9" } }
+    { title: "בנק ישראל: ריבית 3.25%, ההחלטה הבאה ב-21/10", body: "הריבית נותרה ללא שינוי מאז הורדתה ל-3.25% ב-1/9. משמעות: בעוד בארה\"ב שוקלים העלאה נוספת ב-28/10, בנק ישראל נמצא בכיוון המנוגד, מה שעשוי ללחוץ על השקל בטווח הקצר.", source: { name: "בנק ישראל", url: "https://www.boi.org.il/en/communication-and-publications/press-releases/01-9-26-en/", date: "1/9" } },
+    { title: "ת\"א נסגרה בעליות בחוה\"מ סוכות; הבוקר נפתחה בעליות קלות", body: "אתמול (29/9), במסחר מקוצר של חול המועד סוכות, ת\"א 35 נסגר כמעט ללא שינוי (4,221.94, +0.02%), ת\"א 125 עלה 0.2% ות\"א 90 עלה 0.7%. הבוקר (30/9) המסחר נפתח בעליות קלות אחרי שהוסר החשש מחטיפת מטוס פלייי-דובאי שנחת בסעודיה, והשקל התחזק מעט לכ-3.07 לדולר.", source: { name: "TheMarker", url: "https://www.themarker.com/markets/2026-09-30/ty-article-live/000001a0-f122-dea0-adb5-f96e8c730000", date: "30/9" } }
   ],
   sources: [
-    { name: "Investrade: תצוגה מקדימה 28/9", url: "https://investrade.com/morning-preview-september-28-2026/" },
-    { name: "Reuters דרך Yahoo", url: "https://finance.yahoo.com/markets/articles/stocks-cautious-asia-oil-gains-005009179.html" },
-    { name: "AP: אסיה, נפט ואיראן", url: "https://www.news4jax.com/business/2026/09/28/asian-shares-trade-mixed-as-oil-prices-rise/" },
-    { name: "Al Jazeera", url: "https://www.aljazeera.com/economy/2026/9/28/oil-prices-surge-after-trump-rejects-irans-plan-to-reopen-strait-of-hormuz" },
-    { name: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-28/emerging-stocks-slide-as-oil-gains-on-renewed-mideast-tensions" },
-    { name: "CoinDesk", url: "https://www.coindesk.com/markets/2026/09/28/bitcoin-falls-to-usd83-000-while-altcoins-unwind-friday-s-rally" },
-    { name: "Yahoo Finance: זהב", url: "https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-monday-september-28-2026-gold-prices-slump-as-iran-tensions-and-oil-prices-rise-110730952.html" },
-    { name: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase" },
-    { name: "Beansprout: FedWatch", url: "https://growbeansprout.com/tools/fedwatch" },
-    { name: "FinanceFeeds: Polymarket", url: "https://financefeeds.com/polymarket-puts-an-october-fed-hike-at-67-and-a-2026-rate-cut-at-3/" },
-    { name: "CMC Markets", url: "https://www.cmcmarkets.com/en-gb/news-and-analysis/the-week-ahead-us-pce-jobs-report-micron-earnings" },
-    { name: "Investrade (Fear & Greed 25/9)", url: "https://investrade.com/market-review-september-25-2026/" }
+    { name: "Investrade: סקירת שוק 29/9", url: "https://investrade.com/market-review-september-29-2026/" },
+    { name: "TheStreet: שוק המניות 29/9", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-29-2026" },
+    { name: "US News (Reuters): נאום וויליאמס", url: "https://money.usnews.com/investing/news/articles/2026-09-29/feds-williams-sees-no-urgency-for-next-fed-rate-hike" },
+    { name: "Newsquawk: לוח כלכלי שבועי", url: "https://www.newsquawk.com/headlines/newsquawk-weekly-economic-release-28th-september---2nd-october-2026-" },
+    { name: "TipRanks: תנודה גלומה במיקרון", url: "https://www.tipranks.com/news/why-micron-stock-options-signal-a-10-3-move-after-q4-results" },
+    { name: "Roll Call: AI ופיקוח ייצוא", url: "https://rollcall.com/2026/09/23/ai-export-controls-debate-rages-as-trump-xi-meet/" },
+    { name: "GuruFocus: אנבידיה וזיכרון", url: "https://www.gurufocus.com/news/9102307/nvidia-nvda-faces-adjusted-ai-chip-demand-amid-storage-market-insights" },
+    { name: "Advisor Perspectives: יארדני מוריד יעד", url: "https://www.advisorperspectives.com/articles/2026/09/16/stocks-bull-yardeni-cuts-s-p-500-7-900-downturn-risks" },
+    { name: "Benzinga: אל-עריאן על התשואות", url: "https://www.benzinga.com/markets/bonds/26/09/61968162/bond-market-alarm-bells-are-ringing-but-mohamed-el-erian-says-psychology-may-be-fueling-the-fear-more-than-fundamentals" },
+    { name: "Benzinga: רידר על החוב", url: "https://www.benzinga.com/markets/bonds/26/09/61811344/blackrocks-rick-rieder-turns-cautious-on-us-stocks-warns-40-trillion-debt-is-becoming-a-compoundingproblem" },
+    { name: "בנק ישראל: החלטת ריבית 1/9", url: "https://www.boi.org.il/en/communication-and-publications/press-releases/01-9-26-en/" },
+    { name: "TheMarker: ת\"א 30/9", url: "https://www.themarker.com/markets/2026-09-30/ty-article-live/000001a0-f122-dea0-adb5-f96e8c730000" },
+    { name: "SKN: סקירת שווקים גלובליים 29/9", url: "https://skn.co.il/skn-%D7%A1%D7%A7%D7%99%D7%A8%D7%AA-%D7%94%D7%A9%D7%95%D7%95%D7%A7%D7%99%D7%9D-%D7%94%D7%92%D7%9C%D7%95%D7%91%D7%9C%D7%99%D7%99%D7%9D-29-%D7%91%D7%A1%D7%A4%D7%98%D7%9E%D7%91%D7%A8-2026/" },
+    { name: "Al Jazeera: איראן ומצר הורמוז", url: "https://www.aljazeera.com/news/liveblog/2026/9/29/iran-war-live-trump-says-he-did-not-offer-tehran-sanctions-relief" }
   ]
 };
