@@ -54,8 +54,9 @@
     const live = D.movers && D.movers.indices && D.movers.indices.length ? D.movers.indices : null;
     const brief = (D.brief && D.brief.snapshot) || [];
     if (!live) return brief;
-    const have = new Set(live.map((x) => x.k));
-    return live.concat(brief.filter((s) => !have.has(s.k.replace(/\s*\(.*\)$/, '')) && !/ת״א 35|דולר/.test(s.k)));
+    // from the written brief keep only the policy rates (they change every few weeks, not intraday) —
+    // anything market-priced there (futures, other indices) would be stale next to the live board
+    return live.concat(brief.filter((s) => /^ריבית/.test(s.k)));
   };
   // market data stamp: "live" while US trading is open (refreshed every 15 min on the server), otherwise the close it shows
   const marketStamp = (m) => {
@@ -273,7 +274,7 @@
   /* ================= 1. BRIEF ================= */
   function statusStrip() {
     const e = D.extreme, s = D.signals;
-    const fg = e && e.fearGreed;
+    const fg = (D.live && D.live.fearGreed) || (e && e.fearGreed);
     const fgV = fg && isNum(fg.score) ? `<span class="n">${Math.round(fg.score)}</span> · ${esc(C.fgLabel(fg.score))}` : '—';
     let sigV = '—', sigD = 'ממתין לסריקה ראשונה';
     if (s && s.gate) {
@@ -288,12 +289,68 @@
       <a href="#extreme"><span class="lab">מצב חריג (SPY + פחד קיצוני)</span><span class="v">${exV}</span><span class="d">${exD}</span></a>
     </div>`;
   }
+  // One page, three layers: the market right now (every 15 min, generated from live data), the daily brief
+  // (written every morning at 08:00) and the weekly summary (written on Sundays).
+  const writtenAt = (x) => `<span class="stamp" title="${esc(heDate(x.updatedAt, { dateStyle: 'full', timeStyle: 'short' }))}"><span class="dot" style="background:var(--faint)"></span>נכתב ${esc(heDate(x.updatedAt, { weekday: 'long', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }))}</span>`;
+  const findIdx = (k) => ((D.movers && D.movers.indices) || []).find((x) => x.k === k);
+  const fmtIdx = (x) => (x ? `${esc(x.k)} <span class="n ${dirOf(x.dir)}">${arrowOf(x.dir)}${esc(x.c)}</span>` : '');
+  // "the market now": plain-Hebrew bullets built from the latest numbers — no AI, so it can refresh every 15 minutes
+  function marketNowBullets() {
+    const M = D.movers, L = D.live || {}, S = D.signals, out = [];
+    if (!M) return out;
+    const sp = findIdx('S&P 500');
+    if (sp) out.push(`${M.live ? 'עכשיו במסחר' : `בסגירה של ${esc(shortDate(M.asOf))}`}: ${['S&P 500', 'נאסד״ק', 'דאו ג׳ונס', 'ראסל 2000'].map((k) => fmtIdx(findIdx(k))).filter(Boolean).join(' · ')}, ה-S&P ב-<span class="n">${esc(sp.v)}</span>.`);
+    if (M.breadth && M.breadth.total) out.push(`רוחב השוק: <span class="n up">${M.breadth.up.toLocaleString('en-US')}</span> מניות עולות מול <span class="n down">${M.breadth.down.toLocaleString('en-US')}</span> יורדות; <span class="n">${M.breadth.big}</span> זזו 5% ומעלה.`);
+    if (M.sectors && M.sectors.length > 1) { const a = M.sectors[0], z = M.sectors[M.sectors.length - 1]; out.push(`הסקטור החזק: ${esc(a.sector)} ${pct(a.chg, 2)} · החלש: ${esc(z.sector)} ${pct(z.chg, 2)}.`); }
+    const big = (M.large || []).slice(0, 3);
+    if (big.length) out.push(`בולטות בין החברות הגדולות: ${big.map((m) => `<a class="tkr" href="${tvUrl(m.t)}" target="_blank" rel="noopener">${esc(m.t)}</a> ${pct(m.chg, 1)}`).join(' · ')}. המזנקת של היום: <a class="tkr" href="${tvUrl((M.gainers[0] || {}).t || '')}" target="_blank" rel="noopener">${esc((M.gainers[0] || {}).t || '—')}</a> ${pct((M.gainers[0] || {}).chg, 1)}.`);
+    const ten = findIdx('תשואה 10 שנים'), vix = findIdx('VIX'), dxy = findIdx('מדד הדולר');
+    if (ten || vix) out.push(`ריבית ותנודתיות: ${[ten && `תשואת 10 שנים <span class="n">${esc(ten.v)}</span> (${esc(ten.c)})`, vix && `VIX <span class="n">${esc(vix.v)}</span> ${pct(vix.chg, 1)}`, dxy && `מדד הדולר ${pct(dxy.chg, 2)}`].filter(Boolean).join(' · ')}.`);
+    const oil = findIdx('נפט ברנט'), gold = findIdx('זהב'), btc = findIdx('ביטקוין'), ils = findIdx('דולר/שקל');
+    out.push(`סחורות ומטבעות: ${[oil && `ברנט <span class="n">${esc(oil.v)}</span> ${pct(oil.chg, 1)}`, gold && `זהב <span class="n">${esc(gold.v)}</span> ${pct(gold.chg, 1)}`, btc && `ביטקוין <span class="n">${esc(btc.v)}</span> ${pct(btc.chg, 1)}`, ils && `דולר/שקל <span class="n">${esc(ils.v)}</span>`].filter(Boolean).join(' · ')}.`);
+    const fg = L.fearGreed || (D.extreme && D.extreme.fearGreed), fed = L.fed;
+    if (fg || fed) out.push(`סנטימנט: ${fg ? `Fear &amp; Greed <span class="n">${Math.round(fg.score)}</span> (${esc(C.fgLabel(fg.score))})` : ''}${fg && fed ? ' · ' : ''}${fed ? `בפולימרקט: <span class="n">${fed.hold}%</span> לריבית ללא שינוי ו-<span class="n">${fed.hike}%</span> להעלאה בישיבת ${esc(fed.meeting)}` : ''}.`);
+    if (S && S.gate) out.push(`SPY: <span class="n">${S.gate.streak}</span> ${S.gate.streak === 1 ? 'יום אדום' : 'ימים אדומים'} ברצף (נכון ל-${esc(shortDate(S.asOf))}) — ${S.gate.met ? `השער פתוח, <a href="#signals">${(S.items || []).length} איתותי MA150</a>` : `השער לאיתותי MA150 סגור (צריך 3)`}.`);
+    return out;
+  }
+  const TOPICS = [['markets', 'שווקים'], ['macro', 'מאקרו ופד'], ['tech', 'AI וטכנולוגיה'], ['israel', 'ישראל'], ['crypto', 'קריפטו'], ['geo', 'גיאופוליטיקה']];
+  function headlinesHtml() {
+    const H = D.live && D.live.headlines; if (!H) return '';
+    const topic = store.get('newsTopic', 'markets');
+    return `<div class="card flat news"><div class="seg" role="tablist" aria-label="נושא">${TOPICS.filter(([k]) => (H[k] || []).length).map(([k, l]) => `<button type="button" role="tab" data-topic="${k}" aria-pressed="${k === topic}" aria-selected="${k === topic}">${l}</button>`).join('')}</div>
+      <ul class="news-list" id="newsList">${newsItems(topic)}</ul><p class="src" style="margin-top:6px">כותרות כפי שפורסמו, עם קישור למקור · CNBC, Yahoo Finance, הפדרל ריזרב, TechCrunch, גלובס, TheMarker, CoinDesk, The Block, Axios</p></div>`;
+  }
+  const newsItems = (topic) => ((D.live.headlines[topic] || []).slice(0, 8).map((x) => `<li><a href="${esc(safeUrl(x.url) || '#')}" target="_blank" rel="noopener" dir="auto">${esc(x.t)}</a><span class="src">${esc(x.src)}${x.at ? ' · ' + esc(rel(x.at)) : ''}</span></li>`).join('')) || '<li class="muted">אין כותרות חדשות בנושא.</li>';
   function renderBrief() {
-    const b = D.brief;
-    // two clocks: the market numbers (live, every 15 min) and the written analysis (once a day)
-    const stamps = `<div class="stamps">${D.movers ? marketStamp(D.movers) : ''}${b ? `<span class="stamp" title="${esc(heDate(b.updatedAt, { dateStyle: 'full', timeStyle: 'short' }))}">הניתוח נכתב ${esc(heDate(b.updatedAt, { weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }))}</span>` : stamp(null)}</div>`;
-    let h = head(b ? `תדריך ${b.edition || ''}` : 'תדריך', 'השוק היום', null, undefined, stamps) + statusStrip();
-    if (!b) return h + empty('התדריך הראשון עוד לא נכתב', 'Zozo מתעדכן אוטומטית כל בוקר מסחר לפני פתיחת וול סטריט: מאקרו, ריבית, AI, דוחות, ישראל וקולות מהשוק — עם מקור לכל נתון.', I.brief);
+    const b = D.brief, w = D.weekly, M = D.movers;
+    const stamps = `<div class="stamps">${M ? marketStamp(M) : ''}${b ? writtenAt(b) : ''}</div>`;
+    let h = head('Zozo · תדריך', 'השוק היום', null, undefined, stamps) + statusStrip();
+    h += `<nav class="jump" aria-label="קפיצה לחלק"><a href="#" data-jump="now">השוק עכשיו</a><a href="#" data-jump="daily">התדריך היומי</a>${w ? '<a href="#" data-jump="weekly">הסיכום השבועי</a>' : ''}</nav>`;
+    // --- 1. the market right now ---
+    const bullets = marketNowBullets(), board = boardItems();
+    h += `<section class="block layer" id="now" style="margin-top:22px"><div class="layer-head"><div><div class="kicker">מתעדכן כל 15 דקות</div><h2 class="layer-title">השוק עכשיו</h2></div>${M ? marketStamp(M) : ''}</div>
+      ${bullets.length ? `<ul class="now-list" data-g>${bullets.map((x) => `<li>${x}</li>`).join('')}</ul>` : ''}
+      ${board.length ? `<div class="board" style="margin-top:18px">${board.map((s) => `<div class="cell"><span class="k">${esc(s.k)}</span><span class="v">${esc(s.v)}</span><span class="c ${dirOf(s.dir)}">${arrowOf(s.dir)}${esc(s.c || '')}</span></div>`).join('')}</div>` : ''}
+      ${moversWidget().replace('margin-top:0;margin-bottom:34px', 'margin-top:30px')}
+      ${D.live && D.live.headlines ? `<div style="margin-top:30px">${sec('', 'כותרות אחרונות')}${headlinesHtml()}</div>` : ''}
+    </section>`;
+    // --- 2. daily brief, 3. weekly summary ---
+    h += `<section class="block layer" id="daily"><div class="layer-head"><div><div class="kicker">נכתב כל בוקר ב-08:00</div><h2 class="layer-title">התדריך היומי</h2></div>${b ? writtenAt(b) : ''}</div>
+      ${b ? editionHtml(b) : empty('התדריך היומי עוד לא נכתב', 'הוא נכתב אוטומטית כל בוקר ב-08:00 שעון ישראל.', I.brief)}</section>`;
+    if (w) h += `<section class="block layer" id="weekly"><div class="layer-head"><div><div class="kicker">נכתב בכל יום ראשון</div><h2 class="layer-title">הסיכום השבועי</h2></div>${writtenAt(w)}</div>${editionHtml(w)}</section>`;
+    after(() => {
+      main.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); const t = document.getElementById(a.dataset.jump); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+      main.querySelectorAll('[data-topic]').forEach((btn) => btn.addEventListener('click', () => {
+        store.set('newsTopic', btn.dataset.topic);
+        main.querySelectorAll('[data-topic]').forEach((x) => { x.setAttribute('aria-pressed', x === btn); x.setAttribute('aria-selected', x === btn); });
+        document.getElementById('newsList').innerHTML = newsItems(btn.dataset.topic);
+      }));
+    });
+    return h;
+  }
+  // a written edition (daily or weekly): headline, bottom line, Fed odds, what changed, AI, macro, voices, Israel, sources
+  function editionHtml(b) {
+    let h = '';
     const fw = b.macro && b.macro.fedwatch, pm = b.macro && b.macro.polymarket;
     const odds = (o) => o ? `<div class="odds">${isNum(o.cut) && o.cut > 0 ? `<div class="cut" style="width:${o.cut}%">${o.cut >= 12 ? o.cut + '%' : ''}</div>` : ''}${isNum(o.hold) && o.hold > 0 ? `<div class="hold" style="width:${o.hold}%">${o.hold >= 12 ? o.hold + '%' : ''}</div>` : ''}${isNum(o.hike) && o.hike > 0 ? `<div class="hike" style="width:${o.hike}%">${o.hike >= 12 ? o.hike + '%' : ''}</div>` : ''}</div>` : '';
     const headline = esc(b.headline).replace(/&lt;em&gt;/g, '<em>').replace(/&lt;\/em&gt;/g, '</em>');
@@ -309,14 +366,11 @@
           <div style="margin-top:10px;font-size:13px" class="muted">FedWatch (חוזים עתידיים)</div>${odds(fw)}
           ${pm ? `<div style="margin-top:12px;font-size:13px" class="muted">${link(pm.url, 'Polymarket')} (שוק תחזיות)</div>${odds(pm)}` : ''}
           <div class="odds-legend"><span><span class="up">■</span> הורדה</span><span>■ ללא שינוי</span><span><span class="down">■</span> העלאה</span></div></div>` : ''}
-        ${D.extreme && D.extreme.fearGreed ? `<a class="card" href="#extreme" style="text-decoration:none"><div class="lab">מדד פחד ותאוות בצע</div><div class="fg-wrap">${C.gauge(D.extreme.fearGreed.score)}<div style="margin-top:-14px;display:flex;align-items:baseline;gap:8px"><span class="fg-score n" style="font-size:40px">${isNum(D.extreme.fearGreed.score) ? Math.round(D.extreme.fearGreed.score) : '—'}</span><span class="muted">${esc(C.fgLabel(D.extreme.fearGreed.score))}</span></div></div></a>` : ''}
-        ${safeUrl(b.fullUrl) ? `<a class="btn" href="${esc(b.fullUrl)}" target="_blank" rel="noopener">לתדריך המלא ${I.ext}</a>` : ''}
+        ${b.weekAhead && b.weekAhead.length ? `<div class="card flat"><div class="lab" style="margin-bottom:8px">מה בשבוע הקרוב</div><ul class="bul">${b.weekAhead.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
       </aside>
     </section>`;
-    h += moversWidget().replace('margin-top:0;margin-bottom:34px', 'margin-top:44px');
     let n = 0; const nn = () => String(++n).padStart(2, '0');
-    const board = boardItems();
-    if (board.length) h += `<section class="block"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">${sec(nn(), 'תמונת מצב')}${D.movers && D.movers.indices && D.movers.indices.length ? marketStamp(D.movers) : ''}</div><div class="board">${board.map((s) => `<div class="cell"><span class="k">${esc(s.k)}</span><span class="v">${esc(s.v)}</span><span class="c ${dirOf(s.dir)}">${arrowOf(s.dir)}${esc(s.c || '')}</span></div>`).join('')}</div></section>`;
+    if (b.recap && b.recap.length) h += `<section class="block" data-g>${sec(nn(), 'מה היה השבוע')}<div class="grid g2">${b.recap.map((r) => `<div class="card flat"><h3 style="margin-bottom:8px">${esc(r.title)}</h3><ul class="bul">${(r.points || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div>`).join('')}</div></section>`;
     if (b.changes && b.changes.length) h += `<section class="block" data-g>${sec(nn(), 'מה השתנה')}${b.changes.map((c) => `<div class="chg-row"><span class="t">${esc(c.topic)}</span><span class="from">${esc(c.from)}</span><span class="arr">←</span><span>${esc(c.to)}</span></div>`).join('')}</section>`;
     const stories = (arr) => arr.map((s) => `<article class="story"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p><div class="meta">${(s.tickers || []).map((t) => `<span class="chip tkr">${esc(t)}</span>`).join('')}${s.source ? `<span class="src">${link(s.source.url, s.source.name)}${s.source.date ? ' · ' + esc(s.source.date) : ''}</span>` : ''}</div></article>`).join('');
     if (b.ai && b.ai.length) h += `<section class="block" data-g>${sec(nn(), 'בינה מלאכותית וטכנולוגיה')}<div class="card flat">${stories(b.ai)}</div></section>`;
@@ -620,6 +674,17 @@
     trend:    { label: 'מגמה (SMA50 מול SMA200)', kind: 'enum', opts: [['1', 'SMA50 מעל SMA200'], ['0', 'SMA50 מתחת SMA200']] },
     cross:    { label: 'חציית ממוצעים (10 ימים)', kind: 'enum', opts: [['1', 'Golden Cross'], ['-1', 'Death Cross']] },
     sp:       { label: 'חברות ב-S&P 500', kind: 'enum', opts: [['1', 'רק S&P 500'], ['0', 'מחוץ ל-S&P 500']] },
+    // fundamentals (Yahoo Finance, refreshed with the market data)
+    pe:       { label: 'מכפיל רווח (P/E)', unit: '×', kind: 'num', hint: 'מחיר חלקי רווח 12 חודשים אחרונים. חברות בהפסד לא מקבלות מכפיל' },
+    fpe:      { label: 'מכפיל רווח עתידי', unit: '×', kind: 'num', hint: 'מחיר חלקי תחזית הרווח של האנליסטים' },
+    eps:      { label: 'רווח למניה (EPS)', unit: '$', kind: 'num', hint: '12 חודשים אחרונים' },
+    feps:     { label: 'EPS עתידי', unit: '$', kind: 'num' },
+    epsGrowth:{ label: 'צמיחת רווח צפויה', unit: '%', kind: 'num', hint: 'EPS עתידי מול EPS של 12 החודשים האחרונים', get: (r) => { const e = r[UNI.ix.eps], f = r[UNI.ix.feps]; return isNum(e) && isNum(f) && e > 0 ? (f / e - 1) * 100 : null; } },
+    dy:       { label: 'תשואת דיבידנד', unit: '%', kind: 'num' },
+    pb:       { label: 'מכפיל הון (P/B)', unit: '×', kind: 'num' },
+    beta:     { label: 'בטא', unit: '', kind: 'num', hint: 'מעל 1 = תנודתית יותר מהשוק' },
+    rating:   { label: 'דירוג אנליסטים', unit: '', kind: 'num', hint: '1 = קנייה חזקה … 5 = מכירה חזקה' },
+    earnDays: { label: 'ימים עד הדוח הבא', unit: '', kind: 'num', get: (r) => { const d = r[UNI.ix.earn]; return d ? Math.round((Date.parse(d) - Date.now()) / 864e5) : null; } },
   };
   const sval = (r, k) => (SF[k] && SF[k].get ? SF[k].get(r) : r[UNI.ix[k]]);
   const PRESETS = [
@@ -637,11 +702,19 @@
       c: [['cross', '=', '1'], ['dollarVol', '>=', 10]] },
     { id: 'oversold', name: 'מכירת יתר', desc: 'RSI מתחת ל-30 בחברות גדולות.',
       c: [['rsi', '<', 30], ['cap', '>=', 10]] },
+    { id: 'value', name: 'ערך: מכפיל נמוך', desc: 'מכפיל רווח בין 0 ל-15, רווחיות חיובית, ושווי מעל 2 מיליארד.',
+      c: [['pe', 'between', 0, 15], ['eps', '>', 0], ['cap', '>=', 2]] },
+    { id: 'growth', name: 'צמיחה במחיר סביר', desc: 'צמיחת רווח צפויה של 20%+ במכפיל עתידי עד 25, במגמה עולה.',
+      c: [['epsGrowth', '>=', 20], ['fpe', 'between', 0, 25], ['trend', '=', '1']] },
+    { id: 'dividend', name: 'דיבידנד יציב', desc: 'תשואת דיבידנד מעל 3%, מכפיל עד 25 ובטא נמוכה מ-1.',
+      c: [['dy', '>=', 3], ['pe', 'between', 0, 25], ['beta', '<', 1]] },
+    { id: 'earnings', name: 'דוח בשבוע הקרוב', desc: 'חברות מעל 10 מיליארד שמדווחות ב-7 הימים הקרובים.',
+      c: [['earnDays', 'between', 0, 7], ['cap', '>=', 10]] },
     { id: 'volume', name: 'נפח חריג', desc: 'מחזור של פי 3 ומעלה מהממוצע, במניות נזילות.',
       c: [['relVol', '>=', 3], ['dollarVol', '>=', 10]] },
   ];
   const OPS = [['>=', '≥'], ['<=', '≤'], ['>', '>'], ['<', '<'], ['between', 'בין'], ['=', '=']];
-  const COLS = [['chg1d', 'יום'], ['chg1m', 'חודש'], ['chg3m', '3 ח׳'], ['d150', 'מ-SMA150'], ['rsi', 'RSI'], ['relVol', 'נפח'], ['fromHigh', 'מהשיא'], ['cap', 'שווי']];
+  const COLS = [['chg1d', 'יום'], ['chg1m', 'חודש'], ['d150', 'מ-SMA150'], ['rsi', 'RSI'], ['pe', 'P/E'], ['eps', 'EPS'], ['dy', 'דיב׳'], ['relVol', 'נפח'], ['cap', 'שווי']];
 
   function renderScreener() {
     const U = D.universe;
@@ -709,8 +782,9 @@
           <tbody>${res.slice(0, shown).map((r) => { const g = (f) => r[UNI.ix[f]]; return `<tr>
             <td><a class="tkr" href="${tvUrl(g('t'))}" target="_blank" rel="noopener">${esc(g('t'))}</a>${g('ma150') ? ` <span class="chip up" title="איתות MA150">${g('ma150') === 2 ? 'חציה' : 'נגיעה'}</span>` : ''}<div class="muted cell-name">${esc(g('name'))}</div></td>
             <td class="muted" style="font-size:13px">${esc(g('sector'))}</td><td class="num">${usd(g('price'))}</td>
-            <td class="num">${pct(g('chg1d'), 2)}</td><td class="num">${pct(g('chg1m'))}</td><td class="num">${pct(g('chg3m'))}</td><td class="num">${pct(g('d150'))}</td>
-            <td class="num">${num(g('rsi'), 0)}</td><td class="num">${isNum(g('relVol')) ? `<span class="n">×${g('relVol').toFixed(1)}</span>` : '—'}</td><td class="num">${pct(g('fromHigh'))}</td>
+            <td class="num">${pct(g('chg1d'), 2)}</td><td class="num">${pct(g('chg1m'))}</td><td class="num">${pct(g('d150'))}</td>
+            <td class="num">${num(g('rsi'), 0)}</td><td class="num">${isNum(g('pe')) ? num(g('pe'), 1) : '<span class="faint">—</span>'}</td><td class="num">${isNum(g('eps')) ? usd(g('eps')) : '<span class="faint">—</span>'}</td><td class="num">${isNum(g('dy')) && g('dy') > 0 ? `<span class="n">${g('dy').toFixed(2)}%</span>` : '<span class="faint">—</span>'}</td>
+            <td class="num">${isNum(g('relVol')) ? `<span class="n">×${g('relVol').toFixed(1)}</span>` : '—'}</td>
             <td class="num"><span class="n">${isNum(g('cap')) ? (g('cap') >= 1000 ? (g('cap') / 1000).toFixed(2) + 'T' : g('cap').toFixed(1) + 'B') : '—'}</span></td>
             <td>${starBtn(g('t'))}</td></tr>`; }).join('')}</tbody>`;
         const more = document.getElementById('more');
@@ -936,7 +1010,7 @@
   // Live data: while the US market is open the server rewrites movers/universe every 15 minutes.
   // Re-load them every 5 minutes (only on the hosted site, and only while the tab is visible) and redraw
   // the screens that use them — unless the viewer is typing in a field.
-  const LIVE_ROUTES = ['brief', 'movers', 'screener', 'sectors'];
+  const LIVE_ROUTES = ['brief', 'movers', 'screener', 'sectors', 'signals', 'extreme', 'performance', 'calendar'];
   const reloadScript = (src) => new Promise((res) => {
     const s = document.createElement('script');
     s.src = src + '?t=' + Date.now(); s.onload = () => { s.remove(); res(true); }; s.onerror = () => { s.remove(); res(false); };
@@ -947,7 +1021,8 @@
     const before = D.movers.updatedAt;
     const ok = await reloadScript('data/movers.js');
     if (!ok || D.movers.updatedAt === before) return;
-    await reloadScript('data/universe.js');
+    // every cloud run rewrites these together; the brief files change once a day
+    await Promise.all(['universe', 'live', 'extreme', 'signals', 'history', 'brief', 'weekly', 'calendar'].map((n) => reloadScript(`data/${n}.js`)));
     UNI = buildUni();
     buildTape();
     const cur = (location.hash.replace(/^#\/?/, '') || 'brief').split(/[\/.]/)[0];

@@ -1,29 +1,32 @@
-# Zozo — publish the site to GitHub Pages with fresh market data.
-# - every 15 minutes while the US market is open (plus a final run just after the close)
-# - on every push to main (the daily Claude refresh pushes the brief, signals and calendar)
-# - manually from the Actions tab
-# Market data (movers + stock screener) is generated fresh on each run and deployed directly,
-# not committed, so the repository doesn't grow every 15 minutes. If the data source fails,
-# the last committed copy (from the daily refresh) is published instead.
+# Zozo — refresh the data and publish the site to GitHub Pages.
+# Runs:
+#   - during US trading hours (plus a final run after the close): attempts every 5 minutes. GitHub drops or delays
+#     many scheduled runs, so frequent attempts + "skip if the last successful run was < 10 minutes ago"
+#     give a steady ~15-minute refresh.
+#   - every morning at ~07:50 Israel time (the SPY red-day counter, signals and extreme state for the finished session)
+#   - on every push to main (the 08:00 cloud routine pushes the written daily/weekly brief)
+#   - manually from the Actions tab, or from the Windows backup trigger (tools/trigger.ps1)
+# Market data (movers, screener, live headlines) is deployed without committing, so the repository doesn't grow
+# every 15 minutes. Signals, the extreme state and the signal history are committed when they really change.
 name: Zozo site
 
 on:
   schedule:
-    # UTC; covers 9:25–16:35 New York time in both summer and winter time. Off the quarter-hour on purpose:
-    # GitHub delays or drops scheduled runs at :00/:15/:30/:45, when everyone's schedules fire at once.
-    - cron: '7,22,37,52 13-21 * * 1-5'
+    - cron: '2-59/5 13-21 * * 1-5'   # UTC; covers 9:25–16:35 New York time in summer and winter time
+    - cron: '50 4,5 * * *'           # ~07:50 Israel time (04:50 UTC in summer time, 05:50 in winter)
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: zozo-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -32,13 +35,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - name: Only run on schedule while the US market is open
+      - name: Decide whether to run
         id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          now=$(TZ=America/New_York date +%H%M); dow=$(TZ=America/New_York date +%u)
-          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "$dow" -le 5 ] && [ "$now" -ge 0925 ] && [ "$now" -le 1635 ]; then echo "run=true" >> "$GITHUB_OUTPUT"
-          else echo "run=false" >> "$GITHUB_OUTPUT"; echo "Market closed (New York $now, day $dow) — nothing to do."; fi
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          ny=$(TZ=America/New_York date +%H%M); dow=$(TZ=America/New_York date +%u); il=$(TZ=Asia/Jerusalem date +%H%M)
+          window=false
+          if [ "$dow" -le 5 ] && [ "$ny" -ge 0925 ] && [ "$ny" -le 1635 ]; then window=true; fi
+          if [ "$il" -ge 0730 ] && [ "$il" -le 0915 ]; then window=true; fi
+          if [ "$window" != true ]; then echo "run=false" >> "$GITHUB_OUTPUT"; echo "Outside the update windows (NY $ny, IL $il)"; exit 0; fi
+          last=$(gh run list -R "${{ github.repository }}" --workflow site.yml --status success -L 1 --json createdAt -q '.[0].createdAt' || true)
+          if [ -n "$last" ] && [ $(( $(date +%s) - $(date -d "$last" +%s) )) -lt 600 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Last successful run $last — less than 10 minutes ago"; exit 0
+          fi
+          echo "run=true" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
         if: steps.gate.outputs.run == 'true'
@@ -48,9 +60,29 @@ jobs:
         with:
           node-version: 24
 
-      - name: Fresh market data (movers + stock screener)
+      - name: Live context (headlines, Fear & Greed, Fed odds)
+        if: steps.gate.outputs.run == 'true'
+        run: node tools/live.mjs || echo "::warning::live context failed — publishing the last copy"
+
+      - name: Market data (board, movers, screener + fundamentals)
         if: steps.gate.outputs.run == 'true'
         run: node tools/market.mjs || echo "::warning::market data failed — publishing the last committed copy"
+
+      - name: Signals (SPY red days, MA150, extreme state, history)
+        if: steps.gate.outputs.run == 'true'
+        run: node tools/daily.mjs || echo "::warning::signals failed — publishing the last committed copy"
+
+      - name: Save signals that changed
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          if [ ! -s data/.changed ]; then echo "No signal changes to save"; exit 0; fi
+          files=$(sort -u data/.changed); rm -f data/.changed
+          git config user.name "zozo-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add $files
+          git diff --cached --quiet && { echo "Nothing to commit"; exit 0; }
+          git commit -m "Signals update $(TZ=Asia/Jerusalem date '+%Y-%m-%d %H:%M')"
+          # market data files are modified but not committed (deploy-only), so stash them around the rebase
+          for i in 1 2 3; do git pull --rebase --autostash -q && git push -q && break; sleep 5; done
 
       - uses: actions/configure-pages@v5
         if: steps.gate.outputs.run == 'true'

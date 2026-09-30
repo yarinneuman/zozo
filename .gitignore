@@ -2,3 +2,5 @@
 dist/
 node_modules/
 *.log
+# list of data files whose content changed in a cloud run (used by the workflow to commit)
+data/.changed

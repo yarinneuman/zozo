@@ -60,6 +60,39 @@ const all = nas.data.rows
   .filter((r) => r.price != null && r.cap != null);
 console.log(`nasdaq: ${nas.data.rows.length} rows, ${all.length} common stocks`);
 
+/* ---------- 1b. fundamentals (Yahoo quote API, 200 symbols per request) ---------- */
+// The quote API needs Yahoo's session cookie + "crumb", the same pair its own web pages use.
+async function fundamentals(tickers) {
+  const out = new Map();
+  try {
+    const r1 = await fetch('https://fc.yahoo.com/', { headers: { 'User-Agent': UA['User-Agent'] }, redirect: 'manual', signal: AbortSignal.timeout(20000) });
+    const cookie = (r1.headers.getSetCookie ? r1.headers.getSetCookie() : []).map((c) => c.split(';')[0]).join('; ');
+    const crumb = await (await fetch('https://query2.finance.yahoo.com/v1/test/getcrumb', { headers: { 'User-Agent': UA['User-Agent'], Cookie: cookie }, signal: AbortSignal.timeout(20000) })).text();
+    if (!crumb || crumb.length > 40 || /</.test(crumb)) throw new Error('no crumb');
+    const F = 'trailingPE,forwardPE,epsTrailingTwelveMonths,epsForward,dividendYield,priceToBook,beta,averageAnalystRating,earningsTimestampStart,earningsTimestamp';
+    for (let i = 0; i < tickers.length; i += 200) {
+      const syms = tickers.slice(i, i + 200).map((t) => t.replace('.', '-'));
+      try {
+        const res = await fetch(`https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(syms.join(','))}&fields=${F}&crumb=${encodeURIComponent(crumb)}`,
+          { headers: { 'User-Agent': UA['User-Agent'], Cookie: cookie, Accept: 'application/json' }, signal: AbortSignal.timeout(30000) });
+        const j = await res.json();
+        for (const q of (j.quoteResponse && j.quoteResponse.result) || []) {
+          const nowS = Date.now() / 1000, next = [q.earningsTimestampStart, q.earningsTimestamp].filter((x) => x && x > nowS - 86400).sort()[0];
+          out.set(q.symbol.replace('-', '.'), {
+            pe: q.trailingPE > 0 && q.trailingPE < 5000 ? q.trailingPE : null, fpe: q.forwardPE > 0 && q.forwardPE < 5000 ? q.forwardPE : null,
+            eps: q.epsTrailingTwelveMonths ?? null, feps: q.epsForward ?? null, dy: q.dividendYield ?? null,
+            pb: q.priceToBook > 0 && q.priceToBook < 1000 ? q.priceToBook : null, beta: q.beta ?? null,
+            rating: q.averageAnalystRating ? parseFloat(q.averageAnalystRating) : null,
+            earn: next ? new Date(next * 1000).toISOString().slice(0, 10) : null,
+          });
+        }
+      } catch { /* skip this batch */ }
+      await sleep(300);
+    }
+  } catch (e) { console.log('fundamentals unavailable: ' + e.message); }
+  return out;
+}
+
 /* ---------- 2. technical snapshot per stock (Yahoo daily candles) ---------- */
 const SMA = (a, n, end) => { if (end < n - 1) return null; let s = 0; for (let k = end - n + 1; k <= end; k++) s += a[k]; return s / n; };
 function indicators(q) {
@@ -134,7 +167,9 @@ console.log(`yahoo: ${fetchList.length - failed.length} ok, ${failed.length} fai
 const dates = {}; out.forEach((x) => x && (dates[x.date] = (dates[x.date] || 0) + 1));
 const asOf = Object.keys(dates).sort((a, b) => dates[b] - dates[a])[0];
 
-const FIELDS = ['t', 'name', 'sector', 'industry', 'cap', 'price', 'chg1d', 'chg5d', 'chg1m', 'chg3m', 'chg6m', 'chg1y', 'd20', 'd50', 'd150', 'd200', 'rsi', 'fromHigh', 'fromLow', 'relVol', 'dollarVol', 'atrPct', 'ma150', 'since', 'streak', 'gap', 'trend', 'slope150', 'cross', 'sp'];
+const FIELDS = ['t', 'name', 'sector', 'industry', 'cap', 'price', 'chg1d', 'chg5d', 'chg1m', 'chg3m', 'chg6m', 'chg1y', 'd20', 'd50', 'd150', 'd200', 'rsi', 'fromHigh', 'fromLow', 'relVol', 'dollarVol', 'atrPct', 'ma150', 'since', 'streak', 'gap', 'trend', 'slope150', 'cross', 'sp', 'pe', 'fpe', 'eps', 'feps', 'dy', 'pb', 'beta', 'rating', 'earn'];
+const FUND = await fundamentals(fetchList.filter((s) => s.cap >= MIN_CAP).map((s) => s.t));
+console.log(`fundamentals: ${FUND.size} stocks`);
 const tech = [];   // one row per stock with a fresh candle for asOf
 fetchList.forEach((s, i) => {
   const x = out[i]; if (!x || x.date !== asOf) return;   // skip stale/halted tickers
@@ -142,6 +177,8 @@ fetchList.forEach((s, i) => {
   const row = [s.t, s.name, s.sector, s.industry, r2(s.cap / 1e9), r2(x.price), r2(x.chg1d), r2(x.chg5d), r2(x.chg1m), r2(x.chg3m), r2(x.chg6m), r2(x.chg1y),
     r2(x.d20), r2(x.d50), r2(x.d150), r2(x.d200), r2(x.rsi), r2(x.fromHigh), r2(x.fromLow), r2(x.relVol), r2(x.dollarVol), r2(x.atrPct), x.ma150,
     since.length ? Math.min(...since) : null, x.streak, r2(x.gap), x.trend, r2(x.slope150), x.cross, s.sp500 ? 1 : 0];
+  const f = FUND.get(s.t) || {};
+  row.push(r2(f.pe), r2(f.fpe), r2(f.eps), r2(f.feps), r2(f.dy), r2(f.pb), r2(f.beta), r2(f.rating), f.earn || null);
   row.vol = x.vol; row.capRaw = s.cap;
   tech.push(row);
 });
@@ -167,7 +204,9 @@ writeFileSync(join(ROOT, 'data', 'universe.js'),
    Sources: Nasdaq stock screener (market cap, sector, IPO year; S&P 500 sectors are GICS from tools/sp500.tsv) + Yahoo Finance daily candles (1y) for price and every indicator.
    Row fields: ${FIELDS.join(', ')}
    (cap in $B; chg1d..chg1y, d20..d200, fromHigh, fromLow, gap, atrPct, slope150 in %; dollarVol in $M/day (50d avg); relVol = today / 50d avg volume;
-    ma150: 0 none, 1 touch, 2 cross >1%; trend: 1 if SMA50 > SMA200; streak: consecutive up (+) / down (-) closes; cross: 1 golden / -1 death cross in last 10 sessions; sp: 1 if S&P 500 member) */
+    ma150: 0 none, 1 touch, 2 cross >1%; trend: 1 if SMA50 > SMA200; streak: consecutive up (+) / down (-) closes; cross: 1 golden / -1 death cross in last 10 sessions; sp: 1 if S&P 500 member;
+    fundamentals from Yahoo: pe / fpe = trailing / forward P/E, eps / feps = trailing / forward EPS ($), dy = dividend yield %, pb = price/book,
+    beta, rating = analyst consensus 1 (strong buy) … 5 (strong sell), earn = next earnings date) */
 window.ZOZO = window.ZOZO || {};
 ZOZO.universe = ${JSON.stringify({ updatedAt, asOf, live, marketTime, count: rows.length, failed: failed.length, fields: FIELDS, rows })};
 `);

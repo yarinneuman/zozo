@@ -15,22 +15,57 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.signals = {
-  updatedAt: "2026-09-28T16:00:00+03:00",
-  asOf: "2026-09-25",
-  universe: "S&P 500",
-  gate: {
-    streak: 0, met: false, source: "Yahoo Finance",
-    candles: [
-      { date: "2026-09-16", open: 759.50, close: 754.05 },
-      { date: "2026-09-17", open: 763.15, close: 762.60 },
-      { date: "2026-09-18", open: 761.31, close: 761.69 },
-      { date: "2026-09-21", open: 766.25, close: 773.50 },
-      { date: "2026-09-22", open: 774.03, close: 773.38 },
-      { date: "2026-09-23", open: 772.79, close: 767.81 },
-      { date: "2026-09-24", open: 764.07, close: 767.18 },
-      { date: "2026-09-25", open: 768.78, close: 771.35 }
-    ]
-  },
-  scanned: 0, failed: 0,
-  items: []
+ "updatedAt": "2026-09-30T10:07:13+03:00",
+ "asOf": "2026-09-29",
+ "universe": "S&P 500",
+ "gate": {
+  "streak": 2,
+  "met": false,
+  "candles": [
+   {
+    "date": "2026-09-18",
+    "open": 761.31,
+    "close": 761.69
+   },
+   {
+    "date": "2026-09-21",
+    "open": 766.25,
+    "close": 773.5
+   },
+   {
+    "date": "2026-09-22",
+    "open": 774.03,
+    "close": 773.38
+   },
+   {
+    "date": "2026-09-23",
+    "open": 772.79,
+    "close": 767.81
+   },
+   {
+    "date": "2026-09-24",
+    "open": 764.07,
+    "close": 767.18
+   },
+   {
+    "date": "2026-09-25",
+    "open": 768.78,
+    "close": 771.35
+   },
+   {
+    "date": "2026-09-28",
+    "open": 768.35,
+    "close": 765.61
+   },
+   {
+    "date": "2026-09-29",
+    "open": 766.83,
+    "close": 764.2
+   }
+  ],
+  "source": "Yahoo Finance"
+ },
+ "scanned": 0,
+ "failed": 0,
+ "items": []
 };
