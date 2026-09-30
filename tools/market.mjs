@@ -65,10 +65,25 @@ console.log(`nasdaq: ${nas.data.rows.length} rows, ${all.length} common stocks`)
 async function fundamentals(tickers) {
   const out = new Map();
   try {
-    const r1 = await fetch('https://fc.yahoo.com/', { headers: { 'User-Agent': UA['User-Agent'] }, redirect: 'manual', signal: AbortSignal.timeout(20000) });
-    const cookie = (r1.headers.getSetCookie ? r1.headers.getSetCookie() : []).map((c) => c.split(';')[0]).join('; ');
-    const crumb = await (await fetch('https://query2.finance.yahoo.com/v1/test/getcrumb', { headers: { 'User-Agent': UA['User-Agent'], Cookie: cookie }, signal: AbortSignal.timeout(20000) })).text();
-    if (!crumb || crumb.length > 40 || /</.test(crumb)) throw new Error('no crumb');
+    // cookie: fc.yahoo.com sets it directly; some networks only get it from the finance.yahoo.com pages
+    let cookie = '';
+    for (const u of ['https://fc.yahoo.com/', 'https://finance.yahoo.com/quote/AAPL/', 'https://login.yahoo.com/']) {
+      try {
+        const r = await fetch(u, { headers: { 'User-Agent': UA['User-Agent'], Accept: 'text/html' }, redirect: 'manual', signal: AbortSignal.timeout(20000) });
+        cookie = (r.headers.getSetCookie ? r.headers.getSetCookie() : []).map((c) => c.split(';')[0]).filter((c) => /^(A1|A3|B|GUC|A1S)=/.test(c)).join('; ');
+        console.log(`  yahoo cookie via ${u}: HTTP ${r.status}, ${cookie ? cookie.split('; ').map((c) => c.split('=')[0]).join(',') : 'none'}`);
+        if (cookie) break;
+      } catch (e) { console.log(`  yahoo cookie via ${u}: ${e.message}`); }
+    }
+    let crumb = '';
+    for (const host of ['query2', 'query1']) {
+      const r = await fetch(`https://${host}.finance.yahoo.com/v1/test/getcrumb`, { headers: { 'User-Agent': UA['User-Agent'], Cookie: cookie }, signal: AbortSignal.timeout(20000) });
+      crumb = (await r.text()).trim();
+      console.log(`  yahoo crumb via ${host}: HTTP ${r.status}, ${crumb.length} chars`);
+      if (r.ok && crumb && crumb.length <= 40 && !/[<{]/.test(crumb)) break;
+      crumb = '';
+    }
+    if (!crumb) throw new Error('no crumb');
     const F = 'trailingPE,forwardPE,epsTrailingTwelveMonths,epsForward,dividendYield,priceToBook,beta,averageAnalystRating,earningsTimestampStart,earningsTimestamp';
     for (let i = 0; i < tickers.length; i += 200) {
       const syms = tickers.slice(i, i + 200).map((t) => t.replace('.', '-'));
