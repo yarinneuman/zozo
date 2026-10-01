@@ -403,7 +403,7 @@
   };
   function renderSignals() {
     const s = D.signals;
-    let h = head('סריקת MA150 · S&P 500', 'איתותי קנייה', 'מניות שעומדות בשלושת תנאי הכניסה: שווי שוק מעל 500 מיליון דולר, מעל 3 שנים במסחר, ונגיעה בממוצע ה-150 או חציה שלו ביותר מ-1%. הסריקה רצה רק בימים שבהם SPY סגר 3 ימים אדומים ברצף.', s ? s.updatedAt : null);
+    let h = head('סריקת MA150 · S&P 500', 'איתותי קנייה', 'מניות שעומדות בשלושת תנאי הכניסה: שווי שוק מעל 500 מיליון דולר, מעל 3 שנים במסחר, וסגירה מעל ממוצע ה-150. הסריקה רצה בכל יום שבו SPY סגר 3 ימים אדומים ברצף או יותר.', s ? s.updatedAt : null);
     if (!s || !s.gate) return h + empty('עוד לא בוצעה סריקה', 'הסריקה הראשונה תופיע כאן אחרי הריצה היומית הבאה של Zozo.', I.signals) + methodBox();
     const g = s.gate;
     h += `<div class="card gate">
@@ -421,8 +421,11 @@
     }
     if (items.length) {
       h += `<div class="grid" style="gap:18px">${items.map((it, i) => {
-        const typeTxt = it.type === 'cross' ? 'חציה מעל הממוצע ביותר מ-1%' : 'נגיעה בממוצע';
+        const typeTxt = it.type === 'touch' ? 'נגיעה בממוצע וסגירה מעליו' : it.type === 'cross' ? 'חצייה מעל הממוצע' : 'סגירה מעל הממוצע';
         const cx = it.context || {};
+        const fu = it.fundamentals || {};
+        const peVsSector = isNum(fu.pe) && fu.sectorAvg && isNum(fu.sectorAvg.pe)
+          ? `${num(fu.pe, 1)} <span class="muted" style="font-size:12px">(ממוצע סקטור ${fu.sectorAvg.pe.toFixed(1)}×${fu.pe < fu.sectorAvg.pe ? ' — מתחת לממוצע' : ' — מעל הממוצע'})</span>` : null;
         return `<article class="card sig">
           <div class="sig-chart" id="sc_${i}" dir="ltr"><div class="legend"><span style="color:var(--sma150)">SMA150</span><span style="color:var(--sma20)">SMA20</span></div></div>
           <div class="sig-body">
@@ -443,6 +446,7 @@
               <div><span>מול SMA200</span><span>${esc(cx.sma200 || '—')}</span></div>
               <div><span>נפח מול ממוצע</span><span>${isNum(cx.volRatio) ? `<span class="n">×${cx.volRatio.toFixed(1)}</span>` : '—'}</span></div>
               <div><span>מהשיא</span><span>${pct(cx.fromHighPct)}</span></div>
+              ${peVsSector ? `<div><span>P/E מול הסקטור</span><span>${peVsSector}</span></div>` : ''}
             </div>
             <div class="actions">${starBtn(it.ticker)}${buyBtn(it.ticker, it.price, s.asOf, it.name)}<a class="btn ghost" href="${tvUrl(it.ticker)}" target="_blank" rel="noopener">גרף חי ${I.ext}</a></div>
           </div>
@@ -454,7 +458,7 @@
   }
   const methodBox = () => `<details class="card flat block"><summary style="cursor:pointer;font-weight:600">איך עובדת השיטה?</summary><div data-g style="margin-top:12px;display:flex;flex-direction:column;gap:8px;color:var(--ink-2)">
     <p><b>שלב 1 — שער השוק:</b> כל יום בודקים אם SPY (תעודת הסל על S&P 500) סגר נר אדום (סגירה מתחת לפתיחה) 3 ימים ברצף או יותר. רק אז ממשיכים — כך האיתותים מגיעים בזמן תיקון בשוק.</p>
-    <p><b>שלב 2 — סריקת המניות:</b> כל ~500 המניות במדד נבדקות מול 3 תנאים: שווי שוק מעל 500 מיליון דולר, מעל 3 שנים במסחר, ונגיעה ב-MA150 (השפל ≤ הממוצע ≤ השיא) או חציה של יותר מ-1% מעליו. צבע הנר לא משנה.</p>
+    <p><b>שלב 2 — סריקת המניות:</b> כל ~500 המניות במדד נבדקות מול 3 תנאים: שווי שוק מעל 500 מיליון דולר, מעל 3 שנים במסחר, וסגירה מעל ממוצע ה-150 בנר האחרון. הבדיקה חוזרת בכל יום שבו השער פתוח (רצף אדום של 3+ ימים נמשך), כך שמניה יכולה להצטרף גם ביום השלישי האדום וגם בימים שאחריו. צבע הנר של המניה עצמה לא משנה.</p>
     <p><b>מה זה לא:</b> האיתות אומר שהמניה עומדת בכללים, לא שהיא תעלה. זו נקודת התחלה לבדיקה, לא המלצה.</p></div></details>`;
 
   /* ================= 3. EXTREME ================= */
@@ -675,13 +679,13 @@
     cross:    { label: 'חציית ממוצעים (10 ימים)', kind: 'enum', opts: [['1', 'Golden Cross'], ['-1', 'Death Cross']] },
     sp:       { label: 'חברות ב-S&P 500', kind: 'enum', opts: [['1', 'רק S&P 500'], ['0', 'מחוץ ל-S&P 500']] },
     // fundamentals (Yahoo Finance, refreshed with the market data)
-    pe:       { label: 'מכפיל רווח (P/E)', unit: '×', kind: 'num', hint: 'מחיר חלקי רווח 12 חודשים אחרונים. חברות בהפסד לא מקבלות מכפיל' },
-    fpe:      { label: 'מכפיל רווח עתידי', unit: '×', kind: 'num', hint: 'מחיר חלקי תחזית הרווח של האנליסטים' },
+    pe:       { label: 'מכפיל רווח (P/E)', unit: '×', kind: 'num', hint: 'מחיר חלקי רווח 12 חודשים אחרונים. חברות בהפסד לא מקבלות מכפיל', sectorRel: true },
+    fpe:      { label: 'מכפיל רווח עתידי', unit: '×', kind: 'num', hint: 'מחיר חלקי תחזית הרווח של האנליסטים', sectorRel: true },
     eps:      { label: 'רווח למניה (EPS)', unit: '$', kind: 'num', hint: '12 חודשים אחרונים' },
     feps:     { label: 'EPS עתידי', unit: '$', kind: 'num' },
     epsGrowth:{ label: 'צמיחת רווח צפויה', unit: '%', kind: 'num', hint: 'EPS עתידי מול EPS של 12 החודשים האחרונים', get: (r) => { const e = r[UNI.ix.eps], f = r[UNI.ix.feps]; return isNum(e) && isNum(f) && e > 0 ? (f / e - 1) * 100 : null; } },
-    dy:       { label: 'תשואת דיבידנד', unit: '%', kind: 'num' },
-    pb:       { label: 'מכפיל הון (P/B)', unit: '×', kind: 'num' },
+    dy:       { label: 'תשואת דיבידנד', unit: '%', kind: 'num', sectorRel: true },
+    pb:       { label: 'מכפיל הון (P/B)', unit: '×', kind: 'num', sectorRel: true },
     beta:     { label: 'בטא', unit: '', kind: 'num', hint: 'מעל 1 = תנודתית יותר מהשוק' },
     rating:   { label: 'דירוג אנליסטים', unit: '', kind: 'num', hint: '1 = קנייה חזקה … 5 = מכירה חזקה' },
     earnDays: { label: 'ימים עד הדוח הבא', unit: '', kind: 'num', get: (r) => { const d = r[UNI.ix.earn]; return d ? Math.round((Date.parse(d) - Date.now()) / 864e5) : null; } },
@@ -714,10 +718,29 @@
       c: [['relVol', '>=', 3], ['dollarVol', '>=', 10]] },
   ];
   const OPS = [['>=', '≥'], ['<=', '≤'], ['>', '>'], ['<', '<'], ['between', 'בין'], ['=', '=']];
+  const SECTOR_OPS = [['<sec', 'מתחת לממוצע הסקטור'], ['>sec', 'מעל ממוצע הסקטור']];
   const COLS = [['chg1d', 'יום'], ['chg1m', 'חודש'], ['d150', 'מ-SMA150'], ['rsi', 'RSI'], ['pe', 'P/E'], ['eps', 'EPS'], ['dy', 'דיב׳'], ['relVol', 'נפח'], ['cap', 'שווי']];
+  // average of each sector-relative field across a sector, ignoring missing/non-positive values (loss-making companies have no P/E)
+  function sectorAverages(rows) {
+    const sums = {};
+    for (const r of rows) {
+      const sec = r[UNI.ix.sector]; if (!sec) continue;
+      const bucket = sums[sec] || (sums[sec] = {});
+      for (const k in SF) {
+        if (!SF[k].sectorRel) continue;
+        const v = r[UNI.ix[k]]; if (!isNum(v) || v <= 0) continue;
+        const b = bucket[k] || (bucket[k] = { sum: 0, n: 0 });
+        b.sum += v; b.n++;
+      }
+    }
+    const avg = {};
+    for (const sec in sums) { avg[sec] = {}; for (const k in sums[sec]) avg[sec][k] = sums[sec][k].sum / sums[sec][k].n; }
+    return avg;
+  }
 
   function renderScreener() {
     const U = D.universe;
+    const sectorAvg = U ? sectorAverages(U.rows) : {};
     let h = head('סורק מניות · שוק ארה״ב', 'סורק מניות', 'בנו הגדרת כניסה משלכם — ממוצעים נעים, RSI, מומנטום, נפח, שיאים ועוד — והסורק יחפש את המניות האמריקאיות שעונות על כל התנאים.', undefined, U ? marketStamp(U) : stamp(null));
     if (!UNI) return h + empty('עוד אין נתונים לסריקה', 'נתוני המניות מתעדכנים בריענון היומי הבא.', I.screener);
     const state = store.get('screen', null) || { c: PRESETS[0].c, sector: '', sort: 'cap', dir: -1 };
@@ -749,12 +772,15 @@
       const drawCrit = () => {
         critBox.innerHTML = st.c.length ? st.c.map((c, i) => {
           const f = SF[c[0]] || SF.cap;
+          const sectorOp = c[1] === '<sec' || c[1] === '>sec';
           const valUI = f.kind === 'enum'
             ? `<select class="field sel" data-i="${i}" data-part="v1">${f.opts.map(([v, l]) => `<option value="${v}"${String(c[2]) === v ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`
+            : sectorOp
+            ? `<span class="muted">(לפי הסקטור של כל מניה)</span>`
             : `<input class="field num-in" type="number" step="any" data-i="${i}" data-part="v1" value="${esc(c[2] ?? '')}" aria-label="ערך">${c[1] === 'between' ? `<span class="muted">עד</span><input class="field num-in" type="number" step="any" data-i="${i}" data-part="v2" value="${esc(c[3] ?? '')}" aria-label="ערך עליון">` : ''}<span class="unit">${esc(f.unit || '')}</span>`;
           return `<div class="crit-row">
             <select class="field sel" data-i="${i}" data-part="k" aria-label="מדד">${fieldOpts(c[0])}</select>
-            ${f.kind === 'enum' ? '<span class="muted op-eq">הוא</span>' : `<select class="field sel op" data-i="${i}" data-part="op" aria-label="תנאי">${OPS.filter((o) => o[0] !== '=').map(([v, l]) => `<option value="${v}"${c[1] === v ? ' selected' : ''}>${l}</option>`).join('')}</select>`}
+            ${f.kind === 'enum' ? '<span class="muted op-eq">הוא</span>' : `<select class="field sel op" data-i="${i}" data-part="op" aria-label="תנאי">${OPS.filter((o) => o[0] !== '=').map(([v, l]) => `<option value="${v}"${c[1] === v ? ' selected' : ''}>${l}</option>`).join('')}${f.sectorRel ? SECTOR_OPS.map(([v, l]) => `<option value="${v}"${c[1] === v ? ' selected' : ''}>${l}</option>`).join('') : ''}</select>`}
             ${valUI}
             <button class="btn ghost" type="button" data-rm="${i}" aria-label="הסר תנאי">${I.x}</button></div>`;
         }).join('') : '<p class="muted" style="padding:6px 0">אין תנאים — מוצגות כל המניות. הוסיפו תנאי או בחרו הגדרה מוכנה.</p>';
@@ -763,6 +789,12 @@
         const [k, op, a, b] = c; const f = SF[k]; if (!f) return true;
         const v = sval(r, k);
         if (f.kind === 'enum') { if (a === 'any') return v === 1 || v === 2; return String(v) === String(a); }
+        if (op === '<sec' || op === '>sec') {
+          if (!isNum(v)) return false;
+          const secAvg = sectorAvg[r[UNI.ix.sector]] && sectorAvg[r[UNI.ix.sector]][k];
+          if (!isNum(secAvg)) return false;
+          return op === '<sec' ? v < secAvg : v > secAvg;
+        }
         if (a === '' || a == null || !isFinite(+a)) return true;       // unfinished condition: ignore
         if (!isNum(v)) return false;
         switch (op) {

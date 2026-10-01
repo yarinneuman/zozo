@@ -62,7 +62,7 @@
     line(s150, css('--sma150'), 2.5);
 
     const last = rows[rows.length - 1];
-    candles.setMarkers([{ time: last[0], position: 'belowBar', color: css('--accent'), shape: 'arrowUp', text: item.type === 'cross' ? 'חציה' : 'נגיעה' }]);
+    candles.setMarkers([{ time: last[0], position: 'belowBar', color: css('--accent'), shape: 'arrowUp', text: item.type === 'cross' ? 'חציה' : item.type === 'above' ? 'סגירה מעל' : 'נגיעה' }]);
     chart.timeScale().setVisibleLogicalRange({ from: Math.max(0, rows.length - 170), to: rows.length + 3 });
   };
 

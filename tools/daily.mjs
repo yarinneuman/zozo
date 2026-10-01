@@ -105,6 +105,27 @@ if (gate.met && prevSig.asOf === asOf && prevSig.gate && prevSig.gate.met) {
   const GICS_HE = { 'Information Technology': 'טכנולוגיה', 'Health Care': 'בריאות', Financials: 'פיננסים', 'Consumer Discretionary': 'צריכה מחזורית', Industrials: 'תעשייה', Energy: 'אנרגיה', 'Real Estate': 'נדל"ן', Utilities: 'תשתיות וחשמל', Materials: 'חומרים', 'Communication Services': 'תקשורת', 'Consumer Staples': 'צריכה בסיסית' };
   const sp = readFileSync(join(ROOT, 'tools', 'sp500.tsv'), 'utf8').replace(/^﻿/, '').split(/\r?\n/).filter(Boolean).map((l) => { const [t, name, sec] = l.split('\t'); return { t: t.trim(), name, sector: GICS_HE[sec] || sec }; });
   const capOf = new Map(universe ? universe.rows.map((r) => [r[0], r[universe.fields.indexOf('cap')]]) : []);
+  // valuation multiples per ticker (already fetched by tools/market.mjs into universe.js) + each sector's average, for sector-relative context on signal cards
+  const FUND_FIELDS = ['pe', 'fpe', 'pb', 'dy'];
+  const fundOf = new Map();
+  const sectorFundAvg = {};
+  if (universe) {
+    const fi = Object.fromEntries(FUND_FIELDS.map((k) => [k, universe.fields.indexOf(k)]));
+    const secI = universe.fields.indexOf('sector');
+    const sums = {};
+    for (const r of universe.rows) {
+      const f = {}; for (const k of FUND_FIELDS) f[k] = r[fi[k]];
+      fundOf.set(r[0], f);
+      const sec = r[secI]; if (!sec) continue;
+      const bucket = sums[sec] || (sums[sec] = {});
+      for (const k of FUND_FIELDS) {
+        const v = f[k]; if (typeof v !== 'number' || !isFinite(v) || v <= 0) continue;
+        const b = bucket[k] || (bucket[k] = { sum: 0, n: 0 });
+        b.sum += v; b.n++;
+      }
+    }
+    for (const sec in sums) { sectorFundAvg[sec] = {}; for (const k of FUND_FIELDS) { const b = sums[sec][k]; sectorFundAvg[sec][k] = b && b.n ? r2(b.sum / b.n) : null; } }
+  }
   const fmtCap = (b) => (b >= 1000 ? (b / 1000).toFixed(2) + 'T' : b >= 1 ? b.toFixed(1) + 'B' : Math.round(b * 1000) + 'M');
   const MONTHS = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
   let idx = 0;
@@ -117,8 +138,9 @@ if (gate.met && prevSig.asOf === asOf && prevSig.gate && prevSig.gate.met) {
         scanned++;
         const c = rows.map((x) => x.c), n = rows.length - 1, b = rows[n];
         const s150 = SMA(c, 150, n), p150 = SMA(c, 150, n - 1);
-        const touch = b.l <= s150 && s150 <= b.h, cross = c[n - 1] < p150 && b.c >= s150 * 1.01;
-        if (!touch && !cross) continue;
+        const touch = b.l <= s150 && s150 <= b.h, wasBelow = c[n - 1] < p150;
+        if (!(b.c > s150)) continue;   // entry condition: closed above SMA150, re-checked every day the gate (streak >= 3) stays open
+        const type = touch ? 'touch' : wasBelow ? 'cross' : 'above';
         const capB = capOf.get(s.t); const listed = meta.firstTradeDate ? new Date(meta.firstTradeDate * 1000) : null;
         if (!(capB >= 0.5) || !listed || now - listed < 3 * 365.25 * 864e5) continue;   // rules 1–2: > $500M, > 3 years
         const s20 = SMA(c, 20, n), s200 = SMA(c, 200, n), s150ago = SMA(c, 150, n - 20);
@@ -127,11 +149,18 @@ if (gate.met && prevSig.asOf === asOf && prevSig.gate && prevSig.gate.met) {
         const approach = c[n - 5] > SMA(c, 150, n - 5) ? 'מלמעלה' : 'מלמטה';
         const volRatio = r2(b.v / avgV), fromHighPct = r2((b.c / hi - 1) * 100);
         const [, mm, dd] = asOf.split('-');
+        const typeExplain = type === 'touch'
+          ? `בנר של ${+dd} ב${MONTHS[+mm - 1]} המניה נגעה בממוצע ה-150 וסגרה מעליו — הקו היה בתוך טווח הנר (שפל ${r2(b.l)}, שיא ${r2(b.h)}), כשהיא מגיעה ${approach}.`
+          : type === 'cross'
+          ? `בנר של ${+dd} ב${MONTHS[+mm - 1]} המניה חצתה מעל ממוצע ה-150, אחרי שיום קודם סגרה מתחתיו.`
+          : `בנר של ${+dd} ב${MONTHS[+mm - 1]} המניה סגרה מעל ממוצע ה-150, בהמשך למגמה שכבר הייתה מעליו.`;
+        const fund = fundOf.get(s.t) || {};
         items.push({
           ticker: s.t, name: meta.longName || s.name, sector: s.sector, price: r2(b.c), sma150: r2(s150), distancePct: r2((b.c / s150 - 1) * 100),
-          type: touch ? 'touch' : 'cross', marketCap: fmtCap(capB), listedSince: listed.getUTCFullYear(),
+          type, marketCap: fmtCap(capB), listedSince: listed.getUTCFullYear(),
           context: { slope, approach, sma20: b.c >= s20 ? 'מעל' : 'מתחת', sma200: s200 ? (b.c >= s200 ? 'מעל' : 'מתחת') : null, volRatio, fromHighPct },
-          explanation: `${touch ? `בנר של ${+dd} ב${MONTHS[+mm - 1]} המניה נגעה בממוצע ה-150 — הקו היה בתוך טווח הנר (שפל ${r2(b.l)}, שיא ${r2(b.h)}), כשהיא מגיעה ${approach}.` : `בנר של ${+dd} ב${MONTHS[+mm - 1]} המניה חצתה את ממוצע ה-150 ביותר מ-1%, אחרי שיום קודם סגרה מתחתיו.`} הממוצע בשיפוע ${slope} ב-20 הימים האחרונים. המניה ${Math.abs(fromHighPct)}% מתחת לשיא השנתי, והנפח ביום האיתות ×${volRatio} מהממוצע.`,
+          fundamentals: { pe: fund.pe ?? null, fpe: fund.fpe ?? null, pb: fund.pb ?? null, dy: fund.dy ?? null, sectorAvg: sectorFundAvg[s.sector] || null },
+          explanation: `${typeExplain} הממוצע בשיפוע ${slope} ב-20 הימים האחרונים. המניה ${Math.abs(fromHighPct)}% מתחת לשיא השנתי, והנפח ביום האיתות ×${volRatio} מהממוצע.`,
           ohlc: rows.slice(-320).map((x) => [x.d, r2(x.o), r2(x.h), r2(x.l), r2(x.c), x.v]),
         });
       } catch { failedN++; }
