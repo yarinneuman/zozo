@@ -42,10 +42,16 @@
     let i = 0, handle = null, stopped = false;
     const step = () => {
       const end = Math.min(i + BATCH, cards.length);
-      for (; i < end; i++) { const c = cards[i]; if (c.el) Z.signalChart(c.el, c.item); }
+      for (; i < end; i++) {
+        const c = cards[i];
+        // a chart built while #main's .28s page-enter animation (zozo.css) is still running can hit the
+        // chart library's own resize handling mid-transition and throw; one bad chart shouldn't stop the rest.
+        if (c.el) { try { Z.signalChart(c.el, c.item); } catch (e) {} }
+      }
       if (i < cards.length && !stopped) handle = setTimeout(step, 0);
     };
-    handle = setTimeout(step, 0);
+    // let the page-enter animation finish first so the first charts aren't built mid-transition
+    handle = setTimeout(step, 300);
     cancelBatch = () => { stopped = true; clearTimeout(handle); };
   };
 
