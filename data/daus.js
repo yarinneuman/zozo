@@ -8,8 +8,26 @@ Schema:
 A note shows next to a signal card only while that ticker is in data/signals.js. Opinion, not advice. */
 window.ZOZO = window.ZOZO || {};
 ZOZO.daus = {
- "updatedAt": "2026-10-02T15:30:00+03:00",
+ "updatedAt": "2026-10-02T09:45:00+03:00",
  "notes": [
+  {
+   "ticker": "NTRS",
+   "date": "2026-10-02",
+   "verdict": "agree",
+   "text": "P/E של 14.6 (קדימה 13.2) מול 18.5 בסקטור, ונגיעה בממוצע 150 מלמעלה עם שיפוע עולה. הדוחות ב-21/10."
+  },
+  {
+   "ticker": "UNP",
+   "date": "2026-10-02",
+   "verdict": "split",
+   "text": "הטכני נקי: נגיעה בממוצע 150 מלמעלה עם שיפוע עולה. הערך הוגן ולא זול (P/E קדימה 19.2), ומיזוג Norfolk Southern עוד ממתין לאישור STB."
+  },
+  {
+   "ticker": "ROP",
+   "date": "2026-10-02",
+   "verdict": "split",
+   "text": "זולה לעסק תוכנה (P/E קדימה 14.9), אבל המחיר 30% מתחת לשיא ומתחת לממוצע 200. יש גם מינוף של 3.1 וחשש מ-AI. העדשות חלוקות."
+  },
   {
    "ticker": "EOG",
    "date": "2026-10-02",
