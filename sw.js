@@ -2,7 +2,7 @@
    - Site files (HTML, CSS, JS, data, icons): cached on install; served network-first so updates and the daily refresh show up right away, with the cached copy used offline.
    - Fonts and the charts library from their CDNs: cached at runtime after first use.
    Bump VERSION whenever the shell files change. */
-const VERSION = 'zozo-v5';
+const VERSION = 'zozo-v6';
 const SHELL = [
   './',
   './index.html',
@@ -25,6 +25,7 @@ const SHELL = [
   './data/universe.js',
   './data/sectors.js',
   './data/glossary.js',
+  './data/daus.js',
 ];
 const RUNTIME_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'cdn.jsdelivr.net'];
 

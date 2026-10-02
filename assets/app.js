@@ -325,7 +325,7 @@
     const b = D.brief, w = D.weekly, M = D.movers;
     const stamps = `<div class="stamps">${M ? marketStamp(M) : ''}${b ? writtenAt(b) : ''}</div>`;
     let h = head('Zozo · תדריך', 'השוק היום', null, undefined, stamps) + statusStrip();
-    h += `<nav class="jump" aria-label="קפיצה לחלק"><a href="#" data-jump="now">השוק עכשיו</a><a href="#" data-jump="daily">התדריך היומי</a>${w ? '<a href="#" data-jump="weekly">הסיכום השבועי</a>' : ''}</nav>`;
+    h += `<nav class="jump" aria-label="קפיצה לחלק"><a href="#" data-jump="now">השוק עכשיו</a><a href="#" data-jump="daily">התדריך היומי</a>${w ? '<a href="#" data-jump="weekly">הסיכום השבועי</a>' : ''}${D.daus && D.daus.column ? '<a href="#" data-jump="daus">הפינה של דאוס</a>' : ''}</nav>`;
     // --- 1. the market right now ---
     const bullets = marketNowBullets(), board = boardItems();
     h += `<section class="block layer" id="now" style="margin-top:22px"><div class="layer-head"><div><div class="kicker">מתעדכן כל 15 דקות</div><h2 class="layer-title">השוק עכשיו</h2></div>${M ? marketStamp(M) : ''}</div>
@@ -338,6 +338,7 @@
     h += `<section class="block layer" id="daily"><div class="layer-head"><div><div class="kicker">נכתב כל בוקר ב-08:00</div><h2 class="layer-title">התדריך היומי</h2></div>${b ? writtenAt(b) : ''}</div>
       ${b ? editionHtml(b) : empty('התדריך היומי עוד לא נכתב', 'הוא נכתב אוטומטית כל בוקר ב-08:00 שעון ישראל.', I.brief)}</section>`;
     if (w) h += `<section class="block layer" id="weekly"><div class="layer-head"><div><div class="kicker">נכתב בכל יום ראשון</div><h2 class="layer-title">הסיכום השבועי</h2></div>${writtenAt(w)}</div>${editionHtml(w)}</section>`;
+    h += dausColumn();
     after(() => {
       main.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); const t = document.getElementById(a.dataset.jump); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
       main.querySelectorAll('[data-topic]').forEach((btn) => btn.addEventListener('click', () => {
@@ -439,6 +440,7 @@
               <li><span class="ok">✓</span><span>${typeTxt}</span><span class="muted">SMA150 ${usd(it.sma150)}</span></li>
             </ul>
             ${it.explanation ? `<p class="explain" data-g>${esc(it.explanation)}</p>` : ''}
+            ${dausNote(it.ticker)}
             <div class="ctx">
               <div><span>שיפוע SMA150</span><span>${esc(cx.slope || '—')}</span></div>
               <div><span>כיוון</span><span>${esc(cx.approach || '—')}</span></div>
@@ -467,6 +469,19 @@
     }
     return h + methodBox();
   }
+  const DAUS_VERDICT = { agree: ['✔', 'שתי העדשות מסכימות'], split: ['⚠', 'העדשות חלוקות'], wait: ['⏸', 'להמתין'] };
+  const dausNote = (t) => {
+    const n = D.daus && (D.daus.notes || []).find((x) => x.ticker === t);
+    if (!n) return '';
+    const [ic, lab] = DAUS_VERDICT[n.verdict] || ['✎', ''];
+    return `<aside class="daus-note" data-g><div class="dn-head"><span class="dn-who">✎ דאוס בשוליים</span>${lab ? `<span class="dn-verdict">${ic} ${lab}</span>` : ''}</div><p>${esc(n.text)}</p><div class="dn-foot">דעה של דאוס, לא ייעוץ · ${esc(shortDate(n.date))}</div></aside>`;
+  };
+  const dausColumn = () => {
+    const c = D.daus && D.daus.column;
+    if (!c || !c.body || !c.body.length) return '';
+    return `<section class="block layer" id="daus"><div class="layer-head"><div><div class="kicker">נכתב בכל יום ראשון</div><h2 class="layer-title">הפינה של דאוס</h2></div><span class="stamp">${esc(shortDate(c.date))}</span></div>
+      <article class="card daus-col" data-g>${c.title ? `<h3>${esc(c.title)}</h3>` : ''}${c.body.map((p) => `<p>${esc(p)}</p>`).join('')}<div class="dn-foot">דעה אישית של דאוס, סוכן ה-AI של Zozo. לא ייעוץ השקעות.</div></article></section>`;
+  };
   const methodBox = () => `<details class="card flat block"><summary style="cursor:pointer;font-weight:600">איך עובדת השיטה?</summary><div data-g style="margin-top:12px;display:flex;flex-direction:column;gap:8px;color:var(--ink-2)">
     <p><b>שלב 1 — שער השוק:</b> כל יום בודקים אם SPY (תעודת הסל על S&P 500) סגר נר אדום (סגירה מתחת לפתיחה) 3 ימים ברצף או יותר. רק אז ממשיכים — כך האיתותים מגיעים בזמן תיקון בשוק.</p>
     <p><b>שלב 2 — סריקת המניות:</b> כל ~500 המניות במדד נבדקות מול 3 תנאים: שווי שוק מעל 500 מיליון דולר, מעל 3 שנים במסחר, וסגירה מעל ממוצע ה-150 בנר האחרון. הבדיקה חוזרת בכל יום שבו השער פתוח (רצף אדום של 3+ ימים נמשך), כך שמניה יכולה להצטרף גם ביום השלישי האדום וגם בימים שאחריו. צבע הנר של המניה עצמה לא משנה.</p>
@@ -1065,7 +1080,7 @@
     const ok = await reloadScript('data/movers.js');
     if (!ok || D.movers.updatedAt === before) return;
     // every cloud run rewrites these together; the brief files change once a day
-    await Promise.all(['universe', 'live', 'extreme', 'signals', 'history', 'brief', 'weekly', 'calendar'].map((n) => reloadScript(`data/${n}.js`)));
+    await Promise.all(['universe', 'live', 'extreme', 'signals', 'history', 'brief', 'weekly', 'calendar', 'daus'].map((n) => reloadScript(`data/${n}.js`)));
     UNI = buildUni();
     buildTape();
     const cur = (location.hash.replace(/^#\/?/, '') || 'brief').split(/[\/.]/)[0];
