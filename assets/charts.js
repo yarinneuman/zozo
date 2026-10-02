@@ -23,7 +23,31 @@
 
   /* ---------- MA150 signal chart ---------- */
   const live = new Set();
-  Z.destroyAll = function () { live.forEach((c) => { try { c.remove(); } catch (e) {} }); live.clear(); };
+  let cancelBatch = null;
+  Z.destroyAll = function () {
+    if (cancelBatch) { cancelBatch(); cancelBatch = null; }
+    live.forEach((c) => { try { c.remove(); } catch (e) {} }); live.clear();
+  };
+
+  // On a big red-streak day the signals page can list 100-200+ stocks. Creating a lightweight-charts
+  // instance (canvas + its own ResizeObserver) for every one of them synchronously, in one go, blocks
+  // the main thread for many seconds and the tab looks frozen. Instead, build them a few at a time,
+  // yielding back to the browser between batches so it can keep painting and respond to input.
+  Z.lazySignalCharts = function (cards) {
+    if (cancelBatch) cancelBatch();
+    // a hard cap per batch, not just a time budget: some environments (backgrounded/non-rendering tabs)
+    // report an idle deadline that never runs out, which would otherwise collapse this back into building
+    // every chart in one synchronous pass. A fixed batch size guarantees we always yield regularly.
+    const BATCH = 2;
+    let i = 0, handle = null, stopped = false;
+    const step = () => {
+      const end = Math.min(i + BATCH, cards.length);
+      for (; i < end; i++) { const c = cards[i]; if (c.el) Z.signalChart(c.el, c.item); }
+      if (i < cards.length && !stopped) handle = setTimeout(step, 0);
+    };
+    handle = setTimeout(step, 0);
+    cancelBatch = () => { stopped = true; clearTimeout(handle); };
+  };
 
   Z.signalChart = function (el, item) {
     if (!window.LightweightCharts || !item.ohlc || item.ohlc.length < 30) {

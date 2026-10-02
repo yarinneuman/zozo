@@ -452,7 +452,18 @@
           </div>
         </article>`;
       }).join('')}</div>`;
-      after(() => items.forEach((it, i) => C.signalChart(document.getElementById('sc_' + i), it)));
+      // batching the chart creation keeps any single stretch of work short, but on a big red-streak day
+      // (100-200+ signals) even a few hundred ms per chart adds up to many seconds of it happening somewhere
+      // in the background. Cap how many build automatically and let the viewer pull in the rest on demand —
+      // same "הצג עוד" pattern the stock screener already uses below its results table.
+      const AUTO = 24;
+      if (items.length > AUTO) h += `<p style="margin:18px 0 0;text-align:center"><button class="btn" type="button" id="moreCharts">טען את שאר הגרפים (${items.length - AUTO})</button></p>`;
+      after(() => {
+        const all = items.map((it, i) => ({ el: document.getElementById('sc_' + i), item: it }));
+        C.lazySignalCharts(all.slice(0, AUTO));
+        const btn = document.getElementById('moreCharts');
+        if (btn) btn.addEventListener('click', () => { btn.remove(); C.lazySignalCharts(all.slice(AUTO)); });
+      });
     }
     return h + methodBox();
   }
@@ -1068,10 +1079,16 @@
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (!document.documentElement.getAttribute('data-theme')) route(); });
   // PWA: offline cache for the standalone site (not inside the claude.ai Artifact, where service workers are blocked)
   if ('serviceWorker' in navigator && !window.ZOZO_ARTIFACT && window.isSecureContext) {
+    // only a *returning* visit already has a controller; that's the case where a controllerchange means
+    // a newer version just took over. On a first-ever visit (no controller yet) the first activation also
+    // fires controllerchange, and reloading then just reloads a page that was already fresh — it only
+    // shows up as an unprompted flash/refresh for new visitors, so skip it in that case.
+    const hadController = !!navigator.serviceWorker.controller;
     addEventListener('load', () => navigator.serviceWorker.register('sw.js').then((reg) => reg.update()).catch(() => {}));
-    // when a new version of the site takes over, reload once so the viewer never sits on old code
-    let reloaded = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    if (hadController) {
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    }
   }
   const boot = () => route();
   if (window.LightweightCharts || document.readyState === 'complete') boot(); else addEventListener('load', boot, { once: true });
