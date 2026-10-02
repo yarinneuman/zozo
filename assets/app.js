@@ -456,7 +456,7 @@
       // (100-200+ signals) even a few hundred ms per chart adds up to many seconds of it happening somewhere
       // in the background. Cap how many build automatically and let the viewer pull in the rest on demand —
       // same "הצג עוד" pattern the stock screener already uses below its results table.
-      const AUTO = 24;
+      const AUTO = 12;
       if (items.length > AUTO) h += `<p style="margin:18px 0 0;text-align:center"><button class="btn" type="button" id="moreCharts">טען את שאר הגרפים (${items.length - AUTO})</button></p>`;
       after(() => {
         const all = items.map((it, i) => ({ el: document.getElementById('sc_' + i), item: it }));

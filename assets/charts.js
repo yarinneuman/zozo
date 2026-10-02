@@ -38,7 +38,7 @@
     // a hard cap per batch, not just a time budget: some environments (backgrounded/non-rendering tabs)
     // report an idle deadline that never runs out, which would otherwise collapse this back into building
     // every chart in one synchronous pass. A fixed batch size guarantees we always yield regularly.
-    const BATCH = 2;
+    const BATCH = 1;
     let i = 0, handle = null, stopped = false;
     const step = () => {
       const end = Math.min(i + BATCH, cards.length);
