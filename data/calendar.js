@@ -11,13 +11,12 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-10-03T10:55:00+03:00",
+  updatedAt: "2026-10-04T08:35:00+03:00",
   weekOf: "2026-10-04",
   events: [
-    { at: "2026-10-02T15:30:00+03:00", kind: "macro", title: "דו\"ח התעסוקה NFP ספטמבר: 29 אלף משרות מול תחזית כ-84 אלף, אבטלה 4.2%", consensus: "כ-84K · אבטלה 4.1%", prior: "133K (מתוקן) · 4.1%", important: true, source: { name: "CNBC", url: "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html" } },
-    { at: "2026-10-02T20:00:00+03:00", allDay: true, kind: "macro", title: "טראמפ דוחה כ\"בלתי מתקבל\" מתווה של שבעה ימים של איראן להורמוז; הנפט נסוג", important: true, source: { name: "Al Jazeera / CBS News", url: "https://www.aljazeera.com/news/2026/10/2/new-aircraft-carrier-10000-us-troops-is-the-iran-war-about-to-escalate" } },
-
-    { at: "2026-10-04T12:00:00+03:00", allDay: true, kind: "macro", title: "ישיבת OPEC+ · סבב ראשון בבחירות בברזיל", important: true, source: { name: "Newsquawk", url: "https://newsquawk.com/headlines/week-in-focus-4-9th-october-2026-fomc-minutes-us-ism-services-pmi-opec-canadian-jobs-and-ecb-minutes" } },
+    { at: "2026-10-04T12:00:00+03:00", allDay: true, kind: "macro", title: "ישיבת OPEC+ (שבעת חברי הליבה) על מכסות נובמבר — צפי להמשך קיפאון", important: true, source: { name: "Yahoo Finance (Reuters)", url: "https://finance.yahoo.com/energy/articles/opec-expected-keep-november-oil-102921735.html" } },
+    { at: "2026-10-04T20:00:00+03:00", allDay: true, kind: "macro", title: "ברזיל: סבב ראשון בבחירות לנשיאות (לולה מול בולסונארו הבן); סבב שני אפשרי ב-25/10", important: true, source: { name: "Newsquawk", url: "https://newsquawk.com/headlines/week-in-focus-4-9th-october-2026-fomc-minutes-us-ism-services-pmi-opec-canadian-jobs-and-ecb-minutes" } },
+    { at: "2026-10-04T09:00:00+03:00", allDay: true, kind: "macro", title: "דיווח: הצוות הבכיר של טראמפ לביטחון לאומי נפגש בסתר בקאמפ דייוויד על איראן ותימן", important: true, source: { name: "Axios", url: "https://www.axios.com/2026/10/03/trumps-cabinet-camp-david-iran-war-yemen-houthis" } },
 
     { at: "2026-10-05T09:59:00+03:00", kind: "israel", title: "בורסת ת\"א חוזרת למסחר אחרי שמחת תורה", prior: "ת\"א 35: 4,218.25 (1/10)", important: false, source: { name: "Investing.com", url: "https://www.investing.com/news/stock-market-news/israel-stocks-higher-at-close-of-trade-ta-35-up-034-4927821" } },
     { at: "2026-10-05T17:00:00+03:00", kind: "macro", title: "ISM שירותים (ספטמבר)", consensus: "55.7", prior: "55.4", important: true, source: { name: "CMC Markets", url: "https://cmcmarkets.com/en-ie/news-and-analysis/the-week-ahead-us-ism-services-fed-minutes-pepsico-earnings" } },

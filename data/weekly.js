@@ -2,56 +2,66 @@
    Same schema as data/brief.js, plus optional: recap: [{ title, points: [string] }], weekAhead: [string]. */
 window.ZOZO = window.ZOZO || {};
 ZOZO.weekly = {
-  updatedAt: "2026-09-27T12:30:00+03:00",
+  updatedAt: "2026-10-04T08:35:00+03:00",
   edition: "שבועי",
-  headline: "האג״ח קובע את הקצב. <em>וול סטריט</em> מחכה ל-PCE ולמשרות.",
-  thesis: "תשואות האג״ח בשיא של כמעט 20 שנה והפד כבר העלה ריבית — ובכל זאת הנאסד״ק עלה בשבוע האחרון בזכות הטכנולוגיה. השבוע שני נתונים יכריעו אם תגיע העלאה נוספת באוקטובר.",
+  headline: "דו\"ח תעסוקה חלש הציל את השבוע: הנאסד\"ק עלה, ה-S&P ודאו ירדו. בסוף השבוע: <em>פגישת חירום בקאמפ דייוויד</em> על איראן ותימן.",
+  thesis: "השבוע נפתח עם תשואות אג\"ח בשיא של עשרים ומעלה שנה ואמון צרכנים בשפל 12 שנה, אבל דו\"ח התעסוקה החלש של יום שישי (29 אלף משרות מול תחזית 84-90 אלף) הפך את הכיוון: סיכויי העלאת הריבית באוקטובר קרסו מ-77% ל-17%, ווול סטריט נגעה בשיאים — אנבידיה בשווי של כ-$5.7 טריליון. ברקע כל זה, מלחמת ארה\"ב-איראן ממשיכה להעיב: ארה\"ב שלחה נושאת מטוסים שלישית, טראמפ דחה הצעת שביתת נשק איראנית, ובסוף השבוע התגלה כי צוות הביטחון הלאומי הבכיר שלו נפגש בסתר בקאמפ דייוויד — בדיוק כמו ביוני 2025, ימים לפני שישראל תקפה את איראן.",
   bottomLine: [
-    "תשואת ה-10 שנים נגעה ב-5.22%, הגבוהה מאז 2007, וה-30 שנים ב-5.50%, הגבוהה מאז 2004. הנאסד״ק עלה בכל זאת בזכות הטכנולוגיה.",
-    "הפד בראשות קווין וורש העלה ב-16/9 את הריבית ל-3.75–4.00% פה אחד. השוק מתמחר 54% להעלאה נוספת באוקטובר.",
-    "PCE ביום רביעי ודוח התעסוקה ביום שישי (צפי 90K, אבטלה 4.1%) יכריעו את ההימור הזה.",
-    "מיקרון מדווחת ביום רביעי בערב: צפי EPS של $31.16 על הכנסות של $50.45B, והשוק יסתכל בעיקר על התחזית.",
-    "הנפט ירד על רקע שיחות על מצר הורמוז, אבל לפי WSJ טראמפ דחה את ההצעה האיראנית. השאלה הזאת עדיין פתוחה."
+    "דו\"ח התעסוקה של ספטמבר החטיא בגדול: 29 אלף משרות מול תחזית 84-90 אלף, אבטלה 4.2%. סיכויי העלאת הריבית באוקטובר ב-CME FedWatch קרסו מ-76.9% (29/9) ל-17% (2/10); תשואת 10 השנים נגעה ב-5.342% תוך-יומי (שיא מאז 2007) ולמעלה מכך ה-30 שנה נגעה ב-5.61-5.62% (29/9, שיא מאז 2002), לפני שנרגעה מעט לקראת סוף השבוע.",
+    "וול סטריט סגרה שבוע מעורב: S&P 500 ודאו ג'ונס ירדו על פני השבוע כולו, ואילו הנאסד\"ק עלה, בהובלת הטכנולוגיה. אנבידיה נגעה בשיא של $237.88 ביום שישי (שווי של כ-$5.7 טריליון); טסלה עלתה כ-4-5% אחרי 486,532 מסירות ברבעון השלישי (מול קונצנזוס 461,974); נייקי ירדה 3.64% אחרי תחזית חלשה וצניחה של 26% בסין.",
+    "הנפט התנודתי: ברנט קפץ עד $102.31 ו-WTI עד $92.87 ביום רביעי-חמישי, אחרי דיווח שארה\"ב שולחת נושאת מטוסים שלישית (USS Theodore Roosevelt) ועד 10 אלף חיילים נוספים למזרח התיכון; הנפט נסוג בחדות ביום שישי (WTI ל-$91.24, ברנט ל-$99.68) אחרי שטראמפ דחה כ\"בלתי מתקבל על הדעת\" הצעה איראנית בת שבעה ימים לפתיחת מיצרי הורמוז.",
+    "דיפלומטיה קורסת: ארה\"ב גירשה את המשלחת האיראנית באו\"ם (בראשות שר החוץ עראקצ'י) מניו יורק אחרי שהשיחות בתיווך קטארי נתקעו, ולפי Axios הצוות הבכיר של טראמפ לביטחון לאומי — ואנס, רוביו, הגסת', ויטקוף, רטקליף, קיין ובסנט — נפגש בסתר בקאמפ דייוויד ביום שישי לדון בהמשך המלחמה באיראן ובתימן.",
+    "ת\"א 35 נסגר ב-4,218.25 (+0.34%) ביום חמישי, לפני שהבורסה נסגרה לרגל שמחת תורה; השקל נסחר סביב 3.07-3.09 לדולר. בנק ישראל השאיר את הריבית על 3.25%, וההחלטה הבאה ב-21/10. ביטקוין סגר את השבוע סביב $84,500-84,800, לאחר ירידה לשפל 7 שבועות בזהב (כ-$4,150) באמצע השבוע."
   ],
   weekAhead: [
-    "רביעי 30/9: PCE ותמ״ג Q2 סופי (15:30), ובערב דוח מיקרון (אופציות מתמחרות ±11%).",
-    "חמישי 1/10: ISM תעשייה (17:00), דוחות אקסנצ׳ר ונייקי (±8.3%).",
-    "שישי 2/10: דוח התעסוקה — צפי 90K משרות ואבטלה 4.1% (15:30).",
-    "21/10: החלטת הריבית של בנק ישראל."
+    "ראשון 4/10: OPEC+ נפגש לדון במכסות נובמבר (צפי להמשך ללא שינוי); בברזיל הסבב הראשון בבחירות לנשיאות, סבב שני אפשרי ב-25/10.",
+    "שני 5/10: שוק ת\"א נפתח מחדש; ISM שירותים (17:00, תחזית 55.7 מול 55.4 באוגוסט).",
+    "רביעי 7/10: פרוטוקול ישיבת ה-FOMC מ-15-16/9, שבה הועלתה הריבית (21:00).",
+    "חמישי 8/10: פפסיקו מדווחת לפני הפתיחה (תחזית EPS כ-$2.30, הכנסות כ-$25 מיליארד).",
+    "שישי 9/10: דלתא איירליינס מדווחת לפני הפתיחה; סקר אמון הצרכנים של מישיגן (מקדמי).",
+    "קדימה: מדד המחירים לצרכן CPI ב-14/10, החלטת ריבית בנק ישראל ב-21/10 וההחלטה הבאה של הפד ב-28/10."
   ],
   recap: [
-    { title: "ריביות ואג״ח", points: ["תשואת ה-10 שנים הגיעה ל-5.225%, אחרי שעלתה מ-3.97% מאז תחילת העימות עם איראן.", "ציפיות האינפלציה בסקר מישיגן עלו ל-4.6% מ-4%.", "משמעות: תשואה מעל 5% לוחצת על המכפילים; רווחי הטכנולוגיה מחזיקים את השוק."] },
-    { title: "AI וטכנולוגיה", points: ["מטא: סוכן ה-Muse הגיע לראש ה-App Store והמניה קפצה בכ-11% ביום.", "אקמאי ו-Anthropic: חוזה ענן של $11.6B לשבע שנים.", "אורקל ירדה 3.5% אחרי הודעת כוח עליון במרכז נתונים; מיקרון עלתה 16.6% בשבוע שלפני הדוח."] },
-    { title: "דוחות", points: ["קוסטקו: הכנסות $95.72B מול $94.88B צפוי, המניה +2.9%.", "נייקי: בנק אוף אמריקה הוריד ל-Underperform עם יעד $30.", "TD SYNNEX ירדה כ-10% למרות הכנסות מעל הצפי."] },
-    { title: "גיאופוליטיקה וקריפטו", points: ["ארה״ב וסין: הפחתת מכסים על $30B; על מתכות נדירות אין הסכמה.", "איראן: הוצעה פתיחה של הורמוז; לפי WSJ טראמפ דחה, והברנט ירד מ-$100.22 לכ-$97.", "קרנות הביטקוין גייסו $2.4B בשבוע — הגיוס הגדול מאז אוקטובר 2025."] }
+    { title: "ריביות ואג\"ח", points: ["ה-30 שנה נגעה ב-5.61-5.62% ב-29/9, השיא מאז יוני 2002; ה-10 שנים נגעה ב-5.342% תוך-יומי ב-1/10, השיא מאז 2007, לפני שנסגרה ב-5.281% ב-2/10.", "אמון הצרכנים של קונפרנס בורד צנח ל-81.9 בספטמבר — השפל מאז 2014.", "דו\"ח התעסוקה החלש של 2/10 הפך את הכיוון: סיכויי העלאת ריבית באוקטובר ב-CME FedWatch קרסו מ-76.9% ל-17% בתוך יומיים-שלושה."] },
+    { title: "וול סטריט ומניות", points: ["S&P 500 ודאו ג'ונס ירדו על פני השבוע, הנאסד\"ק עלה בהובלת הטכנולוגיה; אנבידיה נגעה בשיא של $237.88 ($5.7 טריליון שווי) ביום שישי.", "טסלה: 486,532 מסירות ברבעון השלישי, מעל קונצנזוס של 461,974.", "נייקי ירדה 3.64% אחרי תחזית חלשה וצניחה של 26% בהכנסות מסין; אקסנצ'ור דיווחה EPS של $3.18 כמעט בדיוק לפי תחזית $3.19."] },
+    { title: "גיאופוליטיקה ואנרגיה", points: ["ארה\"ב שלחה נושאת מטוסים שלישית (USS Theodore Roosevelt) ועד 10 אלף חיילים למזרח התיכון; הנפט זינק עד 4.4% בתגובה ואז נסוג כשטראמפ דחה הצעת שביתת נשק איראנית בת 7 ימים.", "ארה\"ב גירשה את המשלחת האיראנית באו\"ם מניו יורק אחרי קריסת תיווך קטארי.", "לפי Axios, הצוות הבכיר של טראמפ לביטחון לאומי נפגש בסתר בקאמפ דייוויד ביום שישי (3/10) — פגישה מהסוג שקדם למלחמת ישראל-איראן ביוני 2025."] },
+    { title: "AI וטכנולוגיה", points: ["אנתרופיק שואפת להנפקה כבר באמצע נובמבר בשווי מוערך של כ-$2 טריליון; ברודקום תממן עד $42 מיליארד.", "סופטבנק השלימה את הנתח האחרון של $10 מיליארד בהשקעתה ב-OpenAI (סה\"כ כ-$64.6 מיליארד, כ-13% מהחברה); אנבידיה השלימה התחייבות של $30 מיליארד.", "אנבידיה השיקה פלטפורמת אבטחה לסוכני AI סוררים בשיתוף אנתרופיק ומיקרוסופט — אך בלי OpenAI."] },
+    { title: "ישראל", points: ["ת\"א 35 נסגר ב-4,218.25 (+0.34%) ביום חמישי, בהובלת נייס (+6.41%) ופאלו אלטו/CYBR (+5.48% לשיא); הבורסה סגורה לרגל שמחת תורה, פתיחה מחדש ביום שני.", "בנק ישראל השאיר את הריבית על 3.25%; ההחלטה הבאה ב-21/10. השקל נסחר סביב 3.07-3.09 לדולר."] }
   ],
   changes: [
-    { topic: "Fear & Greed", from: "33 (23/9)", to: "36 (24/9) — עדיין פחד" },
-    { topic: "ברנט", from: "$100.22", to: "$97.44 — מתחת ל-$100" },
-    { topic: "תשואת 10 שנים", from: "3.97% בתחילת העימות", to: "5.17% (שיא 5.225%)" },
-    { topic: "ריבית הפד", from: "3.50–3.75%", to: "3.75–4.00% (12-0)" }
+    { topic: "סיכוי להעלאת ריבית באוקטובר (CME FedWatch)", from: "76.9% (29/9)", to: "17% (2/10)" },
+    { topic: "תשואת 10 שנים (סגירה)", from: "5.282% (30/9)", to: "5.281% (2/10), שיא תוך-יומי 5.342%" },
+    { topic: "נפט WTI", from: "$96.26 (28/9)", to: "$91.24 (2/10), תוך-שבוע נגע ב-$92.87" },
+    { topic: "ביטקוין", from: "$83,310 (28/9)", to: "כ-$84,800 (3/10)" },
+    { topic: "ת\"א 35", from: "4,203.98, −0.43% (30/9)", to: "4,218.25, +0.34% (1/10), שוק סגור מ-2/10" }
   ],
   macro: {
-    fedwatch: { meeting: "אוקטובר", cut: 0, hold: 45.8, hike: 54.2 },
-    polymarket: { cut: 0, hold: 34, hike: 66, url: "https://predictionnews.com/story/polymarket-traders-price-65-odds-of-25-basis-point-fed-hike-in-october" },
+    fedwatch: { meeting: "אוקטובר (28/10)", cut: 0, hold: 83, hike: 17 },
+    polymarket: null,
     items: []
   },
   voices: [
-    { name: "טום לי", role: "Fundstrat, ראש מחקר", stance: "שורי", he: "ה-S&P 500 יכול בקלות להיות מעל 8,200 עד סוף השנה", en: "easily be above 8,200 by the end of the year", date: "16/9", url: "https://finance.yahoo.com/markets/stocks/articles/fundstrat-tom-lee-sees-p-073202187.html" },
-    { name: "קווין וורש", role: "יו״ר הפדרל ריזרב", stance: "ניצי", he: "האינפלציה גבוהה מדי, וכבר זמן רב מדי.", en: "Inflation is too high and has been for too long.", date: "16/9", url: "https://www.schwab.com/learn/story/fomc-meeting" },
-    { name: "ריק רידר", role: "BlackRock, מנהל השקעות ראשי באג״ח", stance: "זהיר", he: "זה לא משבר, אלא תמרור אזהרה, וזה משהו שצריך לחשוב עליו", en: "not a crisis but an eye-opener, and it's something I think you've got to think about", date: "24/9", url: "https://finance.yahoo.com/markets/article/bond-market-sell-off-not-a-crisis-but-an-eye-opener-former-fed-chair-contender-says-144707057.html" },
-    { name: "פיטר שיף", role: "כלכלן, Euro Pacific", stance: "דובי", he: "אל תתבלבלו ותחשבו שזה השיא.", en: "Don't be fooled into thinking this is the top", date: "14/9", url: "https://www.benzinga.com/markets/economic-data/26/09/61780988/ed-yardeni-calls-ten-year-bond-yields-high-a-vote-of-confidence" }
+    { name: "מוחמד אל-עריאן", role: "אליאנץ, יועץ כלכלי ראשי", stance: "דובי", he: "הביקוש לעבודה חלש על כל החזיתות... הצד של הביקוש מאותת צהוב, וזה הולך להעמיד את הפד בהחלט על פאוזה באוקטובר.", en: "Weak across the board when it comes to the demand for labor... The demand side is flashing yellow … [and is] going to put the Fed definitely on hold for October.", date: "2/10", url: "https://www.investing.com/news/economy-news/reaction-roundup-experts-analysts-weigh-in-on-september-jobs-report-4930206" },
+    { name: "ג'ון וויליאמס", role: "נשיא הפד של ניו יורק", stance: "ניצי", he: "בפעולת המדיניות שנקטנו בישיבת ספטמבר, אין צורך במיידיות. אם הכלכלה תתפתח בהתאם לתחזית שלי, ייתכן שתיקון נוסף כלפי מעלה בטווח הריבית יתאים בהמשך השנה.", en: "With the policy action we took at our September meeting, there is no need for urgency. If the economy evolves in a manner broadly consistent with my forecast, one further upward adjustment of the federal funds target range may be appropriate late this year.", date: "29/9", url: "https://money.usnews.com/investing/news/articles/2026-09-29/feds-williams-sees-no-urgency-for-next-fed-rate-hike" },
+    { name: "פיליפ ג'פרסון", role: "סגן יו\"ר הפדרל ריזרב", stance: "ניצי", he: "אני רואה את הסיכונים לתחזית האינפלציה שלי מוטים כלפי מעלה, בגלל התפתחויות גיאופוליטיות אחרונות וביקוש מצרפי חזק מהצפוי.", en: "I view risks to my inflation forecast as tilted to the upside due to recent geopolitical developments and stronger-than-anticipated aggregate demand.", date: "1/10", url: "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm" },
+    { name: "ג'יימי דיימון", role: "JPMorgan, יו\"ר ומנכ\"ל", stance: "זהיר", he: "אני חושב שהסבירות שמשהו רע יקרה גבוהה יותר ממה שלדעתי מגולם בשוק.", en: "I think the probability of something bad happening is higher than I think it's embedded in the market.", date: "28/9", url: "https://pymnts.com/economy/2026/jamie-dimon-urges-economic-reforms-prevent-decline-western-democracies", note: "ממאמר דעה ב-WSJ שבו קרא לרפורמות בארה\"ב ובאירופה נוכח המלחמות באיראן ובאוקראינה." },
+    { name: "ריק רידר", role: "BlackRock, מנהל השקעות ראשי באג\"ח", stance: "זהיר", he: "הולכת להיות לנו בעיית חוב מצטברת במדינה.", en: "We're going to have a compounding debt problem in the country.", date: "19/9", url: "https://www.benzinga.com/markets/bonds/26/09/61811344/blackrocks-rick-rieder-turns-cautious-on-us-stocks-warns-40-trillion-debt-is-becoming-a-compoundingproblem" },
+    { name: "טוד שנברגר", role: "Crosscheck Management, מנהל השקעות ראשי", stance: "שורי", he: "נתון המשרות הנמוך, כולל העדכון, הוא באופן מוזר דווקא חדשות טובות למניות.", en: "The lower jobs print including the revision is, oddly enough, good news for stocks.", date: "2/10", url: "https://www.investing.com/news/economy-news/soft-september-jobs-report-sends-markets-higher-4929845" }
   ],
   israel: [
-    { title: "בנק ישראל: ריבית 3.25%", body: "הריבית הורדה ב-1/9; ההחלטה הבאה ב-21/10. הפד מעלה ובנק ישראל מוריד — הפער בין הריביות מתרחב לטובת הדולר.", source: { name: "בנק ישראל", url: "https://www.boi.org.il/en/communication-and-publications/press-releases/01-9-26-en/", date: "1/9" } },
-    { title: "ת״א 35 ירד 1.12% בשבוע", body: "סגר ב-4,242.12 ב-24/9, ועדיין +16.81% מתחילת השנה.", source: { name: "ביזפורטל", url: "https://www.bizportal.co.il/capitalmarket/indices/performance/33343333", date: "24/9" } }
+    { title: "ת\"א 35 עלה 0.34% ל-4,218.25 בסשן האחרון של השבוע", body: "נייס זינקה 6.41% ופאלו אלטו (CYBR) עלתה 5.48% לשיא. שוק ת\"א סגור לרגל שמחת תורה מ-2/10, ייפתח מחדש ב-5/10.", source: { name: "Investing.com", url: "https://www.investing.com/news/stock-market-news/israel-stocks-higher-at-close-of-trade-ta-35-up-034-4927821", date: "1/10" } },
+    { title: "בנק ישראל: ריבית 3.25%, ההחלטה הבאה ב-21/10", body: "הריבית נותרה ללא שינוי מאז הורדתה ל-3.25% ב-1/9. משמעות: קריסת סיכויי העלאת הריבית בארה\"ב מקלה על פער הריביות, אבל ההסלמה האפשרית באיראן מחייבת זהירות.", source: { name: "Investing.com", url: "https://www.investing.com/news/stock-market-news/israel-stocks-higher-at-close-of-trade-ta-35-up-034-4927821", date: "1-2/10" } }
   ],
   sources: [
-    { name: "Yahoo Finance", url: "https://finance.yahoo.com/markets/live/stock-market-today-friday-september-25-dow-sp-500-nasdaq-081738529.html" },
-    { name: "TheStreet", url: "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-25-2026" },
-    { name: "Advisor Perspectives", url: "https://www.advisorperspectives.com/dshort/updates/2026/09/25/treasury-yields-snapshot-september-25-2026" },
-    { name: "Newsquawk", url: "https://www.newsquawk.com/headlines/newsquawk-weekly-economic-release-28th-september---2nd-october-2026-" },
-    { name: "Axios", url: "https://www.axios.com/2026/09/26/us-china-tariffs-trade-30-billion" },
-    { name: "The Block", url: "https://www.theblock.co/news/markets/2026-09-26-bitcoin-etfs-turn-positive-for-2026-with-2-4-billion-weekly-inflow-their-largest-since-october-416944" }
+    { name: "CNBC: סיכויי העלאת הריבית באוקטובר", url: "https://www.cnbc.com/2026/10/02/fed-rate-hike-odds-decline-after-september-jobs-report.html" },
+    { name: "Yahoo Finance: שוק המניות 2/10", url: "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-oct-2-135416764.html" },
+    { name: "Investing.com: תגובת השווקים", url: "https://www.investing.com/news/economy-news/soft-september-jobs-report-sends-markets-higher-4929845" },
+    { name: "Investing.com: ת\"א 35, 1/10", url: "https://www.investing.com/news/stock-market-news/israel-stocks-higher-at-close-of-trade-ta-35-up-034-4927821" },
+    { name: "Axios: הצוות הבכיר של טראמפ נפגש בסתר בקאמפ דייוויד", url: "https://www.axios.com/2026/10/03/trumps-cabinet-camp-david-iran-war-yemen-houthis" },
+    { name: "Axios: רוביו דרש מהמשלחת האיראנית לעזוב", url: "https://www.axios.com/2026/10/01/rubio-iran-unga-delegation-kicked-out" },
+    { name: "US News (Reuters): וויליאמס על ריבית הפד", url: "https://money.usnews.com/investing/news/articles/2026-09-29/feds-williams-sees-no-urgency-for-next-fed-rate-hike" },
+    { name: "Federal Reserve: נאום ג'פרסון 1/10", url: "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm" },
+    { name: "Yahoo Finance: OPEC+ צפוי להשאיר מכסות נובמבר ללא שינוי", url: "https://finance.yahoo.com/energy/articles/opec-expected-keep-november-oil-102921735.html" },
+    { name: "CMC Markets: השבוע הבא", url: "https://cmcmarkets.com/en-ie/news-and-analysis/the-week-ahead-us-ism-services-fed-minutes-pepsico-earnings" }
   ]
 };
