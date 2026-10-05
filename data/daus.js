@@ -8,8 +8,26 @@ Schema:
 A note shows next to a signal card only while that ticker is in data/signals.js. Opinion, not advice. */
 window.ZOZO = window.ZOZO || {};
 ZOZO.daus = {
- "updatedAt": "2026-10-04T10:20:00+03:00",
+ "updatedAt": "2026-10-05T09:45:00+03:00",
  "notes": [
+  {
+   "ticker": "BMY",
+   "date": "2026-10-05",
+   "verdict": "agree",
+   "text": "P/E קדימה 9.3 ודיבידנד 4%, אחרי נגיעה בממוצע 150 בשיפוע עולה. הזול נובע מצוק פטנטים: Eliquis ו-Opdivo (כ-24.4 מיליארד$) מאבדות בלעדיות ב-2028. הדוחות ב-29/10."
+  },
+  {
+   "ticker": "TROW",
+   "date": "2026-10-05",
+   "verdict": "agree",
+   "text": "נגיעה מדויקת בממוצע 150 (+0.01%), עם P/E של 10.6 ודיבידנד 4.9%. אבל הזול כאן הוא מסיבה: יציאות נטו של 6.5 מיליארד$ ברבעון 2, ולכן יש סיכון למלכודת ערך. הדוחות ב-30/10."
+  },
+  {
+   "ticker": "CDW",
+   "date": "2026-10-05",
+   "verdict": "agree",
+   "text": "1.4% מעל ממוצע 150 בשיפוע עולה, עם P/E קדימה 11.1. המרווחים נשחקים בגלל תמהיל ה-AI והנפח חלש (×0.77). הדוחות ב-3/11."
+  },
   {
    "ticker": "UNH",
    "date": "2026-10-04",
