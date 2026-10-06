@@ -10,23 +10,18 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-05T22:31:42+03:00",
+ "updatedAt": "2026-10-06T09:02:20+03:00",
  "fearGreed": {
-  "score": 44.2,
+  "score": 43,
   "rating": "fear",
-  "timestamp": "2026-10-05T19:26:03+00:00",
-  "previousClose": 31.2,
-  "oneWeekAgo": 34.4,
+  "timestamp": "2026-10-06T00:00:00+00:00",
+  "previousClose": 43,
+  "oneWeekAgo": 28.9,
   "oneMonthAgo": 45.2,
   "source": "CNN Fear & Greed (production.dataviz.cnn.io)"
  },
  "spy": {
   "candles": [
-   {
-    "date": "2026-09-23",
-    "open": 772.79,
-    "close": 767.81
-   },
    {
     "date": "2026-09-24",
     "open": 764.07,
@@ -61,10 +56,15 @@ ZOZO.extreme = {
     "date": "2026-10-02",
     "open": 770.58,
     "close": 769.64
+   },
+   {
+    "date": "2026-10-05",
+    "open": 769.69,
+    "close": 774.83
    }
   ],
-  "streak": 5,
-  "lastClose": 769.64,
+  "streak": 0,
+  "lastClose": 774.83,
   "source": "Yahoo Finance, נרות יומיים של SPY (ימי מסחר שהסתיימו)"
  },
  "active": false,
