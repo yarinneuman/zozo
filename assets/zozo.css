@@ -1,11 +1,11 @@
 /* ============ Zozo — design tokens ============ */
 :root{
   --paper:#F3EFE6; --card:#FBF9F4; --sunk:#EAE4D8; --ink:#16140F; --ink-2:#3A362E;
-  --muted:#6E685C; --faint:#9A9385; --line:#DCD4C4; --line-2:#C9BFAC;
-  --accent:#C4431F; --accent-soft:#F4DED4; --accent-on-ink:#F0764F;
-  --up:#1D7549; --up-soft:#DDEEE3; --down:#B3302A; --down-soft:#F6DEDB;
-  --amber:#A86A00; --amber-soft:#F5E8C8;
-  --sma150:#7A1D1D; --sma20:#138C9C;
+  --muted:#6C665A; --faint:#6A655C; --line:#DCD4C4; --line-2:#C9BFAC;
+  --accent:#B23D1C; --accent-soft:#F4DED4; --accent-on-ink:#F0764F;
+  --up:#1D7448; --up-soft:#DDEEE3; --down:#B3302A; --down-soft:#F6DEDB;
+  --amber:#905B00; --amber-soft:#F5E8C8;
+  --sma150:#7A1D1D; --sma20:#0F717E;
   --shadow:0 1px 0 rgba(22,20,15,.04), 0 8px 24px -16px rgba(22,20,15,.25);
   --wordmark:"Fraunces", Georgia, serif;
   --display:"Frank Ruhl Libre", "David", Georgia, serif;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#11100E; --card:#191815; --sunk:#0B0A09; --ink:#EEE8DC; --ink-2:#CFC8BA;
-    --muted:#A29B8D; --faint:#736D62; --line:#2A2824; --line-2:#3A3731;
+    --muted:#A29B8D; --faint:#8F887B; --line:#2A2824; --line-2:#3A3731;
     --accent:#F0764F; --accent-soft:#3A2119; --accent-on-ink:#C4431F;
     --up:#4FC48B; --up-soft:#15291F; --down:#F27B71; --down-soft:#321816;
     --amber:#E8B04A; --amber-soft:#2E2412;
@@ -28,7 +28,7 @@
 }
 :root[data-theme="dark"]{
   --paper:#11100E; --card:#191815; --sunk:#0B0A09; --ink:#EEE8DC; --ink-2:#CFC8BA;
-  --muted:#A29B8D; --faint:#736D62; --line:#2A2824; --line-2:#3A3731;
+  --muted:#A29B8D; --faint:#8F887B; --line:#2A2824; --line-2:#3A3731;
   --accent:#F0764F; --accent-soft:#3A2119; --accent-on-ink:#C4431F;
   --up:#4FC48B; --up-soft:#15291F; --down:#F27B71; --down-soft:#321816;
   --amber:#E8B04A; --amber-soft:#2E2412;
@@ -217,7 +217,7 @@ td.num,th.num{text-align:left}
 .meanwhile b{color:var(--accent)}
 .odds{display:flex;height:28px;border-radius:6px;overflow:hidden;font-family:var(--mono);font-size:12px;font-weight:600;direction:ltr;margin-top:8px}
 .odds div{display:flex;align-items:center;justify-content:center;color:#fff;min-width:0;overflow:hidden;white-space:nowrap}
-.odds .cut{background:var(--up)} .odds .hold{background:#8A8375} .odds .hike{background:var(--down)}
+.odds .cut{background:var(--up)} .odds .hold{background:#6C665A} .odds .hike{background:var(--down)} .odds .cut,.odds .hike{color:var(--paper)}
 .odds-legend{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
 
 /* ============ signals ============ */
@@ -350,7 +350,7 @@ abbr.g{text-decoration:underline dotted var(--accent);text-underline-offset:4px;
 .breadth-bar .u{background:var(--up)} .breadth-bar .d{background:var(--down);margin-inline-start:auto}
 .breadth-legend{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
 .heat{display:flex;flex-wrap:wrap;gap:6px}
-.heat-chip{font-size:12.5px;font-weight:500;padding:3px 9px;border-radius:6px;display:inline-flex;gap:6px;align-items:baseline}
+.heat-chip{color:var(--ink-2);font-size:12.5px;font-weight:500;padding:3px 9px;border-radius:6px;display:inline-flex;gap:6px;align-items:baseline}
 .heat-chip.u{background:color-mix(in srgb,var(--up) calc(var(--a) * 22% + 6%),var(--card))}
 .heat-chip.d{background:color-mix(in srgb,var(--down) calc(var(--a) * 22% + 6%),var(--card))}
 .mv-list{padding:4px 16px}
@@ -386,7 +386,7 @@ abbr.g{text-decoration:underline dotted var(--accent);text-underline-offset:4px;
 .preset b{font-size:14px}
 .preset span{font-size:12.5px;color:var(--muted);line-height:1.45}
 .preset:hover{border-color:var(--ink-2)}
-.preset[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.preset[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)} .preset[aria-pressed="true"] span{color:var(--ink-2)}
 .builder{display:flex;flex-direction:column;gap:10px}
 .builder-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .sel-wrap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
