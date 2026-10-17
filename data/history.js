@@ -12,7 +12,7 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.history = {
- "updatedAt": "2026-10-16T23:30:54+03:00",
+ "updatedAt": "2026-10-17T08:28:43+03:00",
  "spyNow": 763.25,
  "signals": [
   {
@@ -2055,7 +2055,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 288.32,
    "spyEntry": 769.64,
-   "price": 302.33,
+   "price": 302.34,
    "r1w": 5.35,
    "r1m": null,
    "r3m": null,
@@ -5367,7 +5367,7 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 286.9,
    "spyEntry": 763.99,
-   "price": 302.33,
+   "price": 302.34,
    "r1w": 3.8,
    "r1m": null,
    "r3m": null,
@@ -6455,7 +6455,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 10.33,
    "spyEntry": 762.63,
-   "price": 7.26,
+   "price": 6.91,
    "r1w": null,
    "r1m": null,
    "r3m": null,
