@@ -10,14 +10,14 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-17T08:28:43+03:00",
+ "updatedAt": "2026-10-19T16:31:01+03:00",
  "fearGreed": {
-  "score": 17.9,
-  "rating": "extreme fear",
-  "timestamp": "2026-10-16T23:59:49+00:00",
-  "previousClose": 31.5,
-  "oneWeekAgo": 46.5,
-  "oneMonthAgo": 27.3,
+  "score": 25.8,
+  "rating": "fear",
+  "timestamp": "2026-10-19T13:12:17+00:00",
+  "previousClose": 17.9,
+  "oneWeekAgo": 46.3,
+  "oneMonthAgo": 30.4,
   "source": "CNN Fear & Greed (production.dataviz.cnn.io)"
  },
  "spy": {
