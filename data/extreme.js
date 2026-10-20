@@ -10,11 +10,11 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-20T23:01:11+03:00",
+ "updatedAt": "2026-10-20T23:15:58+03:00",
  "fearGreed": {
   "score": 26.1,
   "rating": "fear",
-  "timestamp": "2026-10-20T19:54:10+00:00",
+  "timestamp": "2026-10-20T19:59:59+00:00",
   "previousClose": 23.1,
   "oneWeekAgo": 44.1,
   "oneMonthAgo": 30.4,
@@ -22,11 +22,6 @@ ZOZO.extreme = {
  },
  "spy": {
   "candles": [
-   {
-    "date": "2026-10-08",
-    "open": 774.86,
-    "close": 773.93
-   },
    {
     "date": "2026-10-09",
     "open": 776.24,
@@ -61,10 +56,15 @@ ZOZO.extreme = {
     "date": "2026-10-19",
     "open": 767.23,
     "close": 766.48
+   },
+   {
+    "date": "2026-10-20",
+    "open": 765.86,
+    "close": 769.05
    }
   ],
-  "streak": 2,
-  "lastClose": 766.48,
+  "streak": 0,
+  "lastClose": 769.05,
   "source": "Yahoo Finance, נרות יומיים של SPY (ימי מסחר שהסתיימו)"
  },
  "active": false,
