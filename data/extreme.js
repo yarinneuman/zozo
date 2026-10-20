@@ -10,13 +10,13 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-19T23:30:56+03:00",
+ "updatedAt": "2026-10-20T08:21:37+03:00",
  "fearGreed": {
-  "score": 23.1,
+  "score": 23,
   "rating": "extreme fear",
-  "timestamp": "2026-10-19T20:17:56+00:00",
-  "previousClose": 17.9,
-  "oneWeekAgo": 46.3,
+  "timestamp": "2026-10-20T00:00:00+00:00",
+  "previousClose": 23.1,
+  "oneWeekAgo": 44.1,
   "oneMonthAgo": 30.4,
   "source": "CNN Fear & Greed (production.dataviz.cnn.io)"
  },
