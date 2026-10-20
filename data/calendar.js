@@ -11,24 +11,21 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-10-19T08:15:00+03:00",
-  weekOf: "2026-10-19",
+  updatedAt: "2026-10-20T08:15:00+03:00",
+  weekOf: "2026-10-20",
   events: [
-    { at: "2026-10-19T00:00:00+03:00", allDay: true, kind: "macro", title: "מדד שוק הבתים של NAHB בארה\"ב (אוקטובר)", important: false },
+    { at: "2026-10-20T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "NFLX", title: "Netflix (רבעון שלישי 2026) - קונצנזוס EPS כ-0.82$ על הכנסות כ-12.87-12.88 מיליארד דולר; החברה כבר לא מדווחת מנויים", timing: "AMC", impliedMove: "±9.5%", important: true, source: { name: "AlphaStreet / MarketBeat", url: "https://news.alphastreet.com/netflix-nflx-q3-2026-preview-eps-est-0-82-reports-october-20/" } },
 
-    { at: "2026-10-20T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "NFLX", title: "Netflix (רבעון שלישי 2026) - קונצנזוס EPS כ-0.82$; החברה כבר לא מדווחת מנויים, הפוקוס על שכבת הפרסום", timing: "AMC", important: true, source: { name: "Netflix IR", url: "https://www.insiderfinance.io/news/netflix-q3-2026-earnings-oct-20" } },
-    { at: "2026-10-20T00:00:00+03:00", allDay: true, kind: "macro", title: "התחלות בנייה ומכירות בתים ממתינות בארה\"ב (ספטמבר)", important: false },
-
-    { at: "2026-10-21T16:00:00+03:00", allDay: true, kind: "israel", title: "החלטת ריבית בנק ישראל", prior: "3.25% (מאז 1/9); אינפלציה שנתית 1.5% - מתחת לאמצע היעד; השוק נוטה להחזקה", important: true, source: { name: "בנק ישראל / funder.co.il", url: "https://funder.co.il/article/211282" } },
-    { at: "2026-10-21T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "TSLA", title: "Tesla (רבעון שלישי 2026) - מסירות הרבעון (486,532) כבר דיווחו וחרגו מהקונצנזוס (461,974)", timing: "AMC", important: true, source: { name: "driveteslacanada.ca", url: "https://driveteslacanada.ca/?p=124427" } },
-    { at: "2026-10-21T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "IBM", title: "IBM (רבעון שלישי 2026)", timing: "AMC", important: false },
+    { at: "2026-10-21T16:00:00+03:00", allDay: true, kind: "israel", title: "החלטת ריבית בנק ישראל", prior: "3.25% (מאז 1/9); אינפלציה שנתית ספטמבר 1.6%; שוק מתמחר כ-79% סיכוי להחזקה", important: true, source: { name: "בנק ישראל / ICE", url: "https://www.ice.co.il/finance/news/article/1103658" } },
+    { at: "2026-10-21T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "TSLA", title: "Tesla (רבעון שלישי 2026) - מסירות הרבעון (486,532) כבר דיווחו וחרגו מהקונצנזוס (461,974); קונצנזוס הכנסות כ-27.6 מיליארד דולר, EPS GAAP כ-0.26$", timing: "AMC", important: true, source: { name: "electrek / Hudson Labs", url: "https://www.hudson-labs.com/research/tesla-q3-2026-earnings-preview-tsla-revenue-margins-outlook" } },
+    { at: "2026-10-21T23:05:00+03:00", allDay: true, kind: "earnings", ticker: "IBM", title: "IBM (רבעון שלישי 2026) - קונצנזוס EPS לא-GAAP כ-2.89$ על הכנסות כ-16.85 מיליארד דולר", timing: "AMC", important: false, source: { name: "Benzinga" } },
 
     { at: "2026-10-23T16:30:00+03:00", kind: "macro", title: "מדדי PMI מקדמיים (Flash) לייצור ולשירותים בארה\"ב - אוקטובר", important: false },
     { at: "2026-10-23T17:00:00+03:00", kind: "macro", title: "מדד אמון הצרכנים של אוניברסיטת מישיגן (אוקטובר, נתון סופי) — ארה\"ב", important: false },
 
-    { at: "2026-10-27T00:00:00+02:00", allDay: true, kind: "israel", title: "בחירות לכנסת ה-26 — הראשונות במועדן החוקי מזה 38 שנה; סקר i24NEWS (7/10): גוש הקואליציה 60, גוש השינוי 48, ערבים 12", important: true, source: { name: "i24NEWS - סקרים", url: "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-e0e93683" } },
+    { at: "2026-10-27T00:00:00+02:00", allDay: true, kind: "israel", title: "בחירות לכנסת ה-26 — הראשונות במועדן החוקי מזה 38 שנה; סקרי 18-19/10 (ערוץ 12, 13, קאן) נתנו לגוש הנגדי לנתניהו בהנהגת גדי איזנקוט יתרון צר, בלי שאף גוש עובר את רף 61 המנדטים", important: true, source: { name: "Times of Israel", url: "https://www.timesofisrael.com/liveblog_entry/toi-poll-anti-netanyahu-bloc-regains-lead-eisenkots-yashar-comes-1st-with-likud-in-2nd-place/" } },
 
-    { at: "2026-10-28T20:00:00+02:00", kind: "fed", title: "החלטת ריבית FOMC (מפגש 27-28/10)", prior: "3.75–4.00%", consensus: "CME FedWatch (16/10, אחרי דברי וורש): החזקה ~85% · העלאה ~15%", important: true, source: { name: "Benzinga", url: "https://www.benzinga.com/markets/prediction-markets/26/10/62408879/fed-rate-hike-odds-warsh-ai" } },
+    { at: "2026-10-28T20:00:00+02:00", kind: "fed", title: "החלטת ריבית FOMC (מפגש 27-28/10)", prior: "3.75–4.00%", consensus: "CME FedWatch (19/10): החזקה ~85% · העלאה ~15%", important: true, source: { name: "FXStreet", url: "https://vantagemarkets.com/market-analysis/why-usd-jpy-stalled-ueda-fed-hike-bets-fade-october-19-2026" } },
 
     { at: "2026-11-03T00:00:00+02:00", allDay: true, kind: "macro", title: "בחירות לקונגרס האמריקאי (midterms)", important: true }
   ]
