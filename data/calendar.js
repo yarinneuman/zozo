@@ -11,14 +11,14 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-10-24T09:10:00+03:00",
-  weekOf: "2026-10-24",
+  updatedAt: "2026-10-25T08:20:00+02:00",
+  weekOf: "2026-10-25",
   events: [
-    { at: "2026-10-27T00:00:00+02:00", allDay: true, kind: "israel", title: "בחירות לכנסת ה-26 - הסקרים האחרונים (הארץ, מעריב, חדשות 12) נותנים יתרון זהיר ל\"ישר!\" בהנהגת גדי איזנקוט על הליכוד, לצד סקר חריג של ערוץ 14 שהראה מגמה הפוכה; אף גוש לא עובר את רף 61 המנדטים לפי מרבית הסקרים", important: true, source: { name: "הארץ / מעריב / חדשות 12", url: "https://www.haaretz.co.il/news/elections/2026-10-23/ty-article/000001a1-69ad-d29a-a1a5-ebaf49c50000" } },
+    { at: "2026-10-27T00:00:00+02:00", allDay: true, kind: "israel", title: "בחירות לכנסת ה-26 - הסקרים מאופלים מאז מוצ\"ש (23/10, 23:59) עד לסגירת הקלפיות (22:00); הסקרים האחרונים שפורסמו (הארץ, מעריב, חדשות 12) נתנו יתרון זהיר ל\"ישר!\" בהנהגת גדי איזנקוט על הליכוד, לצד סקר חריג של ערוץ 14 שהראה מגמה הפוכה; אף גוש לא עובר את רף 61 המנדטים לפי מרבית הסקרים", important: true, source: { name: "ישראל היום / הארץ / מעריב / חדשות 12", url: "https://www.israelhayom.com/2026/10/20/israel-warns-of-illegal-election-polls-ahead-of-vote/" } },
 
     { at: "2026-10-27T16:00:00+02:00", kind: "macro", title: "מדד אמון הצרכנים של Conference Board - ארה\"ב (אוקטובר)", important: false },
 
-    { at: "2026-10-28T20:00:00+02:00", kind: "fed", title: "החלטת ריבית FOMC (מפגש 27-28/10)", prior: "3.75-4.00% (העלאה של 25 נ\"ב בספטמבר - הראשונה מאז 2023)", consensus: "סקר רויטרס בין כלכלנים (20/10): 94% מצפים להחזקה; FedWatch (19/10, Forbes): כ-80% החזקה", important: true, source: { name: "Reuters/Kitco; Forbes", url: "https://www.kitco.com/news/off-the-wire/2026-10-20/fed-skip-october-raise-rates-again-december-nearly-all-economists-say" } },
+    { at: "2026-10-28T20:00:00+02:00", kind: "fed", title: "החלטת ריבית FOMC (מפגש 27-28/10)", prior: "3.75-4.00% (העלאה של 25 נ\"ב בספטמבר - הראשונה מאז 2023)", consensus: "סקר רויטרס בין כלכלנים (20/10): 94% מצפים להחזקה; FedWatch (20/10, Reuters/Kitco): כ-83% החזקה / 17% העלאה; Polymarket/Kalshi (18/10): כ-14% העלאה", important: true, source: { name: "Reuters/Kitco; Forbes", url: "https://www.kitco.com/news/off-the-wire/2026-10-20/fed-skip-october-raise-rates-again-december-nearly-all-economists-say" } },
     { at: "2026-10-28T23:05:00+02:00", allDay: true, kind: "earnings", ticker: "MSFT", title: "Microsoft (רבעון ראשון, שנת פיסקלית 2027) - אחרי נעילת המסחר, שיחת משקיעים ב-17:30 לפי שעון מזרח ארה\"ב", timing: "AMC", important: true, source: { name: "Microsoft (הודעה רשמית, 7/10)", url: "https://news.microsoft.com/source/?p=25114" } },
     { at: "2026-10-28T23:05:00+02:00", allDay: true, kind: "earnings", ticker: "GOOGL", title: "Alphabet (רבעון שלישי 2026) - אחרי נעילת המסחר, קונצנזוס הכנסות כ-127.4-131.8 מיליארד דולר", timing: "AMC", important: true, source: { name: "cmelitegroup.com / insiderfinance.io", url: "https://www.insiderfinance.io/news/alphabet-q3-2026-earnings-preview" } },
 
