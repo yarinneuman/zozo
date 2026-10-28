@@ -15,18 +15,13 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.signals = {
- "updatedAt": "2026-10-27T22:16:23+02:00",
- "asOf": "2026-10-27",
+ "updatedAt": "2026-10-28T22:16:33+02:00",
+ "asOf": "2026-10-28",
  "universe": "S&P 500",
  "gate": {
   "streak": 0,
   "met": false,
   "candles": [
-   {
-    "date": "2026-10-16",
-    "open": 773.24,
-    "close": 763.25
-   },
    {
     "date": "2026-10-19",
     "open": 767.23,
@@ -61,6 +56,11 @@ ZOZO.signals = {
     "date": "2026-10-27",
     "open": 767.34,
     "close": 769.66
+   },
+   {
+    "date": "2026-10-28",
+    "open": 771.43,
+    "close": 772.31
    }
   ],
   "source": "Yahoo Finance"
