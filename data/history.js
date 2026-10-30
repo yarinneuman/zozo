@@ -12,8 +12,8 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.history = {
- "updatedAt": "2026-10-30T22:19:57+02:00",
- "spyNow": 751.78,
+ "updatedAt": "2026-10-30T22:30:55+02:00",
+ "spyNow": 753.7,
  "signals": [
   {
    "id": "MA150-MRNA-2026-10-02",
@@ -71,7 +71,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 270.04,
    "spyEntry": 769.64,
-   "price": 247.39,
+   "price": 250.23,
    "r1w": 1.85,
    "r1m": null,
    "r3m": null,
@@ -87,7 +87,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 562.52,
    "spyEntry": 769.64,
-   "price": 424.16,
+   "price": 424.3,
    "r1w": 4.18,
    "r1m": null,
    "r3m": null,
@@ -119,7 +119,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 226.27,
    "spyEntry": 769.64,
-   "price": 197.92,
+   "price": 199.18,
    "r1w": 4.81,
    "r1m": null,
    "r3m": null,
@@ -135,7 +135,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 633.91,
    "spyEntry": 769.64,
-   "price": 505,
+   "price": 504.8,
    "r1w": -4.07,
    "r1m": null,
    "r3m": null,
@@ -311,7 +311,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 290.19,
    "spyEntry": 769.64,
-   "price": 356.59,
+   "price": 359.01,
    "r1w": 4,
    "r1m": null,
    "r3m": null,
@@ -327,7 +327,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 43.69,
    "spyEntry": 769.64,
-   "price": 31.75,
+   "price": 32.55,
    "r1w": -4.19,
    "r1m": null,
    "r3m": null,
@@ -407,7 +407,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 167.78,
    "spyEntry": 769.64,
-   "price": 174.91,
+   "price": 174.87,
    "r1w": 1.65,
    "r1m": null,
    "r3m": null,
@@ -455,7 +455,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 85.03,
    "spyEntry": 769.64,
-   "price": 85.69,
+   "price": 86.22,
    "r1w": -10.21,
    "r1m": null,
    "r3m": null,
@@ -503,7 +503,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 207.35,
    "spyEntry": 769.64,
-   "price": 168.68,
+   "price": 168.86,
    "r1w": 4.53,
    "r1m": null,
    "r3m": null,
@@ -551,7 +551,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 654.8,
    "spyEntry": 769.64,
-   "price": 696.97,
+   "price": 697,
    "r1w": 0.49,
    "r1m": null,
    "r3m": null,
@@ -583,7 +583,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 234.69,
    "spyEntry": 769.64,
-   "price": 228.36,
+   "price": 228.23,
    "r1w": -2.37,
    "r1m": null,
    "r3m": null,
@@ -631,7 +631,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 134.38,
    "spyEntry": 769.64,
-   "price": 104.97,
+   "price": 105.12,
    "r1w": 4.82,
    "r1m": null,
    "r3m": null,
@@ -695,7 +695,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 425.21,
    "spyEntry": 769.64,
-   "price": 462.73,
+   "price": 462.72,
    "r1w": 2.01,
    "r1m": null,
    "r3m": null,
@@ -759,7 +759,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 86.96,
    "spyEntry": 769.64,
-   "price": 79.35,
+   "price": 79.3,
    "r1w": 0.32,
    "r1m": null,
    "r3m": null,
@@ -775,7 +775,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 540.04,
    "spyEntry": 769.64,
-   "price": 389.47,
+   "price": 390.09,
    "r1w": -6.11,
    "r1m": null,
    "r3m": null,
@@ -823,7 +823,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 364.98,
    "spyEntry": 769.64,
-   "price": 412.4,
+   "price": 412.62,
    "r1w": 0.28,
    "r1m": null,
    "r3m": null,
@@ -839,7 +839,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 156,
    "spyEntry": 769.64,
-   "price": 154.25,
+   "price": 154.38,
    "r1w": -1.51,
    "r1m": null,
    "r3m": null,
@@ -887,7 +887,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 333.54,
    "spyEntry": 769.64,
-   "price": 321.61,
+   "price": 322.67,
    "r1w": -1.61,
    "r1m": null,
    "r3m": null,
@@ -903,7 +903,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 43.68,
    "spyEntry": 769.64,
-   "price": 52.83,
+   "price": 52.82,
    "r1w": 5.04,
    "r1m": null,
    "r3m": null,
@@ -919,7 +919,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 233.95,
    "spyEntry": 769.64,
-   "price": 203.24,
+   "price": 204.64,
    "r1w": -2,
    "r1m": null,
    "r3m": null,
@@ -935,7 +935,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 687,
    "spyEntry": 769.64,
-   "price": 675.7,
+   "price": 675.48,
    "r1w": -9.62,
    "r1m": null,
    "r3m": null,
@@ -951,7 +951,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 848.99,
    "spyEntry": 769.64,
-   "price": 627.9,
+   "price": 636.23,
    "r1w": -7.77,
    "r1m": null,
    "r3m": null,
@@ -967,7 +967,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 198.9,
    "spyEntry": 769.64,
-   "price": 257.65,
+   "price": 258.24,
    "r1w": 5.11,
    "r1m": null,
    "r3m": null,
@@ -999,7 +999,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 262.82,
    "spyEntry": 769.64,
-   "price": 294.25,
+   "price": 294.89,
    "r1w": 5.19,
    "r1m": null,
    "r3m": null,
@@ -1015,7 +1015,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 333.69,
    "spyEntry": 769.64,
-   "price": 344.64,
+   "price": 344.63,
    "r1w": 0.88,
    "r1m": null,
    "r3m": null,
@@ -1031,7 +1031,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 489.9,
    "spyEntry": 769.64,
-   "price": 462.91,
+   "price": 467.33,
    "r1w": 4.1,
    "r1m": null,
    "r3m": null,
@@ -1047,7 +1047,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 62.99,
    "spyEntry": 769.64,
-   "price": 68.06,
+   "price": 68.53,
    "r1w": 3.76,
    "r1m": null,
    "r3m": null,
@@ -1095,7 +1095,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 394.6,
    "spyEntry": 769.64,
-   "price": 398.98,
+   "price": 399.39,
    "r1w": 0.84,
    "r1m": null,
    "r3m": null,
@@ -1159,7 +1159,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 417.15,
    "spyEntry": 769.64,
-   "price": 417.16,
+   "price": 417.11,
    "r1w": -2.63,
    "r1m": null,
    "r3m": null,
@@ -1175,7 +1175,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 72.04,
    "spyEntry": 769.64,
-   "price": 62.45,
+   "price": 62.47,
    "r1w": 2.29,
    "r1m": null,
    "r3m": null,
@@ -1191,7 +1191,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 214.06,
    "spyEntry": 769.64,
-   "price": 232.3,
+   "price": 232.23,
    "r1w": 2.69,
    "r1m": null,
    "r3m": null,
@@ -1223,7 +1223,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 232.3,
    "spyEntry": 769.64,
-   "price": 252.58,
+   "price": 252.72,
    "r1w": 4.08,
    "r1m": null,
    "r3m": null,
@@ -1271,7 +1271,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 162.43,
    "spyEntry": 769.64,
-   "price": 164.37,
+   "price": 164.39,
    "r1w": 2.12,
    "r1m": null,
    "r3m": null,
@@ -1287,7 +1287,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 233.33,
    "spyEntry": 769.64,
-   "price": 251.75,
+   "price": 251.82,
    "r1w": -1.01,
    "r1m": null,
    "r3m": null,
@@ -1303,7 +1303,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 127.24,
    "spyEntry": 769.64,
-   "price": 120.79,
+   "price": 120.9,
    "r1w": -0.17,
    "r1m": null,
    "r3m": null,
@@ -1335,7 +1335,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 281.16,
    "spyEntry": 769.64,
-   "price": 272.59,
+   "price": 272.67,
    "r1w": -4.55,
    "r1m": null,
    "r3m": null,
@@ -1351,7 +1351,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 257.68,
    "spyEntry": 769.64,
-   "price": 293.76,
+   "price": 293.84,
    "r1w": 5.12,
    "r1m": null,
    "r3m": null,
@@ -1383,7 +1383,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 360.38,
    "spyEntry": 769.64,
-   "price": 396.37,
+   "price": 396.22,
    "r1w": 2.32,
    "r1m": null,
    "r3m": null,
@@ -1399,7 +1399,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 97.21,
    "spyEntry": 769.64,
-   "price": 117.29,
+   "price": 117.24,
    "r1w": 7.34,
    "r1m": null,
    "r3m": null,
@@ -1431,7 +1431,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 403.04,
    "spyEntry": 769.64,
-   "price": 465.96,
+   "price": 466.01,
    "r1w": 2.94,
    "r1m": null,
    "r3m": null,
@@ -1463,7 +1463,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 91.34,
    "spyEntry": 769.64,
-   "price": 103.03,
+   "price": 103.38,
    "r1w": -3.03,
    "r1m": null,
    "r3m": null,
@@ -1495,7 +1495,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 84.09,
    "spyEntry": 769.64,
-   "price": 80.14,
+   "price": 80.15,
    "r1w": -2.28,
    "r1m": null,
    "r3m": null,
@@ -1527,7 +1527,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 175.96,
    "spyEntry": 769.64,
-   "price": 168.4,
+   "price": 168.74,
    "r1w": -0.57,
    "r1m": null,
    "r3m": null,
@@ -1543,7 +1543,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 251.93,
    "spyEntry": 769.64,
-   "price": 240.83,
+   "price": 241.12,
    "r1w": -1.33,
    "r1m": null,
    "r3m": null,
@@ -1591,7 +1591,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 112.2,
    "spyEntry": 769.64,
-   "price": 103.75,
+   "price": 104.28,
    "r1w": 5.52,
    "r1m": null,
    "r3m": null,
@@ -1623,7 +1623,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 206.69,
    "spyEntry": 769.64,
-   "price": 235.31,
+   "price": 235.4,
    "r1w": 2.56,
    "r1m": null,
    "r3m": null,
@@ -1655,7 +1655,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 184.87,
    "spyEntry": 769.64,
-   "price": 164.73,
+   "price": 164.79,
    "r1w": -5.07,
    "r1m": null,
    "r3m": null,
@@ -1703,7 +1703,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 337.04,
    "spyEntry": 769.64,
-   "price": 205.35,
+   "price": 207.85,
    "r1w": -7.25,
    "r1m": null,
    "r3m": null,
@@ -1751,7 +1751,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 28.69,
    "spyEntry": 769.64,
-   "price": 29.1,
+   "price": 29.12,
    "r1w": 1.5,
    "r1m": null,
    "r3m": null,
@@ -1767,7 +1767,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 281.74,
    "spyEntry": 769.64,
-   "price": 315.05,
+   "price": 314.99,
    "r1w": 1.76,
    "r1m": null,
    "r3m": null,
@@ -1815,7 +1815,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 117.19,
    "spyEntry": 769.64,
-   "price": 130.41,
+   "price": 129.75,
    "r1w": 2.25,
    "r1m": null,
    "r3m": null,
@@ -1831,7 +1831,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 287.54,
    "spyEntry": 769.64,
-   "price": 279.64,
+   "price": 279.6,
    "r1w": -0.73,
    "r1m": null,
    "r3m": null,
@@ -1879,7 +1879,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 58.51,
    "spyEntry": 769.64,
-   "price": 65.43,
+   "price": 65.53,
    "r1w": 1.18,
    "r1m": null,
    "r3m": null,
@@ -1895,7 +1895,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 154.21,
    "spyEntry": 769.64,
-   "price": 186.48,
+   "price": 186.44,
    "r1w": -2.42,
    "r1m": null,
    "r3m": null,
@@ -1927,7 +1927,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 454.35,
    "spyEntry": 769.64,
-   "price": 436.08,
+   "price": 436.2,
    "r1w": -4.79,
    "r1m": null,
    "r3m": null,
@@ -1959,7 +1959,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 351.35,
    "spyEntry": 769.64,
-   "price": 324.2,
+   "price": 327.12,
    "r1w": 0.42,
    "r1m": null,
    "r3m": null,
@@ -1991,7 +1991,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 240.39,
    "spyEntry": 769.64,
-   "price": 270.27,
+   "price": 273.87,
    "r1w": 4.13,
    "r1m": null,
    "r3m": null,
@@ -2007,7 +2007,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 220.36,
    "spyEntry": 769.64,
-   "price": 212.75,
+   "price": 213.03,
    "r1w": -0.94,
    "r1m": null,
    "r3m": null,
@@ -2087,7 +2087,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 115.56,
    "spyEntry": 769.64,
-   "price": 105.54,
+   "price": 106.61,
    "r1w": 1.97,
    "r1m": null,
    "r3m": null,
@@ -2167,7 +2167,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 267.32,
    "spyEntry": 769.64,
-   "price": 292.96,
+   "price": 292.8,
    "r1w": -0.31,
    "r1m": null,
    "r3m": null,
@@ -2231,7 +2231,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 126.75,
    "spyEntry": 769.64,
-   "price": 153.49,
+   "price": 153.75,
    "r1w": 5.8,
    "r1m": null,
    "r3m": null,
@@ -2327,7 +2327,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 228.3,
    "spyEntry": 769.64,
-   "price": 251.6,
+   "price": 250.73,
    "r1w": 4.06,
    "r1m": null,
    "r3m": null,
@@ -2375,7 +2375,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 193.02,
    "spyEntry": 769.64,
-   "price": 221.21,
+   "price": 220.16,
    "r1w": 4.86,
    "r1m": null,
    "r3m": null,
@@ -2391,7 +2391,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 31.65,
    "spyEntry": 769.64,
-   "price": 31.76,
+   "price": 31.74,
    "r1w": 1.14,
    "r1m": null,
    "r3m": null,
@@ -2407,7 +2407,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 80.45,
    "spyEntry": 769.64,
-   "price": 76.81,
+   "price": 76.91,
    "r1w": -0.7,
    "r1m": null,
    "r3m": null,
@@ -2439,7 +2439,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 183,
    "spyEntry": 769.64,
-   "price": 138.05,
+   "price": 141.27,
    "r1w": -1.97,
    "r1m": null,
    "r3m": null,
@@ -2455,7 +2455,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 227.71,
    "spyEntry": 769.64,
-   "price": 234.65,
+   "price": 234.6,
    "r1w": -0.98,
    "r1m": null,
    "r3m": null,
@@ -2503,7 +2503,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 1280.3,
    "spyEntry": 769.64,
-   "price": 1359.4,
+   "price": 1359.17,
    "r1w": 0.74,
    "r1m": null,
    "r3m": null,
@@ -2535,7 +2535,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 47.43,
    "spyEntry": 769.64,
-   "price": 52,
+   "price": 52.08,
    "r1w": -0.36,
    "r1m": null,
    "r3m": null,
@@ -2551,7 +2551,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 78.38,
    "spyEntry": 769.64,
-   "price": 97.01,
+   "price": 96.84,
    "r1w": 4.87,
    "r1m": null,
    "r3m": null,
@@ -2567,7 +2567,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 14.91,
    "spyEntry": 769.64,
-   "price": 14.84,
+   "price": 14.83,
    "r1w": 0.2,
    "r1m": null,
    "r3m": null,
@@ -2615,7 +2615,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 251.52,
    "spyEntry": 769.64,
-   "price": 240.26,
+   "price": 240.35,
    "r1w": 4.34,
    "r1m": null,
    "r3m": null,
@@ -2711,7 +2711,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 165.68,
    "spyEntry": 769.64,
-   "price": 158.82,
+   "price": 159.08,
    "r1w": -0.91,
    "r1m": null,
    "r3m": null,
@@ -2775,7 +2775,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 171.4,
    "spyEntry": 769.64,
-   "price": 168.53,
+   "price": 169.16,
    "r1w": -1.86,
    "r1m": null,
    "r3m": null,
@@ -2791,7 +2791,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 231.99,
    "spyEntry": 769.64,
-   "price": 247.13,
+   "price": 249.49,
    "r1w": 2.75,
    "r1m": null,
    "r3m": null,
@@ -2887,7 +2887,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 133.29,
    "spyEntry": 769.64,
-   "price": 150.27,
+   "price": 153.36,
    "r1w": 6.66,
    "r1m": null,
    "r3m": null,
@@ -2935,7 +2935,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 169.87,
    "spyEntry": 769.64,
-   "price": 181.99,
+   "price": 182.22,
    "r1w": -1.21,
    "r1m": null,
    "r3m": null,
@@ -2951,7 +2951,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 463.91,
    "spyEntry": 769.64,
-   "price": 409.78,
+   "price": 410,
    "r1w": 2.82,
    "r1m": null,
    "r3m": null,
@@ -3063,7 +3063,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 845.42,
    "spyEntry": 769.64,
-   "price": 617.99,
+   "price": 623.71,
    "r1w": -5.32,
    "r1m": null,
    "r3m": null,
@@ -3095,7 +3095,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 309.05,
    "spyEntry": 769.64,
-   "price": 332.08,
+   "price": 331.15,
    "r1w": 4.79,
    "r1m": null,
    "r3m": null,
@@ -3127,7 +3127,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 68.98,
    "spyEntry": 769.64,
-   "price": 73.84,
+   "price": 73.86,
    "r1w": 4.25,
    "r1m": null,
    "r3m": null,
@@ -3143,7 +3143,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 317.44,
    "spyEntry": 769.64,
-   "price": 341.46,
+   "price": 342.64,
    "r1w": 0.11,
    "r1m": null,
    "r3m": null,
@@ -3159,7 +3159,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 90.33,
    "spyEntry": 769.64,
-   "price": 105.92,
+   "price": 106.23,
    "r1w": 3.68,
    "r1m": null,
    "r3m": null,
@@ -3175,7 +3175,7 @@ ZOZO.history = {
    "date": "2026-10-02",
    "entry": 102.19,
    "spyEntry": 769.64,
-   "price": 110.96,
+   "price": 110.94,
    "r1w": 5.73,
    "r1m": null,
    "r3m": null,
@@ -3244,7 +3244,7 @@ ZOZO.history = {
    "r1m": 17.35,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3260,7 +3260,7 @@ ZOZO.history = {
    "r1m": -5.33,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3271,12 +3271,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 266.09,
    "spyEntry": 763.99,
-   "price": 247.39,
+   "price": 250.23,
    "r1w": -1.16,
-   "r1m": -7.03,
+   "r1m": -5.96,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3292,7 +3292,7 @@ ZOZO.history = {
    "r1m": -14.69,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3303,12 +3303,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 541.74,
    "spyEntry": 763.99,
-   "price": 424.16,
+   "price": 424.3,
    "r1w": 6.06,
-   "r1m": -21.7,
+   "r1m": -21.68,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3324,7 +3324,7 @@ ZOZO.history = {
    "r1m": -11.19,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3340,7 +3340,7 @@ ZOZO.history = {
    "r1m": 5.85,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3351,12 +3351,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 615.73,
    "spyEntry": 763.99,
-   "price": 505,
+   "price": 504.8,
    "r1w": 0.8,
-   "r1m": -17.98,
+   "r1m": -18.02,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3372,7 +3372,7 @@ ZOZO.history = {
    "r1m": -7.67,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3388,7 +3388,7 @@ ZOZO.history = {
    "r1m": -2.15,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3399,12 +3399,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 215.05,
    "spyEntry": 763.99,
-   "price": 197.92,
+   "price": 199.18,
    "r1w": 7.44,
-   "r1m": -7.97,
+   "r1m": -7.38,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3420,7 +3420,7 @@ ZOZO.history = {
    "r1m": 11.01,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3436,7 +3436,7 @@ ZOZO.history = {
    "r1m": -19.38,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3452,7 +3452,7 @@ ZOZO.history = {
    "r1m": 5.33,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3468,7 +3468,7 @@ ZOZO.history = {
    "r1m": -26.74,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3484,7 +3484,7 @@ ZOZO.history = {
    "r1m": -3.78,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3500,7 +3500,7 @@ ZOZO.history = {
    "r1m": -23.86,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3516,7 +3516,7 @@ ZOZO.history = {
    "r1m": -14.9,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3527,12 +3527,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 286.83,
    "spyEntry": 763.99,
-   "price": 356.59,
+   "price": 359.01,
    "r1w": 3.89,
-   "r1m": 24.32,
+   "r1m": 25.16,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3548,7 +3548,7 @@ ZOZO.history = {
    "r1m": 7.04,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3564,7 +3564,7 @@ ZOZO.history = {
    "r1m": -10.48,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3575,12 +3575,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 41.92,
    "spyEntry": 763.99,
-   "price": 31.75,
+   "price": 32.55,
    "r1w": 2.03,
-   "r1m": -24.26,
+   "r1m": -22.35,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3596,7 +3596,7 @@ ZOZO.history = {
    "r1m": -45.2,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3612,7 +3612,7 @@ ZOZO.history = {
    "r1m": 2.54,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3628,7 +3628,7 @@ ZOZO.history = {
    "r1m": -3.12,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3639,12 +3639,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 945.57,
    "spyEntry": 763.99,
-   "price": 627.9,
+   "price": 636.23,
    "r1w": -18.06,
-   "r1m": -33.6,
+   "r1m": -32.71,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3655,12 +3655,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 166.68,
    "spyEntry": 763.99,
-   "price": 174.91,
+   "price": 174.87,
    "r1w": 0.89,
-   "r1m": 4.94,
+   "r1m": 4.91,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3676,7 +3676,7 @@ ZOZO.history = {
    "r1m": 5.93,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3692,7 +3692,7 @@ ZOZO.history = {
    "r1m": -19.61,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3703,12 +3703,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 83.16,
    "spyEntry": 763.99,
-   "price": 85.69,
+   "price": 86.22,
    "r1w": -2.9,
-   "r1m": 3.04,
+   "r1m": 3.68,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3719,12 +3719,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 137.76,
    "spyEntry": 763.99,
-   "price": 104.97,
+   "price": 105.12,
    "r1w": 1.44,
-   "r1m": -23.8,
+   "r1m": -23.69,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3735,12 +3735,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 236.69,
    "spyEntry": 763.99,
-   "price": 228.36,
+   "price": 228.23,
    "r1w": -3.76,
-   "r1m": -3.52,
+   "r1m": -3.57,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3751,12 +3751,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 652.51,
    "spyEntry": 763.99,
-   "price": 696.97,
+   "price": 697,
    "r1w": -0.08,
-   "r1m": 6.81,
+   "r1m": 6.82,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3767,12 +3767,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 204.49,
    "spyEntry": 763.99,
-   "price": 168.68,
+   "price": 168.86,
    "r1w": 3.17,
-   "r1m": -17.51,
+   "r1m": -17.42,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3788,7 +3788,7 @@ ZOZO.history = {
    "r1m": 9.17,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3804,7 +3804,7 @@ ZOZO.history = {
    "r1m": -23.54,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3815,12 +3815,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 212.3,
    "spyEntry": 763.99,
-   "price": 257.65,
+   "price": 258.24,
    "r1w": -1.86,
-   "r1m": 21.36,
+   "r1m": 21.64,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3836,7 +3836,7 @@ ZOZO.history = {
    "r1m": -23.74,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3852,7 +3852,7 @@ ZOZO.history = {
    "r1m": 1.78,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3868,7 +3868,7 @@ ZOZO.history = {
    "r1m": -26.81,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3884,7 +3884,7 @@ ZOZO.history = {
    "r1m": 18.67,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3895,12 +3895,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 425.53,
    "spyEntry": 763.99,
-   "price": 462.73,
+   "price": 462.72,
    "r1w": 0.85,
    "r1m": 8.74,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3916,7 +3916,7 @@ ZOZO.history = {
    "r1m": 9.06,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3932,7 +3932,7 @@ ZOZO.history = {
    "r1m": -15.28,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3948,7 +3948,7 @@ ZOZO.history = {
    "r1m": 0.36,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3964,7 +3964,7 @@ ZOZO.history = {
    "r1m": -4.57,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3975,12 +3975,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 156.7,
    "spyEntry": 763.99,
-   "price": 154.25,
+   "price": 154.38,
    "r1w": -1.24,
-   "r1m": -1.56,
+   "r1m": -1.48,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -3996,7 +3996,7 @@ ZOZO.history = {
    "r1m": -29.69,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4007,12 +4007,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 365.01,
    "spyEntry": 763.99,
-   "price": 412.4,
+   "price": 412.62,
    "r1w": -0.48,
-   "r1m": 12.98,
+   "r1m": 13.04,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4028,7 +4028,7 @@ ZOZO.history = {
    "r1m": 13.07,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4044,7 +4044,7 @@ ZOZO.history = {
    "r1m": -34.01,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4055,12 +4055,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 85.67,
    "spyEntry": 763.99,
-   "price": 79.35,
+   "price": 79.3,
    "r1w": -0.41,
-   "r1m": -7.38,
+   "r1m": -7.44,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4076,7 +4076,7 @@ ZOZO.history = {
    "r1m": -17.83,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4087,12 +4087,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 529.3,
    "spyEntry": 763.99,
-   "price": 389.47,
+   "price": 390.09,
    "r1w": -3.73,
-   "r1m": -26.42,
+   "r1m": -26.3,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4108,7 +4108,7 @@ ZOZO.history = {
    "r1m": 5.92,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4124,7 +4124,7 @@ ZOZO.history = {
    "r1m": 3.97,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4135,12 +4135,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 43.34,
    "spyEntry": 763.99,
-   "price": 52.83,
+   "price": 52.82,
    "r1w": 4.91,
-   "r1m": 21.9,
+   "r1m": 21.87,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4156,7 +4156,7 @@ ZOZO.history = {
    "r1m": null,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4172,7 +4172,7 @@ ZOZO.history = {
    "r1m": 18.72,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4183,12 +4183,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 490.54,
    "spyEntry": 763.99,
-   "price": 462.91,
+   "price": 467.33,
    "r1w": 1.47,
-   "r1m": -5.63,
+   "r1m": -4.73,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4199,12 +4199,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 230.86,
    "spyEntry": 763.99,
-   "price": 203.24,
+   "price": 204.64,
    "r1w": -0.16,
-   "r1m": -11.96,
+   "r1m": -11.36,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4215,12 +4215,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 329.02,
    "spyEntry": 763.99,
-   "price": 321.61,
+   "price": 322.67,
    "r1w": -0.65,
-   "r1m": -2.25,
+   "r1m": -1.93,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4236,7 +4236,7 @@ ZOZO.history = {
    "r1m": -2.71,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4247,12 +4247,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 263.96,
    "spyEntry": 763.99,
-   "price": 293.76,
+   "price": 293.84,
    "r1w": 2.56,
-   "r1m": 11.29,
+   "r1m": 11.32,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4268,7 +4268,7 @@ ZOZO.history = {
    "r1m": 13.82,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4279,12 +4279,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 330.32,
    "spyEntry": 763.99,
-   "price": 344.64,
+   "price": 344.63,
    "r1w": 3.06,
-   "r1m": 4.34,
+   "r1m": 4.33,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4295,12 +4295,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 259.93,
    "spyEntry": 763.99,
-   "price": 294.25,
+   "price": 294.89,
    "r1w": 4.81,
-   "r1m": 13.2,
+   "r1m": 13.45,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4311,12 +4311,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 233.39,
    "spyEntry": 763.99,
-   "price": 252.58,
+   "price": 252.72,
    "r1w": 2.4,
-   "r1m": 8.22,
+   "r1m": 8.28,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4332,7 +4332,7 @@ ZOZO.history = {
    "r1m": 6.01,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4343,12 +4343,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 60.88,
    "spyEntry": 763.99,
-   "price": 65.43,
+   "price": 65.53,
    "r1w": -1.43,
-   "r1m": 7.48,
+   "r1m": 7.64,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4359,12 +4359,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 667.26,
    "spyEntry": 763.99,
-   "price": 675.7,
+   "price": 675.48,
    "r1w": -2.2,
-   "r1m": 1.26,
+   "r1m": 1.23,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4380,7 +4380,7 @@ ZOZO.history = {
    "r1m": 9.02,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4391,12 +4391,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 389.73,
    "spyEntry": 763.99,
-   "price": 398.98,
+   "price": 399.39,
    "r1w": 3.17,
-   "r1m": 2.37,
+   "r1m": 2.48,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4407,12 +4407,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 407.27,
    "spyEntry": 763.99,
-   "price": 465.96,
+   "price": 466.01,
    "r1w": 0.04,
-   "r1m": 14.41,
+   "r1m": 14.42,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4428,7 +4428,7 @@ ZOZO.history = {
    "r1m": 4.02,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4444,7 +4444,7 @@ ZOZO.history = {
    "r1m": 11.12,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4455,12 +4455,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 282.46,
    "spyEntry": 763.99,
-   "price": 272.59,
+   "price": 272.67,
    "r1w": -4.96,
-   "r1m": -3.49,
+   "r1m": -3.47,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4471,12 +4471,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 361.64,
    "spyEntry": 763.99,
-   "price": 396.37,
+   "price": 396.22,
    "r1w": 2.39,
-   "r1m": 9.6,
+   "r1m": 9.56,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4487,12 +4487,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 211.76,
    "spyEntry": 763.99,
-   "price": 232.3,
+   "price": 232.23,
    "r1w": 2.69,
-   "r1m": 9.7,
+   "r1m": 9.67,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4503,12 +4503,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 231.09,
    "spyEntry": 763.99,
-   "price": 251.75,
+   "price": 251.82,
    "r1w": -0.12,
-   "r1m": 8.94,
+   "r1m": 8.97,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4519,12 +4519,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 160.47,
    "spyEntry": 763.99,
-   "price": 164.37,
+   "price": 164.39,
    "r1w": 1.72,
-   "r1m": 2.43,
+   "r1m": 2.44,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4535,12 +4535,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 60.99,
    "spyEntry": 763.99,
-   "price": 68.06,
+   "price": 68.53,
    "r1w": 5.82,
-   "r1m": 11.59,
+   "r1m": 12.36,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4551,12 +4551,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 96.98,
    "spyEntry": 763.99,
-   "price": 117.29,
+   "price": 117.24,
    "r1w": 6.4,
-   "r1m": 20.94,
+   "r1m": 20.89,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4572,7 +4572,7 @@ ZOZO.history = {
    "r1m": -8.74,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4588,7 +4588,7 @@ ZOZO.history = {
    "r1m": -15.39,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4599,12 +4599,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 84.13,
    "spyEntry": 763.99,
-   "price": 80.14,
+   "price": 80.15,
    "r1w": -2.37,
-   "r1m": -4.74,
+   "r1m": -4.73,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4620,7 +4620,7 @@ ZOZO.history = {
    "r1m": 2.77,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4631,12 +4631,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 125.12,
    "spyEntry": 763.99,
-   "price": 120.79,
+   "price": 120.9,
    "r1w": 2.44,
-   "r1m": -3.46,
+   "r1m": -3.37,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4647,12 +4647,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 404.6,
    "spyEntry": 763.99,
-   "price": 417.16,
+   "price": 417.11,
    "r1w": 0.33,
-   "r1m": 3.1,
+   "r1m": 3.09,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4663,12 +4663,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 207.1,
    "spyEntry": 763.99,
-   "price": 235.31,
+   "price": 235.4,
    "r1w": 2.15,
-   "r1m": 13.62,
+   "r1m": 13.66,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4684,7 +4684,7 @@ ZOZO.history = {
    "r1m": 15.72,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4695,12 +4695,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 174.62,
    "spyEntry": 763.99,
-   "price": 168.4,
+   "price": 168.74,
    "r1w": 0.27,
-   "r1m": -3.56,
+   "r1m": -3.37,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4716,7 +4716,7 @@ ZOZO.history = {
    "r1m": -0.54,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4732,7 +4732,7 @@ ZOZO.history = {
    "r1m": 11.91,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4748,7 +4748,7 @@ ZOZO.history = {
    "r1m": 18.64,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4764,7 +4764,7 @@ ZOZO.history = {
    "r1m": -1.81,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4780,7 +4780,7 @@ ZOZO.history = {
    "r1m": 7.44,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4796,7 +4796,7 @@ ZOZO.history = {
    "r1m": 3.34,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4812,7 +4812,7 @@ ZOZO.history = {
    "r1m": 10.65,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4823,12 +4823,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 249.09,
    "spyEntry": 763.99,
-   "price": 240.83,
+   "price": 241.12,
    "r1w": -0.63,
-   "r1m": -3.32,
+   "r1m": -3.2,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4839,12 +4839,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 189.29,
    "spyEntry": 763.99,
-   "price": 138.05,
+   "price": 141.27,
    "r1w": -9.13,
-   "r1m": -27.07,
+   "r1m": -25.37,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4855,12 +4855,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 287.84,
    "spyEntry": 763.99,
-   "price": 279.64,
+   "price": 279.6,
    "r1w": -2.45,
-   "r1m": -2.85,
+   "r1m": -2.86,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4876,7 +4876,7 @@ ZOZO.history = {
    "r1m": 14.3,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4892,7 +4892,7 @@ ZOZO.history = {
    "r1m": 23.28,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4908,7 +4908,7 @@ ZOZO.history = {
    "r1m": 10.29,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4924,7 +4924,7 @@ ZOZO.history = {
    "r1m": 1.74,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4940,7 +4940,7 @@ ZOZO.history = {
    "r1m": 6.94,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4951,12 +4951,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 28.64,
    "spyEntry": 763.99,
-   "price": 29.1,
+   "price": 29.12,
    "r1w": 1.15,
-   "r1m": 1.61,
+   "r1m": 1.68,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4967,12 +4967,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 69.28,
    "spyEntry": 763.99,
-   "price": 62.45,
+   "price": 62.47,
    "r1w": 2.68,
-   "r1m": -9.86,
+   "r1m": -9.83,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -4988,7 +4988,7 @@ ZOZO.history = {
    "r1m": 14.93,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5004,7 +5004,7 @@ ZOZO.history = {
    "r1m": 13.15,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5015,12 +5015,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 89.59,
    "spyEntry": 763.99,
-   "price": 103.03,
+   "price": 103.38,
    "r1w": -0.47,
-   "r1m": 15,
+   "r1m": 15.39,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5036,7 +5036,7 @@ ZOZO.history = {
    "r1m": 10.61,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5052,7 +5052,7 @@ ZOZO.history = {
    "r1m": 8.53,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5063,12 +5063,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 154.28,
    "spyEntry": 763.99,
-   "price": 186.48,
+   "price": 186.44,
    "r1w": -2.78,
-   "r1m": 20.87,
+   "r1m": 20.85,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5084,7 +5084,7 @@ ZOZO.history = {
    "r1m": -2.65,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5100,7 +5100,7 @@ ZOZO.history = {
    "r1m": -21.18,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5111,12 +5111,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 350.73,
    "spyEntry": 763.99,
-   "price": 324.2,
+   "price": 327.12,
    "r1w": -0.54,
-   "r1m": -7.56,
+   "r1m": -6.73,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5127,12 +5127,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 279.31,
    "spyEntry": 763.99,
-   "price": 315.05,
+   "price": 314.99,
    "r1w": 3.29,
-   "r1m": 12.8,
+   "r1m": 12.77,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5148,7 +5148,7 @@ ZOZO.history = {
    "r1m": 33.5,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5159,12 +5159,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 182.09,
    "spyEntry": 763.99,
-   "price": 164.73,
+   "price": 164.79,
    "r1w": -3.34,
-   "r1m": -9.54,
+   "r1m": -9.5,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5175,12 +5175,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 115.95,
    "spyEntry": 763.99,
-   "price": 130.41,
+   "price": 129.75,
    "r1w": 2.98,
-   "r1m": 12.47,
+   "r1m": 11.9,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5196,7 +5196,7 @@ ZOZO.history = {
    "r1m": 9.27,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5207,12 +5207,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 195.6,
    "spyEntry": 763.99,
-   "price": 221.21,
+   "price": 220.16,
    "r1w": 2.82,
-   "r1m": 13.09,
+   "r1m": 12.56,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5223,12 +5223,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 80.29,
    "spyEntry": 763.99,
-   "price": 97.01,
+   "price": 96.84,
    "r1w": 3.09,
-   "r1m": 20.82,
+   "r1m": 20.61,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5244,7 +5244,7 @@ ZOZO.history = {
    "r1m": 21.11,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5260,7 +5260,7 @@ ZOZO.history = {
    "r1m": -0.06,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5271,12 +5271,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 230.09,
    "spyEntry": 763.99,
-   "price": 251.6,
+   "price": 250.73,
    "r1w": 3.86,
-   "r1m": 9.35,
+   "r1m": 8.97,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5292,7 +5292,7 @@ ZOZO.history = {
    "r1m": 10.95,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5303,12 +5303,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 127.06,
    "spyEntry": 763.99,
-   "price": 153.49,
+   "price": 153.75,
    "r1w": 5.61,
-   "r1m": 20.8,
+   "r1m": 21.01,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5324,7 +5324,7 @@ ZOZO.history = {
    "r1m": 2.93,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5340,7 +5340,7 @@ ZOZO.history = {
    "r1m": 5.62,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5351,12 +5351,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 108.76,
    "spyEntry": 763.99,
-   "price": 103.75,
+   "price": 104.28,
    "r1w": 5.64,
-   "r1m": -4.61,
+   "r1m": -4.12,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5372,7 +5372,7 @@ ZOZO.history = {
    "r1m": 7.08,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5388,7 +5388,7 @@ ZOZO.history = {
    "r1m": 16,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5404,7 +5404,7 @@ ZOZO.history = {
    "r1m": 11.46,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5415,12 +5415,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 266.24,
    "spyEntry": 763.99,
-   "price": 292.96,
+   "price": 292.8,
    "r1w": 2.49,
-   "r1m": 10.04,
+   "r1m": 9.98,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5431,12 +5431,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 217.76,
    "spyEntry": 763.99,
-   "price": 212.75,
+   "price": 213.03,
    "r1w": -1.58,
-   "r1m": -2.3,
+   "r1m": -2.17,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5447,12 +5447,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 114.67,
    "spyEntry": 763.99,
-   "price": 105.54,
+   "price": 106.61,
    "r1w": 0.77,
-   "r1m": -7.97,
+   "r1m": -7.03,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5463,12 +5463,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 235.98,
    "spyEntry": 763.99,
-   "price": 270.27,
+   "price": 273.87,
    "r1w": 4.31,
-   "r1m": 14.53,
+   "r1m": 16.06,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5484,7 +5484,7 @@ ZOZO.history = {
    "r1m": 0.56,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5495,12 +5495,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 135.83,
    "spyEntry": 763.99,
-   "price": 150.27,
+   "price": 153.36,
    "r1w": 2.98,
-   "r1m": 10.63,
+   "r1m": 12.91,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5516,7 +5516,7 @@ ZOZO.history = {
    "r1m": -6.75,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5532,7 +5532,7 @@ ZOZO.history = {
    "r1m": -2.49,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5543,12 +5543,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 442.45,
    "spyEntry": 763.99,
-   "price": 436.08,
+   "price": 436.2,
    "r1w": -1.88,
-   "r1m": -1.44,
+   "r1m": -1.41,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5564,7 +5564,7 @@ ZOZO.history = {
    "r1m": 16.78,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5580,7 +5580,7 @@ ZOZO.history = {
    "r1m": 10.06,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5591,12 +5591,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 31.45,
    "spyEntry": 763.99,
-   "price": 31.76,
+   "price": 31.74,
    "r1w": 1.49,
-   "r1m": 0.99,
+   "r1m": 0.92,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5612,7 +5612,7 @@ ZOZO.history = {
    "r1m": 19.1,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5628,7 +5628,7 @@ ZOZO.history = {
    "r1m": 1.16,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5639,12 +5639,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 1281.68,
    "spyEntry": 763.99,
-   "price": 1359.4,
+   "price": 1359.17,
    "r1w": -1.02,
-   "r1m": 6.06,
+   "r1m": 6.05,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5655,12 +5655,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 226.94,
    "spyEntry": 763.99,
-   "price": 234.65,
+   "price": 234.6,
    "r1w": -1.72,
-   "r1m": 3.4,
+   "r1m": 3.38,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5671,12 +5671,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 79.52,
    "spyEntry": 763.99,
-   "price": 76.81,
+   "price": 76.91,
    "r1w": 3.68,
-   "r1m": -3.41,
+   "r1m": -3.28,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5687,12 +5687,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 14.92,
    "spyEntry": 763.99,
-   "price": 14.84,
+   "price": 14.83,
    "r1w": 0.07,
-   "r1m": -0.54,
+   "r1m": -0.6,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5703,12 +5703,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 171.62,
    "spyEntry": 763.99,
-   "price": 181.99,
+   "price": 182.22,
    "r1w": -2.33,
-   "r1m": 6.04,
+   "r1m": 6.18,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5724,7 +5724,7 @@ ZOZO.history = {
    "r1m": -6.32,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5740,7 +5740,7 @@ ZOZO.history = {
    "r1m": 6.94,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5756,7 +5756,7 @@ ZOZO.history = {
    "r1m": -6.84,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5772,7 +5772,7 @@ ZOZO.history = {
    "r1m": 9.71,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5788,7 +5788,7 @@ ZOZO.history = {
    "r1m": 3.97,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5799,12 +5799,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 165.83,
    "spyEntry": 763.99,
-   "price": 158.82,
+   "price": 159.08,
    "r1w": 0.15,
-   "r1m": -4.23,
+   "r1m": -4.07,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5820,7 +5820,7 @@ ZOZO.history = {
    "r1m": 1.66,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5831,12 +5831,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 91.67,
    "spyEntry": 763.99,
-   "price": 105.92,
+   "price": 106.23,
    "r1w": 0.76,
-   "r1m": 15.54,
+   "r1m": 15.88,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5852,7 +5852,7 @@ ZOZO.history = {
    "r1m": -20.85,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5868,7 +5868,7 @@ ZOZO.history = {
    "r1m": 10.58,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5884,7 +5884,7 @@ ZOZO.history = {
    "r1m": 8.39,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5900,7 +5900,7 @@ ZOZO.history = {
    "r1m": -10.38,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5916,7 +5916,7 @@ ZOZO.history = {
    "r1m": 17.15,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5932,7 +5932,7 @@ ZOZO.history = {
    "r1m": 12.39,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5948,7 +5948,7 @@ ZOZO.history = {
    "r1m": 2.94,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5964,7 +5964,7 @@ ZOZO.history = {
    "r1m": -23.32,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5980,7 +5980,7 @@ ZOZO.history = {
    "r1m": 11.68,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -5996,7 +5996,7 @@ ZOZO.history = {
    "r1m": 26.28,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6012,7 +6012,7 @@ ZOZO.history = {
    "r1m": 7.82,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6028,7 +6028,7 @@ ZOZO.history = {
    "r1m": -1.82,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6044,7 +6044,7 @@ ZOZO.history = {
    "r1m": 9.63,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6060,7 +6060,7 @@ ZOZO.history = {
    "r1m": 10.65,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6076,7 +6076,7 @@ ZOZO.history = {
    "r1m": 8.86,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6087,12 +6087,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 319.19,
    "spyEntry": 763.99,
-   "price": 205.35,
+   "price": 207.85,
    "r1w": -5.28,
-   "r1m": -35.66,
+   "r1m": -34.88,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6108,7 +6108,7 @@ ZOZO.history = {
    "r1m": 2.22,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6119,12 +6119,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 231.82,
    "spyEntry": 763.99,
-   "price": 276.55,
+   "price": 276.07,
    "r1w": 0.96,
-   "r1m": 19.3,
+   "r1m": 19.09,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6135,12 +6135,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 248.23,
    "spyEntry": 763.99,
-   "price": 240.26,
+   "price": 240.35,
    "r1w": 2.35,
-   "r1m": -3.21,
+   "r1m": -3.17,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6151,12 +6151,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 330.18,
    "spyEntry": 763.99,
-   "price": 394.39,
+   "price": 394.3,
    "r1w": 0.29,
-   "r1m": 19.45,
+   "r1m": 19.42,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6172,7 +6172,7 @@ ZOZO.history = {
    "r1m": 11.8,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6183,12 +6183,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 494.82,
    "spyEntry": 763.99,
-   "price": 491.29,
+   "price": 490.83,
    "r1w": 0.86,
-   "r1m": -0.71,
+   "r1m": -0.81,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6204,7 +6204,7 @@ ZOZO.history = {
    "r1m": 14.87,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6215,12 +6215,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 309.78,
    "spyEntry": 763.99,
-   "price": 332.08,
+   "price": 331.15,
    "r1w": 3.73,
-   "r1m": 7.2,
+   "r1m": 6.9,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6236,7 +6236,7 @@ ZOZO.history = {
    "r1m": -1.75,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6247,12 +6247,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 98.37,
    "spyEntry": 763.99,
-   "price": 87.67,
+   "price": 88.17,
    "r1w": -1.52,
-   "r1m": -10.88,
+   "r1m": -10.37,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6268,7 +6268,7 @@ ZOZO.history = {
    "r1m": -10.97,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6279,12 +6279,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 46.54,
    "spyEntry": 763.99,
-   "price": 52,
+   "price": 52.08,
    "r1w": 1.72,
-   "r1m": 11.73,
+   "r1m": 11.9,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6300,7 +6300,7 @@ ZOZO.history = {
    "r1m": 10.96,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6316,7 +6316,7 @@ ZOZO.history = {
    "r1m": 16.99,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6332,7 +6332,7 @@ ZOZO.history = {
    "r1m": 28.69,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6343,12 +6343,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 169.2,
    "spyEntry": 763.99,
-   "price": 168.53,
+   "price": 169.16,
    "r1w": -0.41,
-   "r1m": -0.4,
+   "r1m": -0.02,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6359,12 +6359,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 68.9,
    "spyEntry": 763.99,
-   "price": 73.84,
+   "price": 73.86,
    "r1w": 4.57,
-   "r1m": 7.17,
+   "r1m": 7.2,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6375,12 +6375,12 @@ ZOZO.history = {
    "date": "2026-10-01",
    "entry": 458.94,
    "spyEntry": 763.99,
-   "price": 409.78,
+   "price": 410,
    "r1w": 2.4,
-   "r1m": -10.71,
+   "r1m": -10.66,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6396,7 +6396,7 @@ ZOZO.history = {
    "r1m": -1.59,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6412,7 +6412,7 @@ ZOZO.history = {
    "r1m": 11.59,
    "r3m": null,
    "spy1w": 1.3,
-   "spy1m": -1.6,
+   "spy1m": -1.35,
    "spy3m": null
   },
   {
@@ -6471,7 +6471,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 323.27,
    "spyEntry": 762.63,
-   "price": 331.37,
+   "price": 333.45,
    "r1w": -2.56,
    "r1m": 2.11,
    "r3m": null,
@@ -6487,7 +6487,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 451.98,
    "spyEntry": 762.63,
-   "price": 409.78,
+   "price": 410,
    "r1w": 3.38,
    "r1m": -4.62,
    "r3m": null,
@@ -6599,7 +6599,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 98.83,
    "spyEntry": 762.63,
-   "price": 106.31,
+   "price": 106.2,
    "r1w": -0.1,
    "r1m": 5.81,
    "r3m": null,
@@ -6679,7 +6679,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 41.86,
    "spyEntry": 762.63,
-   "price": 47.33,
+   "price": 47.39,
    "r1w": -1.43,
    "r1m": 12.59,
    "r3m": null,
@@ -6711,7 +6711,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 169.36,
    "spyEntry": 762.63,
-   "price": 168.53,
+   "price": 169.16,
    "r1w": -0.7,
    "r1m": 2.1,
    "r3m": null,
@@ -6727,7 +6727,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 228.11,
    "spyEntry": 762.63,
-   "price": 276.55,
+   "price": 276.07,
    "r1w": -0.44,
    "r1m": 17.57,
    "r3m": null,
@@ -6823,7 +6823,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 330.19,
    "spyEntry": 762.63,
-   "price": 324.2,
+   "price": 327.12,
    "r1w": 7.85,
    "r1m": 3.8,
    "r3m": null,
@@ -6903,7 +6903,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 434.94,
    "spyEntry": 762.63,
-   "price": 462.91,
+   "price": 467.33,
    "r1w": 15.57,
    "r1m": 12.7,
    "r3m": null,
@@ -6919,7 +6919,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 1245.76,
    "spyEntry": 762.63,
-   "price": 1359.4,
+   "price": 1359.17,
    "r1w": 1.42,
    "r1m": 10.12,
    "r3m": null,
@@ -6967,7 +6967,7 @@ ZOZO.history = {
    "date": "2026-09-30",
    "entry": 97.74,
    "spyEntry": 762.63,
-   "price": 87.67,
+   "price": 88.17,
    "r1w": -2.21,
    "r1m": -8.46,
    "r3m": null,

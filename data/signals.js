@@ -15,7 +15,7 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.signals = {
- "updatedAt": "2026-10-30T22:19:57+02:00",
+ "updatedAt": "2026-10-30T22:30:55+02:00",
  "asOf": "2026-10-30",
  "universe": "S&P 500",
  "gate": {
@@ -60,7 +60,7 @@ ZOZO.signals = {
    {
     "date": "2026-10-30",
     "open": 761.38,
-    "close": 751.78
+    "close": 753.7
    }
   ],
   "source": "Yahoo Finance"

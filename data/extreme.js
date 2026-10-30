@@ -10,11 +10,11 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-30T22:19:57+02:00",
+ "updatedAt": "2026-10-30T22:30:55+02:00",
  "fearGreed": {
-  "score": 25.5,
+  "score": 26.2,
   "rating": "fear",
-  "timestamp": "2026-10-30T20:07:54+00:00",
+  "timestamp": "2026-10-30T20:18:00+00:00",
   "previousClose": 34.6,
   "oneWeekAgo": 16.7,
   "oneMonthAgo": 30.3,
@@ -60,11 +60,11 @@ ZOZO.extreme = {
    {
     "date": "2026-10-30",
     "open": 761.38,
-    "close": 751.78
+    "close": 753.7
    }
   ],
   "streak": 1,
-  "lastClose": 751.78,
+  "lastClose": 753.7,
   "source": "Yahoo Finance, נרות יומיים של SPY (ימי מסחר שהסתיימו)"
  },
  "active": false,
