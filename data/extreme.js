@@ -10,11 +10,11 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.extreme = {
- "updatedAt": "2026-10-30T18:30:57+02:00",
+ "updatedAt": "2026-10-30T18:45:52+02:00",
  "fearGreed": {
-  "score": 25.8,
+  "score": 25.9,
   "rating": "fear",
-  "timestamp": "2026-10-30T16:26:29+00:00",
+  "timestamp": "2026-10-30T16:41:01+00:00",
   "previousClose": 34.6,
   "oneWeekAgo": 16.7,
   "oneMonthAgo": 30.3,
