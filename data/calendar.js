@@ -11,17 +11,17 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-10-31T08:15:00+02:00",
-  weekOf: "2026-10-25",
+  updatedAt: "2026-11-01T08:20:00+02:00",
+  weekOf: "2026-11-01",
   events: [
-    { at: "2026-10-31T00:00:00+02:00", allDay: true, kind: "israel", title: "סיום רוב ספירת הקולות (53 בלוק נתניהו, 48 בלוק איזנקוט, 19 מפלגות ערביות) - בלי רוב לאף צד; איזנקוט צפוי לקבל מהנשיא הרצוג את המנדט הראשון. הבורסה בתל אביב סגורה (שבת)", important: true, source: { name: "Haaretz; Ynetnews, 28-29/10", url: "https://www.haaretz.com/israel-news/elections/2026-10-29/ty-article/.premium/eisenkots-only-advantage-getting-first-chance-at-forming-a-government/000001a1-8448-de48-aba1-c6db890a0000" } },
+    { at: "2026-11-02T00:00:00+02:00", allDay: true, kind: "israel", title: "הנשיא הרצוג מתוכנן להזמין את ראשי הסיעות להתייעצויות השבוע, לאחר אישור רשמי של תוצאות הבחירות (53 בלוק נתניהו, 48 בלוק איזנקוט, 19 הרשימה המשותפת - בלי רוב לאף צד); הרשימה המשותפת מציעה תמיכה חוץ-קואליציונית באיזנקוט בלי להצטרף לממשלה", important: true, source: { name: "Republic World, 28/10", url: "https://www.republicworld.com/global-news/arrive-with-an-open-mind-israeli-president-herzog-urges-party-leaders-ahead-of-coalition-talks-2026-10-28-139882" } },
 
     { at: "2026-11-02T17:00:00+02:00", kind: "macro", title: "מדד מנהלי הרכש התעשייתי ISM לחודש אוקטובר - ארה\"ב (10:00 שעון מזרח ארה\"ב)", important: true, source: { name: "ISM", url: "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/" } },
-    { at: "2026-11-02T23:30:00+02:00", allDay: true, kind: "earnings", ticker: "AAPL", title: "Apple (רבעון רביעי, שנת פיסקלית 2026) - אחרי נעילת המסחר", timing: "AMC", important: true, source: { name: "Apple Investor Relations", url: "https://www.macrumors.com/2026/10/06/apple-q4-2026-earnings-nov-2" } },
+    { at: "2026-11-02T23:30:00+02:00", allDay: true, kind: "earnings", ticker: "AAPL", title: "Apple (רבעון רביעי, שנת פיסקלית 2026) - אחרי נעילת המסחר", timing: "AMC", impliedMove: "±4.4%", important: true, source: { name: "Apple Investor Relations / S&P Global", url: "https://www.macrumors.com/2026/10/06/apple-q4-2026-earnings-nov-2" } },
 
-    { at: "2026-11-03T00:00:00+02:00", allDay: true, kind: "macro", title: "בחירות הביניים (midterms) לקונגרס ארה\"ב - כל 435 מושבי הבית, 33-35 מושבי הסנאט ו-39 בחירות למושלים", important: true, source: { name: "Council on Foreign Relations", url: "https://www.cfr.org/articles/five-things-to-know-about-the-midterms" } },
+    { at: "2026-11-03T00:00:00+02:00", allDay: true, kind: "macro", title: "בחירות הביניים (midterms) לקונגרס ארה\"ב - כל 435 מושבי הבית, 33-35 מושבי הסנאט ו-39 בחירות למושלים; הדמוקרטים מועדפים להשתלט על הבית (כ-85-88%), הסנאט צמוד מאוד (הערכות שונות בין כ-48% ל-74%)", important: true, source: { name: "Defirate / Silver Bulletin / Kalshi", url: "https://defirate.com/?p=7780" } },
     { at: "2026-11-03T17:00:00+02:00", kind: "macro", title: "סקר JOLTS (משרות פנויות) לחודש ספטמבר - ארה\"ב (10:00 שעון מזרח ארה\"ב)", important: false, source: { name: "BLS", url: "https://www.financecalendar.com/events/category/economic-indicators/day/2026-11-07/" } },
-    { at: "2026-11-03T23:00:00+02:00", allDay: true, kind: "earnings", ticker: "AMD", title: "AMD (רבעון שלישי 2026) - אחרי נעילת המסחר", timing: "AMC", important: false, source: { name: "AMD Investor Relations", url: "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results" } },
+    { at: "2026-11-03T23:00:00+02:00", allDay: true, kind: "earnings", ticker: "AMD", title: "AMD (רבעון שלישי 2026) - אחרי נעילת המסחר (תאריך צפי, לא אושר רשמית)", timing: "AMC", impliedMove: "±9.3%", important: false, source: { name: "AMD Investor Relations (צפי)", url: "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results" } },
 
     { at: "2026-11-04T17:00:00+02:00", kind: "macro", title: "מדד מנהלי הרכש בשירותים ISM לחודש אוקטובר - ארה\"ב (10:00 שעון מזרח ארה\"ב)", important: false, source: { name: "ISM", url: "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/" } },
 
