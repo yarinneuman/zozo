@@ -11,13 +11,13 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-11-01T08:20:00+02:00",
-  weekOf: "2026-11-01",
+  updatedAt: "2026-11-02T08:24:00+02:00",
+  weekOf: "2026-11-02",
   events: [
-    { at: "2026-11-02T00:00:00+02:00", allDay: true, kind: "israel", title: "הנשיא הרצוג מתוכנן להזמין את ראשי הסיעות להתייעצויות השבוע, לאחר אישור רשמי של תוצאות הבחירות (53 בלוק נתניהו, 48 בלוק איזנקוט, 19 הרשימה המשותפת - בלי רוב לאף צד); הרשימה המשותפת מציעה תמיכה חוץ-קואליציונית באיזנקוט בלי להצטרף לממשלה", important: true, source: { name: "Republic World, 28/10", url: "https://www.republicworld.com/global-news/arrive-with-an-open-mind-israeli-president-herzog-urges-party-leaders-ahead-of-coalition-talks-2026-10-28-139882" } },
+    { at: "2026-11-02T00:00:00+02:00", allDay: true, kind: "israel", title: "המשא ומתן הקואליציוני נתקע: נתניהו מתנה ממשלה משותפת עם איזנקוט בהישארות אמיר אוחנה כיו\"ר הכנסת; הנשיא הרצוג העלה אפשרות לממשלת אחדות, בית הנשיא מכחיש שיחות רשמיות", important: true, source: { name: "ynet; כאן חדשות, 31/10-1/11", url: "https://www.ynet.co.il/news/article/h1ri3yeagx" } },
 
     { at: "2026-11-02T17:00:00+02:00", kind: "macro", title: "מדד מנהלי הרכש התעשייתי ISM לחודש אוקטובר - ארה\"ב (10:00 שעון מזרח ארה\"ב)", important: true, source: { name: "ISM", url: "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/" } },
-    { at: "2026-11-02T23:30:00+02:00", allDay: true, kind: "earnings", ticker: "AAPL", title: "Apple (רבעון רביעי, שנת פיסקלית 2026) - אחרי נעילת המסחר", timing: "AMC", impliedMove: "±4.4%", important: true, source: { name: "Apple Investor Relations / S&P Global", url: "https://www.macrumors.com/2026/10/06/apple-q4-2026-earnings-nov-2" } },
+    { at: "2026-11-02T23:30:00+02:00", allDay: true, kind: "earnings", ticker: "AAPL", title: "Apple (רבעון רביעי, שנת פיסקלית 2026) - אחרי נעילת המסחר; שיחת הדו\"חות הראשונה של המנכ\"ל החדש ג'ון טרנוס", timing: "AMC", consensus: "הכנסות: צמיחה של 9-11% לעומת התקופה המקבילה (כ-111.7-113.7 מיליארד דולר); שולי רווח גולמי: 47-48%", important: true, source: { name: "MacRumors; iGeeks Blog", url: "https://macrumors.com/2026/10/06/apple-q4-2026-earnings-nov-2" } },
 
     { at: "2026-11-03T00:00:00+02:00", allDay: true, kind: "macro", title: "בחירות הביניים (midterms) לקונגרס ארה\"ב - כל 435 מושבי הבית, 33-35 מושבי הסנאט ו-39 בחירות למושלים; הדמוקרטים מועדפים להשתלט על הבית (כ-85-88%), הסנאט צמוד מאוד (הערכות שונות בין כ-48% ל-74%)", important: true, source: { name: "Defirate / Silver Bulletin / Kalshi", url: "https://defirate.com/?p=7780" } },
     { at: "2026-11-03T17:00:00+02:00", kind: "macro", title: "סקר JOLTS (משרות פנויות) לחודש ספטמבר - ארה\"ב (10:00 שעון מזרח ארה\"ב)", important: false, source: { name: "BLS", url: "https://www.financecalendar.com/events/category/economic-indicators/day/2026-11-07/" } },
