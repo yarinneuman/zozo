@@ -11,14 +11,17 @@ Schema:
 */
 window.ZOZO = window.ZOZO || {};
 ZOZO.calendar = {
-  updatedAt: "2026-11-07T08:20:00+02:00",
+  updatedAt: "2026-11-08T08:20:00+02:00",
   weekOf: "2026-11-08",
   events: [
+    { at: "2026-11-08T00:00:00+02:00", allDay: true, kind: "israel", title: "הנשיא הרצוג מטיל על ח\"כ גדי איזנקוט את המנדט להרכבת הממשלה - 67 המלצות לעומת 46 לנתניהו; 28 יום להרכיב קואליציה", important: true, source: { name: "CBS News; Al Jazeera; JPost", url: "https://www.jpost.com/israel-election-2026/article-913989" } },
+    { at: "2026-11-08T00:00:00+02:00", allDay: true, kind: "israel", title: "אין מסחר בבורסת תל אביב היום - מתחילת 2026 שבוע המסחר הוא שני-שישי; המסחר הבא ביום שני", important: false, source: { name: "Mizrahi Tefahot; Bank Hapoalim", url: "https://www.bankhapoalim.co.il/he/article-jan2026-tase" } },
+
     { at: "2026-11-09T00:00:00+02:00", allDay: true, kind: "fed", title: "נשיא הפד של ריצ'מונד, טום ברקין, נואם - ייתכן שיתייחס לדו\"ח התעסוקה החזק ולסיכויי העלאת הריבית בדצמבר", important: false, source: { name: "fedratecalc", url: "https://fedratecalc.com/us-economic-calendar/november-2026/" } },
-    { at: "2026-11-09T00:00:00+02:00", allDay: true, kind: "macro", title: "תחילת שיווק ההנפקה (IPO) של Anthropic; הערכות שווי נדונות בטווח של כ-1-1.3 טריליון דולר", important: true, source: { name: "Axios; Unite.ai", url: "https://www.axios.com/2026/11/06/anthropicai-ipo-valuation-ai-trade" } },
+    { at: "2026-11-09T00:00:00+02:00", allDay: true, kind: "macro", title: "תחילת שיווק ההנפקה (IPO) של Anthropic; הערכות שווי נדונות בטווח של כ-1.2-1.3 טריליון דולר", important: true, source: { name: "Axios; Unite.ai", url: "https://www.axios.com/2026/11/06/anthropicai-ipo-valuation-ai-trade" } },
     { at: "2026-11-09T23:05:00+02:00", kind: "earnings", title: "Take-Two Interactive - דו\"ח רבעוני", ticker: "TTWO", timing: "AMC", important: false, source: { name: "Stocktitan", url: "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-9-2026" } },
 
-    { at: "2026-11-10T00:00:00+02:00", allDay: true, kind: "israel", title: "הכנסת ה-26 מתכנסת; גוש השינוי טוען שאסף 61 חתימות לדרישה להחליף את יו\"ר הכנסת אוחנה", important: true, source: { name: "Ynet; Walla", url: "https://www.ynet.co.il/news/article/rktlgckpml" } },
+    { at: "2026-11-10T16:00:00+02:00", kind: "israel", title: "הכנסת ה-26 מתכנסת לטקס השבעה ובחירת יו\"ר כנסת; גוש השינוי בראשות איזנקוט מבקש להחליף את אמיר אוחנה", important: true, source: { name: "JNS; Anews", url: "https://www.jns.org/news/israel-news/knesset-speaker-amir-ohana-no-early-speaker-vote-without-61-signatures" } },
     { at: "2026-11-10T15:30:00+02:00", kind: "macro", title: "מדד המחירים לצרכן (CPI) לאוקטובר - ארה\"ב; נתון אינפלציה מרכזי לפני החלטת הריבית של הפד ב-9/12", important: true, source: { name: "BLS; Schaeffer's Investment Research", url: "https://www.schaeffersresearch.com/content/news/2026/11/05/the-week-ahead-inflation-data-on-deck-as-earnings-slow" } },
 
     { at: "2026-11-12T15:30:00+02:00", kind: "macro", title: "תביעות דמי אבטלה שבועיות - ארה\"ב", important: false, source: { name: "fedratecalc", url: "https://fedratecalc.com/us-economic-calendar/november-2026/" } },
