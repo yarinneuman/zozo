@@ -66,7 +66,18 @@ try {
   const f = j.fear_and_greed;
   const r1 = (x) => (isFinite(x) ? Math.round(x * 10) / 10 : null);
   fearGreed = { score: r1(f.score), rating: f.rating, timestamp: f.timestamp, previousClose: r1(f.previous_close), oneWeekAgo: r1(f.previous_1_week), oneMonthAgo: r1(f.previous_1_month), source: 'CNN Fear & Greed (production.dataviz.cnn.io)' };
-} catch (e) { failed.push('CNN Fear & Greed: ' + e.message); }
+} catch (e) {
+  failed.push('CNN Fear & Greed: ' + e.message);
+  // fallback when CNN blocks us: a simple open estimate from VIX and SPY vs its 125-day average (0–100), clearly labelled
+  try {
+    const ch = async (s, r) => (await (await get(`https://query1.finance.yahoo.com/v8/finance/chart/${s}?range=${r}&interval=1d`)).json()).chart.result[0].indicators.quote[0].close.filter((x) => x != null);
+    const vix = (await ch('%5EVIX', '5d')).at(-1), spy = await ch('SPY', '1y'), avg = spy.slice(-125).reduce((a, x) => a + x, 0) / 125;
+    const clamp = (x) => Math.max(0, Math.min(100, x));
+    const score = Math.round((clamp(100 - (vix - 12) * 4) + clamp(50 + ((spy.at(-1) / avg - 1) * 100) * 6)) / 2 * 10) / 10;
+    const rating = score < 25 ? 'extreme fear' : score < 45 ? 'fear' : score < 55 ? 'neutral' : score < 75 ? 'greed' : 'extreme greed';
+    fearGreed = { score, rating, timestamp: new Date().toISOString(), previousClose: null, oneWeekAgo: null, oneMonthAgo: null, source: 'מחושב מ-VIX ו-SPY (CNN חסם)', computed: true };
+  } catch (e2) { failed.push('F&G fallback: ' + e2.message); }
+}
 
 /* ---------- Polymarket: next Fed decision ---------- */
 let fed = null;

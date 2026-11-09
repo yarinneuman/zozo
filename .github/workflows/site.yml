@@ -72,6 +72,18 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: node tools/daily.mjs || echo "::warning::signals failed — publishing the last committed copy"
 
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true' && github.event_name == 'schedule' && contains(github.event.schedule, '50 4')
+        with:
+          python-version: '3.12'
+
+      - name: Brief, calendar and weekly (templates + free Argos translation, no LLM)
+        if: steps.gate.outputs.run == 'true' && github.event_name == 'schedule' && contains(github.event.schedule, '50 4')
+        run: |
+          pip install -q argostranslate || echo "::warning::argos not installed — headlines stay in English"
+          node tools/brief.mjs || echo "::warning::brief failed — keeping the last one"
+          if [ "$(TZ=Asia/Jerusalem date +%u)" = 7 ]; then node tools/etf.mjs || true; fi
+
       - name: Save signals that changed
         if: steps.gate.outputs.run == 'true'
         run: |
